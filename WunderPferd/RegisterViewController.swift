@@ -20,10 +20,11 @@ class RegisterViewController: UIViewController {
             if field == textFields.last {
                 field.returnKeyType = .done
             } else {
-                field.returnKeyType = .next
+                field.returnKeyType = UIReturnKeyType.next
             }
         }
         textFields.first?.becomeFirstResponder()
+
     }
     
     @IBOutlet var textFields: [UITextField]!
@@ -38,6 +39,9 @@ extension RegisterViewController: UITextFieldDelegate {
         }
         if let index = textFields.firstIndex(where: {textField in textField == currentField}) {
             textFields[index + 1].becomeFirstResponder()
+            if index == textFields.count - 2 {
+                
+            }
         }
         return true
     }

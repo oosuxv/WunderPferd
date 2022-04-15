@@ -23,6 +23,10 @@ class RegisterViewController: UIViewController {
                 field.returnKeyType = .next
             }
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         textFields.first?.becomeFirstResponder()
     }
     

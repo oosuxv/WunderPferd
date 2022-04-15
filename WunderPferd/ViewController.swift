@@ -24,6 +24,27 @@ class ViewController: UIViewController {
         textField.delegate = self
         tap.addTarget(self, action: #selector(tap2))
         someView.addGestureRecognizer(tap)
+        testClosure = {[weak self] text, editable, field in
+            guard let self = self else {
+                return false
+            }
+            print("\(text) and \(field?.text ?? "")")
+            self.printCompare(text1: text, text2: field?.text ?? "")
+            return editable && text == field?.text
+        }
+        
+        let result = testClosure?("ok", textField.isEditing, textField)
+        print(result as Any)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self, selector:  #selector(keyboardDidChange), name: UIResponder.keyboardWillShowNotification, object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
     }
     
     @objc func tap2() {
@@ -31,18 +52,27 @@ class ViewController: UIViewController {
         textField.resignFirstResponder()
     }
     
+    @objc func keyboardDidChange(Sender: Notification) {
+        print(Sender)
+    }
+    
+    func printCompare(text1: String, text2: String) {
+        print("\(text1 == text2)")
+
+    }
+    
     @IBOutlet weak var someView: UIView! // bad naming
     @IBOutlet weak var button: UIButton! // bad naming
     @IBOutlet weak var textField: UITextField! // bad naming
     @IBOutlet weak var tap: UITapGestureRecognizer!
     
+    var testClosure: ((String, Bool, UITextField?) -> Bool)?
     
 }
 
 extension ViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool { // можно ли нажать кнопку
         textField.resignFirstResponder()
-        if fields.last
         return true
     }
     

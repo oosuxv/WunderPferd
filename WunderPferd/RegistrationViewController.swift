@@ -12,13 +12,12 @@ class RegistrationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print(scrollView.contentSize as Any)
-        scrollView.contentInset = .init(top: 20, left:0, bottom: 200, right: 0)
 //        scrollView.isTracking
 //        scrollView.isDragging
 //        scrollView.isDecelerating
         scrollView.delegate = self
         let tap = UITapGestureRecognizer(target: self, action: #selector(endEditing))
-//        view.addGestureRecognizer(tap)
+        view.addGestureRecognizer(tap)
     }
     
     @objc func keyboardDidHide() {
@@ -43,7 +42,7 @@ class RegistrationViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        NotificationCenter.default.addObserver(self, selector:  #selector(keyboardDidChange), name: UIResponder.keyboardDidHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector:  #selector(keyboardDidHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector:  #selector(keyboardDidChange), name: UIResponder.keyboardWillShowNotification, object: nil)
     }
     

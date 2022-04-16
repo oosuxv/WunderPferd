@@ -7,7 +7,10 @@
 
 import UIKit
 
-class BestButton: UIButton {
+class BrightButton: UIButton {
+    
+    private let defaultColor = UIColor.red
+    private let highighlightedColor = UIColor.orange
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -26,11 +29,11 @@ class BestButton: UIButton {
     
     override open var isHighlighted: Bool {
         didSet {
-            self.backgroundColor = isHighlighted ? .yellow : .blue
+            self.backgroundColor = isHighlighted ? highighlightedColor : defaultColor
         }
     }
 
     func setup() {
-        self.backgroundColor = .blue;
+        self.backgroundColor = defaultColor;
     }
 }

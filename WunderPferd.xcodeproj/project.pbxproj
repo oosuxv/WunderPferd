@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		520169C6280961AE00662E71 /* BestButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520169C5280961AE00662E71 /* BestButton.swift */; };
+		520169C6280961AE00662E71 /* BrightButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520169C5280961AE00662E71 /* BrightButton.swift */; };
 		5228AD4E27FF5CEF0000122D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5228AD4D27FF5CEF0000122D /* AppDelegate.swift */; };
 		5228AD5027FF5CEF0000122D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5228AD4F27FF5CEF0000122D /* SceneDelegate.swift */; };
 		5228AD5227FF5CEF0000122D /* AuthorizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5228AD5127FF5CEF0000122D /* AuthorizeViewController.swift */; };
@@ -19,7 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		520169C5280961AE00662E71 /* BestButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestButton.swift; sourceTree = "<group>"; };
+		520169C5280961AE00662E71 /* BrightButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrightButton.swift; sourceTree = "<group>"; };
 		5228AD4A27FF5CEF0000122D /* WunderPferd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WunderPferd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5228AD4D27FF5CEF0000122D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5228AD4F27FF5CEF0000122D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,7 +71,7 @@
 				5228AD5B27FF5CF50000122D /* Info.plist */,
 				52CBEE5A28089DC300371816 /* Registration.storyboard */,
 				5251497A2809422A0055B8D0 /* RegisterViewController.swift */,
-				520169C5280961AE00662E71 /* BestButton.swift */,
+				520169C5280961AE00662E71 /* BrightButton.swift */,
 			);
 			path = WunderPferd;
 			sourceTree = "<group>";
@@ -148,7 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				520169C6280961AE00662E71 /* BestButton.swift in Sources */,
+				520169C6280961AE00662E71 /* BrightButton.swift in Sources */,
 				5228AD5227FF5CEF0000122D /* AuthorizeViewController.swift in Sources */,
 				5228AD4E27FF5CEF0000122D /* AppDelegate.swift in Sources */,
 				5228AD5027FF5CEF0000122D /* SceneDelegate.swift in Sources */,

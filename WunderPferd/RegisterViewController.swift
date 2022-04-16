@@ -31,7 +31,6 @@ class RegisterViewController: UIViewController {
     }
     
     @IBOutlet var textFields: [UITextField]!
-  
 }
 
 extension RegisterViewController: UITextFieldDelegate {

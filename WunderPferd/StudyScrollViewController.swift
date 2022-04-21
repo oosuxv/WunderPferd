@@ -35,7 +35,7 @@ class StudyScrollViewController: UIViewController {
         
         let currentField = textFields.first(where: { $0.isFirstResponder })
         if let currentField = currentField {
-            let scrollTo = CGPoint(x: 0, y: currentField.frame.origin.y)
+            let scrollTo = CGPoint(x: 0, y: currentField.frame.origin.y - keyboardHeight + stackOffset)
             scrollView.setContentOffset(scrollTo, animated: true)
         }
     }
@@ -48,4 +48,5 @@ class StudyScrollViewController: UIViewController {
     
     @IBOutlet var textFields: [UITextField]!
     @IBOutlet weak var scrollView: UIScrollView!
+    var stackOffset = 0.0
 }

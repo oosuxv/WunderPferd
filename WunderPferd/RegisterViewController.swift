@@ -8,7 +8,8 @@
 import UIKit
 
 class RegisterViewController: StudyScrollViewController {
-
+    @IBOutlet weak var stackView: UIStackView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,6 +26,7 @@ class RegisterViewController: StudyScrollViewController {
         }
         
         scrollView.delegate = self
+        stackOffset = stackView.frame.origin.y
     }
     
     override func viewDidAppear(_ animated: Bool) {

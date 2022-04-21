@@ -7,12 +7,12 @@
 
 import UIKit
 
-class AuthorizeViewController: UIViewController {
+class AuthorizeViewController: StudyScrollViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-    
 }
+
 

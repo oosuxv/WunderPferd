@@ -23,6 +23,8 @@ class RegisterViewController: UIViewController {
                 field.returnKeyType = .next
             }
         }
+        
+        scrollView.delegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -30,7 +32,34 @@ class RegisterViewController: UIViewController {
         textFields.first?.becomeFirstResponder()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self, selector:  #selector(keyboardDidHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector:  #selector(keyboardDidChange), name: UIResponder.keyboardWillShowNotification, object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc func keyboardDidHide() {
+        scrollView.contentInset = .zero
+        print("khkh")
+    }
+                
+    @objc func keyboardDidChange(notification: Notification) {
+        var keyboardHeight = 0.0
+        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            keyboardHeight = keyboardRectangle.height
+        }
+        print("wow, keyboard did change")
+        scrollView.contentInset = .init(top: 0, left: 0, bottom: keyboardHeight, right: 0)
+    }
+    
     @IBOutlet var textFields: [UITextField]!
+    @IBOutlet weak var scrollView: UIScrollView!
 }
 
 extension RegisterViewController: UITextFieldDelegate {
@@ -44,4 +73,8 @@ extension RegisterViewController: UITextFieldDelegate {
         }
         return true
     }
+}
+
+extension RegisterViewController : UIScrollViewDelegate {
+    
 }

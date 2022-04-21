@@ -115,7 +115,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zHG-P6-paf">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="827"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="giQ-RA-lHK">
                                                 <rect key="frame" x="21" y="138.5" width="57" height="76"/>
@@ -128,7 +128,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Регистрация" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRD-I0-GCu">
-                                                <rect key="frame" x="89" y="155" width="216" height="43"/>
+                                                <rect key="frame" x="89" y="155" width="216" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -163,7 +163,7 @@
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZSL-0y-9s1" customClass="BrightButton" customModule="WunderPferd" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="679" width="414" height="51"/>
+                                                <rect key="frame" x="0.0" y="738" width="414" height="51"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="51" id="Bx0-Sd-f9E"/>
                                                 </constraints>
@@ -173,7 +173,7 @@
                                                 </buttonConfiguration>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="Hq8-hP-PQg" secondAttribute="trailing" constant="16" id="2kf-Il-Hyd" userLabel="trailing = Stack View.trailing + 16"/>
                                             <constraint firstAttribute="bottom" secondItem="kRD-I0-GCu" secondAttribute="bottom" constant="629" id="6No-xk-QfK"/>
@@ -186,9 +186,9 @@
                                             <constraint firstItem="ZSL-0y-9s1" firstAttribute="leading" secondItem="zHG-P6-paf" secondAttribute="leading" id="mzc-Nr-qQk"/>
                                             <constraint firstItem="giQ-RA-lHK" firstAttribute="leading" secondItem="zHG-P6-paf" secondAttribute="leading" constant="21" id="tGc-SR-wPd"/>
                                             <constraint firstItem="Hq8-hP-PQg" firstAttribute="top" secondItem="giQ-RA-lHK" secondAttribute="bottom" constant="8" id="uQI-HO-ZfO"/>
-                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ZSL-0y-9s1" secondAttribute="bottom" priority="900" constant="38" id="yHh-A1-XGs"/>
+                                            <constraint firstAttribute="bottom" secondItem="ZSL-0y-9s1" secondAttribute="bottom" priority="900" constant="38" id="yHh-A1-XGs"/>
                                             <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="kRD-I0-GCu" secondAttribute="trailing" constant="109" id="yI7-d4-isL"/>
-                                            <constraint firstItem="ZSL-0y-9s1" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Hq8-hP-PQg" secondAttribute="bottom" priority="900" constant="150" id="yYp-us-1mp"/>
+                                            <constraint firstItem="ZSL-0y-9s1" firstAttribute="top" secondItem="Hq8-hP-PQg" secondAttribute="bottom" priority="900" constant="150" id="yYp-us-1mp"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -215,6 +215,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="34a-re-CiG"/>
                     <connections>
+                        <outlet property="scrollView" destination="t2d-OC-j3j" id="xVf-7w-QtJ"/>
                         <outletCollection property="textFields" destination="45b-YB-X0b" collectionClass="NSMutableArray" id="WoP-7f-K4j"/>
                         <outletCollection property="textFields" destination="ol4-qI-OuC" collectionClass="NSMutableArray" id="olE-9d-726"/>
                         <outletCollection property="textFields" destination="b9c-L8-FOT" collectionClass="NSMutableArray" id="mmc-vc-eRe"/>

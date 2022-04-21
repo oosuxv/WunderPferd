@@ -54,6 +54,13 @@ class RegisterViewController: UIViewController {
             keyboardHeight = keyboardRectangle.height
         }
         scrollView.contentInset = .init(top: 0, left: 0, bottom: keyboardHeight, right: 0)
+        
+        let currentField = textFields.first(where: { $0.isFirstResponder })
+        if let currentField = currentField {
+            let scrollTo = CGPoint(x: 0, y: currentField.frame.origin.y)
+            scrollView.setContentOffset(scrollTo, animated: true)
+        }
+        
     }
     
     @IBOutlet var textFields: [UITextField]!

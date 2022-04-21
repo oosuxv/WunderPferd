@@ -45,7 +45,6 @@ class RegisterViewController: UIViewController {
     
     @objc func keyboardDidHide() {
         scrollView.contentInset = .zero
-        print("khkh")
     }
                 
     @objc func keyboardDidChange(notification: Notification) {
@@ -54,7 +53,6 @@ class RegisterViewController: UIViewController {
             let keyboardRectangle = keyboardFrame.cgRectValue
             keyboardHeight = keyboardRectangle.height
         }
-        print("wow, keyboard did change")
         scrollView.contentInset = .init(top: 0, left: 0, bottom: keyboardHeight, right: 0)
     }
     
@@ -76,5 +74,4 @@ extension RegisterViewController: UITextFieldDelegate {
 }
 
 extension RegisterViewController : UIScrollViewDelegate {
-    
 }

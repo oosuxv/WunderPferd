@@ -34,8 +34,10 @@ class RegisterViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        NotificationCenter.default.addObserver(self, selector:  #selector(keyboardDidHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector:  #selector(keyboardDidChange), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector:  #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector:  #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector:  #selector(keyboardDidShow), name: UIResponder.keyboardDidShowNotification, object: nil)
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -43,11 +45,11 @@ class RegisterViewController: UIViewController {
         NotificationCenter.default.removeObserver(self)
     }
     
-    @objc func keyboardDidHide() {
+    @objc func keyboardWillHide() {
         scrollView.contentInset = .zero
     }
                 
-    @objc func keyboardDidChange(notification: Notification) {
+    @objc func keyboardWillShow(notification: Notification) {
         var keyboardHeight = 0.0
         if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
             let keyboardRectangle = keyboardFrame.cgRectValue
@@ -60,7 +62,12 @@ class RegisterViewController: UIViewController {
             let scrollTo = CGPoint(x: 0, y: currentField.frame.origin.y)
             scrollView.setContentOffset(scrollTo, animated: true)
         }
-        
+    }
+    
+    @objc func keyboardDidShow(notification: Notification) {
+        if let animationDuration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] {
+            print("keyboard animation time: \(animationDuration) seconds")
+        }
     }
     
     @IBOutlet var textFields: [UITextField]!

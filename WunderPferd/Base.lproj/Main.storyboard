@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tVh-CR-jWn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cRU-8w-f3E">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -23,19 +23,19 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Авторизация" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LEb-VP-yy2">
-                                                <rect key="frame" x="16" y="135" width="382" height="42"/>
+                                                <rect key="frame" x="16" y="225" width="382" height="42"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="36"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Авторизуйтесь, чтоб получить доступ к полному функционалу приложения" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kav-IW-HQp" userLabel="authDescr">
-                                                <rect key="frame" x="16" y="203" width="382" height="86"/>
+                                                <rect key="frame" x="16" y="293" width="382" height="86"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Login" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tV7-8b-fxZ">
-                                                <rect key="frame" x="16" y="365" width="382" height="70"/>
+                                                <rect key="frame" x="16" y="405" width="382" height="70"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="70" id="o1j-1Z-8D9"/>
                                                 </constraints>
@@ -43,7 +43,7 @@
                                                 <textInputTraits key="textInputTraits" textContentType="username"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7IC-vo-Dcc">
-                                                <rect key="frame" x="16" y="453" width="382" height="70"/>
+                                                <rect key="frame" x="16" y="493" width="382" height="70"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="70" id="9Dq-UC-AbI"/>
                                                 </constraints>
@@ -84,12 +84,12 @@
                                             <constraint firstItem="kav-IW-HQp" firstAttribute="top" secondItem="LEb-VP-yy2" secondAttribute="bottom" constant="26" id="3o2-6w-vjg"/>
                                             <constraint firstItem="kav-IW-HQp" firstAttribute="leading" secondItem="uFR-GO-Ldm" secondAttribute="leading" constant="16" id="7eK-5O-dD0"/>
                                             <constraint firstAttribute="trailing" secondItem="7IC-vo-Dcc" secondAttribute="trailing" constant="16" id="AH1-kd-f1q"/>
-                                            <constraint firstItem="tV7-8b-fxZ" firstAttribute="top" secondItem="kav-IW-HQp" secondAttribute="bottom" constant="76" id="FUR-D0-cWb"/>
+                                            <constraint firstItem="tV7-8b-fxZ" firstAttribute="top" secondItem="kav-IW-HQp" secondAttribute="bottom" constant="26" id="FUR-D0-cWb"/>
                                             <constraint firstItem="LEb-VP-yy2" firstAttribute="leading" secondItem="uFR-GO-Ldm" secondAttribute="leading" constant="16" id="K60-9Q-DNM"/>
                                             <constraint firstItem="JFv-A5-bUF" firstAttribute="leading" secondItem="uFR-GO-Ldm" secondAttribute="leading" id="Mos-dc-A8F"/>
                                             <constraint firstAttribute="trailing" secondItem="kcX-2K-8fe" secondAttribute="trailing" id="QFq-zo-Njm"/>
                                             <constraint firstItem="7IC-vo-Dcc" firstAttribute="leading" secondItem="uFR-GO-Ldm" secondAttribute="leading" constant="16" id="Qr0-6K-rhc"/>
-                                            <constraint firstItem="LEb-VP-yy2" firstAttribute="top" secondItem="uFR-GO-Ldm" secondAttribute="top" constant="135" id="a6h-JX-oQC"/>
+                                            <constraint firstItem="LEb-VP-yy2" firstAttribute="top" secondItem="uFR-GO-Ldm" secondAttribute="top" constant="225" id="a6h-JX-oQC"/>
                                             <constraint firstAttribute="trailing" secondItem="JFv-A5-bUF" secondAttribute="trailing" id="gio-DU-D1F"/>
                                             <constraint firstItem="tV7-8b-fxZ" firstAttribute="leading" secondItem="uFR-GO-Ldm" secondAttribute="leading" constant="16" id="gj6-AA-lt8"/>
                                             <constraint firstItem="kcX-2K-8fe" firstAttribute="leading" secondItem="uFR-GO-Ldm" secondAttribute="leading" id="jia-fz-c3z"/>
@@ -125,6 +125,7 @@
                     </view>
                     <connections>
                         <outlet property="scrollView" destination="u8O-yz-O7G" id="OXy-s4-nmT"/>
+                        <outlet property="titleLabel" destination="LEb-VP-yy2" id="cXS-5K-osw"/>
                         <outletCollection property="textFields" destination="tV7-8b-fxZ" collectionClass="NSMutableArray" id="4yx-C5-F2l"/>
                         <outletCollection property="textFields" destination="7IC-vo-Dcc" collectionClass="NSMutableArray" id="a5z-LD-pDu"/>
                     </connections>
@@ -248,6 +249,7 @@
                     <connections>
                         <outlet property="scrollView" destination="t2d-OC-j3j" id="xVf-7w-QtJ"/>
                         <outlet property="stackView" destination="Hq8-hP-PQg" id="nKz-Qo-3ud"/>
+                        <outlet property="titleLabel" destination="kRD-I0-GCu" id="vMy-2z-pqM"/>
                         <outletCollection property="textFields" destination="45b-YB-X0b" collectionClass="NSMutableArray" id="WoP-7f-K4j"/>
                         <outletCollection property="textFields" destination="ol4-qI-OuC" collectionClass="NSMutableArray" id="olE-9d-726"/>
                         <outletCollection property="textFields" destination="b9c-L8-FOT" collectionClass="NSMutableArray" id="mmc-vc-eRe"/>
@@ -291,7 +293,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xD3-rQ-poq">
                                 <rect key="frame" x="0.0" y="807" width="414" height="36"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Button">
+                                <buttonConfiguration key="configuration" style="filled" title="Выйти">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="18"/>
                                 </buttonConfiguration>
                             </button>

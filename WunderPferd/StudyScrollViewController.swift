@@ -9,6 +9,11 @@ import UIKit
 
 class StudyScrollViewController: UIViewController {
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        scrollView.delegate = self
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         NotificationCenter.default.addObserver(self, selector:  #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -33,8 +38,7 @@ class StudyScrollViewController: UIViewController {
         }
         scrollView.contentInset = .init(top: 0, left: 0, bottom: keyboardHeight, right: 0)
         
-        let currentField = textFields.first(where: { $0.isFirstResponder })
-        if let currentField = currentField {
+        if let currentField = textFields.first(where: { $0.isFirstResponder }) {
             let scrollTo = CGPoint(x: 0, y: currentField.frame.origin.y - keyboardHeight + stackOffset)
             scrollView.setContentOffset(scrollTo, animated: true)
         }
@@ -48,5 +52,17 @@ class StudyScrollViewController: UIViewController {
     
     @IBOutlet var textFields: [UITextField]!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var titleLabel: UILabel!
     var stackOffset = 0.0
+    let scaleCoef = 500.0
+}
+
+extension StudyScrollViewController : UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let scale = 1 + scrollView.contentOffset.y / scaleCoef
+        let leftEdgeCompensation = scrollView.contentSize.width * (scale - 1) / 2
+        titleLabel.transform = CGAffineTransform(scaleX: scale, y: scale)
+                                .concatenating(CGAffineTransform(translationX: leftEdgeCompensation, y: 0))
+    }
 }

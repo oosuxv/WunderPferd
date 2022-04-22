@@ -25,7 +25,6 @@ class RegisterViewController: StudyScrollViewController {
             }
         }
         
-        scrollView.delegate = self
         stackOffset = stackView.frame.origin.y
     }
     
@@ -46,7 +45,4 @@ extension RegisterViewController: UITextFieldDelegate {
         }
         return true
     }
-}
-
-extension RegisterViewController : UIScrollViewDelegate {
 }

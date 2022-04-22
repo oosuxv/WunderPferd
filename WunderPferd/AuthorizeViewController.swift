@@ -11,8 +11,10 @@ class AuthorizeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
     
+    func printPipint(string: String) {
+        print(string)
+    }
 }
 

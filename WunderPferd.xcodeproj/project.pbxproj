@@ -15,6 +15,12 @@
 		5228AD5727FF5CF50000122D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5228AD5627FF5CF50000122D /* Assets.xcassets */; };
 		5228AD5A27FF5CF50000122D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5228AD5827FF5CF50000122D /* LaunchScreen.storyboard */; };
 		5251497B2809422A0055B8D0 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5251497A2809422A0055B8D0 /* RegisterViewController.swift */; };
+		E7816CFA2812DED500E9F9AB /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7816CF92812DED500E9F9AB /* CollectionViewController.swift */; };
+		E7816CFE2812E26600E9F9AB /* TestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7816CFC2812E26600E9F9AB /* TestCollectionViewCell.swift */; };
+		E7816CFF2812E26600E9F9AB /* TestCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7816CFD2812E26600E9F9AB /* TestCollectionViewCell.xib */; };
+		E7816D032812E2B600E9F9AB /* PLCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7816D022812E2B600E9F9AB /* PLCollectionViewCell.swift */; };
+		E7816D052812E7D200E9F9AB /* NSObject+ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7816D042812E7D200E9F9AB /* NSObject+ClassName.swift */; };
+		E7816D072812F2E900E9F9AB /* CompositionCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7816D062812F2E900E9F9AB /* CompositionCollectionViewController.swift */; };
 		E7972C19280EED4C007319DA /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7972C18280EED4C007319DA /* TableViewController.swift */; };
 		E7972C1D280EEFFC007319DA /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7972C1B280EEFFC007319DA /* LocationTableViewCell.swift */; };
 		E7972C1E280EEFFC007319DA /* LocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7972C1C280EEFFC007319DA /* LocationTableViewCell.xib */; };
@@ -32,6 +38,12 @@
 		5228AD5927FF5CF50000122D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5228AD5B27FF5CF50000122D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5251497A2809422A0055B8D0 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		E7816CF92812DED500E9F9AB /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		E7816CFC2812E26600E9F9AB /* TestCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCollectionViewCell.swift; sourceTree = "<group>"; };
+		E7816CFD2812E26600E9F9AB /* TestCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestCollectionViewCell.xib; sourceTree = "<group>"; };
+		E7816D022812E2B600E9F9AB /* PLCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLCollectionViewCell.swift; sourceTree = "<group>"; };
+		E7816D042812E7D200E9F9AB /* NSObject+ClassName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+ClassName.swift"; sourceTree = "<group>"; };
+		E7816D062812F2E900E9F9AB /* CompositionCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionCollectionViewController.swift; sourceTree = "<group>"; };
 		E7972C18280EED4C007319DA /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		E7972C1B280EEFFC007319DA /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
 		E7972C1C280EEFFC007319DA /* LocationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationTableViewCell.xib; sourceTree = "<group>"; };
@@ -79,13 +91,35 @@
 				5251497A2809422A0055B8D0 /* RegisterViewController.swift */,
 				520169C5280961AE00662E71 /* BrightButton.swift */,
 				E7972C18280EED4C007319DA /* TableViewController.swift */,
+				E7816CF92812DED500E9F9AB /* CollectionViewController.swift */,
+				E7816D042812E7D200E9F9AB /* NSObject+ClassName.swift */,
+				E7816D062812F2E900E9F9AB /* CompositionCollectionViewController.swift */,
 			);
 			path = WunderPferd;
+			sourceTree = "<group>";
+		};
+		E7816CFB2812E23D00E9F9AB /* TestCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				E7816CFC2812E26600E9F9AB /* TestCollectionViewCell.swift */,
+				E7816CFD2812E26600E9F9AB /* TestCollectionViewCell.xib */,
+			);
+			path = TestCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		E7816D002812E28300E9F9AB /* TestPLCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				E7816D022812E2B600E9F9AB /* PLCollectionViewCell.swift */,
+			);
+			path = TestPLCollectionViewCell;
 			sourceTree = "<group>";
 		};
 		E7972C1A280EEFC4007319DA /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				E7816D002812E28300E9F9AB /* TestPLCollectionViewCell */,
+				E7816CFB2812E23D00E9F9AB /* TestCollectionViewCell */,
 				E7972C1F280EF050007319DA /* LocationTableViewCell */,
 				E7972C20280EF810007319DA /* UITableViewCell+NibName.swift */,
 			);
@@ -162,6 +196,7 @@
 				5228AD5A27FF5CF50000122D /* LaunchScreen.storyboard in Resources */,
 				5228AD5727FF5CF50000122D /* Assets.xcassets in Resources */,
 				E7972C1E280EEFFC007319DA /* LocationTableViewCell.xib in Resources */,
+				E7816CFF2812E26600E9F9AB /* TestCollectionViewCell.xib in Resources */,
 				5228AD5527FF5CEF0000122D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -173,11 +208,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7816CFE2812E26600E9F9AB /* TestCollectionViewCell.swift in Sources */,
+				E7816D052812E7D200E9F9AB /* NSObject+ClassName.swift in Sources */,
+				E7816CFA2812DED500E9F9AB /* CollectionViewController.swift in Sources */,
 				520169C6280961AE00662E71 /* BrightButton.swift in Sources */,
 				E7972C1D280EEFFC007319DA /* LocationTableViewCell.swift in Sources */,
+				E7816D072812F2E900E9F9AB /* CompositionCollectionViewController.swift in Sources */,
 				E7972C19280EED4C007319DA /* TableViewController.swift in Sources */,
 				5228AD5227FF5CEF0000122D /* AuthorizeViewController.swift in Sources */,
 				5228AD4E27FF5CEF0000122D /* AppDelegate.swift in Sources */,
+				E7816D032812E2B600E9F9AB /* PLCollectionViewCell.swift in Sources */,
 				5228AD5027FF5CEF0000122D /* SceneDelegate.swift in Sources */,
 				E7972C21280EF810007319DA /* UITableViewCell+NibName.swift in Sources */,
 				5251497B2809422A0055B8D0 /* RegisterViewController.swift in Sources */,

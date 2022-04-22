@@ -9,6 +9,6 @@ import UIKit
 
 extension UITableViewCell {
     static var nibName: String {
-        String(describing: Self.self)
+        className
     }
 }

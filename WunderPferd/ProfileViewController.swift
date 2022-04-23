@@ -30,7 +30,9 @@ class ProfileViewController: UIViewController {
     }
 }
 
-extension ProfileViewController: UITableViewDelegate {}
+extension ProfileViewController: UITableViewDelegate {
+    // TODO: realize
+}
 
 extension ProfileViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

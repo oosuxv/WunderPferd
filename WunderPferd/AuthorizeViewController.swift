@@ -7,12 +7,20 @@
 
 import UIKit
 
-class AuthorizeViewController: StudyScrollViewController {
+class AuthorizeViewController: TitledScrollViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        scrollView = authScrollView
+        titleLabel = authTitleLabel
+        textFields = authTextFields
+        authScrollView.delegate = self
     }
+    
+    @IBOutlet var authTextFields: [UITextField]!
+    @IBOutlet weak var authScrollView: UIScrollView!
+    @IBOutlet weak var authTitleLabel: UILabel!
 }
 
 

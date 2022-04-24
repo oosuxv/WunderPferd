@@ -7,12 +7,7 @@
 
 import UIKit
 
-class StudyScrollViewController: UIViewController {
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        scrollView.delegate = self
-    }
+class TitledScrollViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -27,7 +22,7 @@ class StudyScrollViewController: UIViewController {
     }
 
     @objc func keyboardWillHide() {
-        scrollView.contentInset = .zero
+        scrollView?.contentInset = .zero
     }
                 
     @objc func keyboardWillShow(notification: Notification) {
@@ -36,11 +31,11 @@ class StudyScrollViewController: UIViewController {
             let keyboardRectangle = keyboardFrame.cgRectValue
             keyboardHeight = keyboardRectangle.height
         }
-        scrollView.contentInset = .init(top: 0, left: 0, bottom: keyboardHeight, right: 0)
+        scrollView?.contentInset = .init(top: 0, left: 0, bottom: keyboardHeight, right: 0)
         
-        if let currentField = textFields.first(where: { $0.isFirstResponder }) {
+        if let currentField = textFields?.first(where: { $0.isFirstResponder }) {
             let scrollTo = CGPoint(x: 0, y: currentField.frame.origin.y - keyboardHeight + stackOffset)
-            scrollView.setContentOffset(scrollTo, animated: true)
+            scrollView?.setContentOffset(scrollTo, animated: true)
         }
     }
     
@@ -50,19 +45,19 @@ class StudyScrollViewController: UIViewController {
         }
     }
     
-    @IBOutlet var textFields: [UITextField]!
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var titleLabel: UILabel!
+    var textFields: [UITextField]?
+    var scrollView: UIScrollView?
+    var titleLabel: UILabel?
     var stackOffset = 0.0
     let scaleCoef = 500.0
 }
 
-extension StudyScrollViewController : UIScrollViewDelegate {
+extension TitledScrollViewController : UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let scale = 1 + scrollView.contentOffset.y / scaleCoef
         let leftEdgeCompensation = scrollView.contentSize.width * (scale - 1) / 2
-        titleLabel.transform = CGAffineTransform(scaleX: scale, y: scale)
+        titleLabel?.transform = CGAffineTransform(scaleX: scale, y: scale)
                                 .concatenating(CGAffineTransform(translationX: leftEdgeCompensation, y: 0))
     }
 }

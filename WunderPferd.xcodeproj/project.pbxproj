@@ -15,7 +15,7 @@
 		5228AD5727FF5CF50000122D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5228AD5627FF5CF50000122D /* Assets.xcassets */; };
 		5228AD5A27FF5CF50000122D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5228AD5827FF5CF50000122D /* LaunchScreen.storyboard */; };
 		5251497B2809422A0055B8D0 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5251497A2809422A0055B8D0 /* RegisterViewController.swift */; };
-		5277D9742811DA3B00955C19 /* StudyScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5277D9732811DA3B00955C19 /* StudyScrollViewController.swift */; };
+		5277D9742811DA3B00955C19 /* TitledScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5277D9732811DA3B00955C19 /* TitledScrollViewController.swift */; };
 		5277D9762811FE5200955C19 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5277D9752811FE5200955C19 /* ProfileViewController.swift */; };
 		5277D97C2811FFD100955C19 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5277D97A2811FFD100955C19 /* ProfileTableViewCell.swift */; };
 		5277D97D2811FFD100955C19 /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5277D97B2811FFD100955C19 /* ProfileTableViewCell.xib */; };
@@ -33,7 +33,7 @@
 		5228AD5927FF5CF50000122D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5228AD5B27FF5CF50000122D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5251497A2809422A0055B8D0 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		5277D9732811DA3B00955C19 /* StudyScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyScrollViewController.swift; sourceTree = "<group>"; };
+		5277D9732811DA3B00955C19 /* TitledScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitledScrollViewController.swift; sourceTree = "<group>"; };
 		5277D9752811FE5200955C19 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		5277D97A2811FFD100955C19 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		5277D97B2811FFD100955C19 /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTableViewCell.xib; sourceTree = "<group>"; };
@@ -80,7 +80,7 @@
 				520169C5280961AE00662E71 /* BrightButton.swift */,
 				5228AD5127FF5CEF0000122D /* AuthorizeViewController.swift */,
 				5251497A2809422A0055B8D0 /* RegisterViewController.swift */,
-				5277D9732811DA3B00955C19 /* StudyScrollViewController.swift */,
+				5277D9732811DA3B00955C19 /* TitledScrollViewController.swift */,
 				5277D9752811FE5200955C19 /* ProfileViewController.swift */,
 			);
 			path = WunderPferd;
@@ -180,7 +180,7 @@
 				5277D97C2811FFD100955C19 /* ProfileTableViewCell.swift in Sources */,
 				5228AD5227FF5CEF0000122D /* AuthorizeViewController.swift in Sources */,
 				5228AD4E27FF5CEF0000122D /* AppDelegate.swift in Sources */,
-				5277D9742811DA3B00955C19 /* StudyScrollViewController.swift in Sources */,
+				5277D9742811DA3B00955C19 /* TitledScrollViewController.swift in Sources */,
 				5277D9762811FE5200955C19 /* ProfileViewController.swift in Sources */,
 				5228AD5027FF5CEF0000122D /* SceneDelegate.swift in Sources */,
 				5277D97F281281CA00955C19 /* UITableViewCell+NibName.swift in Sources */,

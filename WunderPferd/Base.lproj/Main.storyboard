@@ -153,13 +153,11 @@
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="77" id="7Zr-aK-91c"/>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="57" id="7tY-4a-6pE"/>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="77" id="HTd-xi-Jsi"/>
-                                                    <constraint firstAttribute="width" constant="57" id="mtS-Nn-3fw"/>
+                                                    <constraint firstAttribute="width" constant="57" id="7tY-4a-6pE"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Регистрация" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRD-I0-GCu">
-                                                <rect key="frame" x="89" y="155" width="216" height="46"/>
+                                                <rect key="frame" x="89" y="155" width="236" height="46"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -213,12 +211,11 @@
                                             <constraint firstItem="giQ-RA-lHK" firstAttribute="top" secondItem="zHG-P6-paf" secondAttribute="top" constant="138" id="S7r-MX-GbD"/>
                                             <constraint firstItem="Hq8-hP-PQg" firstAttribute="leading" secondItem="zHG-P6-paf" secondAttribute="leading" constant="16" id="fWr-KS-dVF" userLabel="Stack View.leading = leading +16"/>
                                             <constraint firstItem="kRD-I0-GCu" firstAttribute="leading" secondItem="giQ-RA-lHK" secondAttribute="trailing" constant="11" id="gYg-Vn-BzH"/>
-                                            <constraint firstAttribute="trailing" secondItem="giQ-RA-lHK" secondAttribute="trailing" constant="336" id="izl-z9-7qS"/>
                                             <constraint firstItem="ZSL-0y-9s1" firstAttribute="leading" secondItem="zHG-P6-paf" secondAttribute="leading" id="mzc-Nr-qQk"/>
                                             <constraint firstItem="giQ-RA-lHK" firstAttribute="leading" secondItem="zHG-P6-paf" secondAttribute="leading" constant="21" id="tGc-SR-wPd"/>
                                             <constraint firstItem="Hq8-hP-PQg" firstAttribute="top" secondItem="giQ-RA-lHK" secondAttribute="bottom" constant="8" id="uQI-HO-ZfO"/>
                                             <constraint firstAttribute="bottom" secondItem="ZSL-0y-9s1" secondAttribute="bottom" priority="950" constant="38" id="yHh-A1-XGs"/>
-                                            <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="kRD-I0-GCu" secondAttribute="trailing" constant="109" id="yI7-d4-isL"/>
+                                            <constraint firstAttribute="trailing" secondItem="kRD-I0-GCu" secondAttribute="trailing" priority="900" constant="89" id="yI7-d4-isL"/>
                                             <constraint firstItem="ZSL-0y-9s1" firstAttribute="top" secondItem="Hq8-hP-PQg" secondAttribute="bottom" priority="900" constant="150" id="yYp-us-1mp"/>
                                         </constraints>
                                     </view>

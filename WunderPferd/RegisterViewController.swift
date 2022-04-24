@@ -7,40 +7,50 @@
 
 import UIKit
 
-class RegisterViewController: UIViewController {
-
+class RegisterViewController: TitledScrollViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        scrollView = regScrollView
+        titleLabel = regTitleLabel
+        textFields = regTextFields
+        regScrollView.delegate = self
         
         let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tap)
         
-        textFields.forEach { field in
+        regTextFields.forEach { field in
             field.delegate = self
-            if field == textFields.last {
+            if field == regTextFields.last {
                 field.returnKeyType = .done
             } else {
                 field.returnKeyType = .next
             }
         }
+        
+        stackOffset = stackView.frame.origin.y
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        textFields.first?.becomeFirstResponder()
+        regTextFields.first?.becomeFirstResponder()
     }
     
-    @IBOutlet var textFields: [UITextField]!
+    @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet var regTextFields: [UITextField]!
+    @IBOutlet weak var regScrollView: UIScrollView!
+    @IBOutlet weak var regTitleLabel: UILabel!
 }
 
 extension RegisterViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ currentField: UITextField) -> Bool {
-        if textFields.last == currentField {
+        if regTextFields.last == currentField {
             currentField.resignFirstResponder()
             return true
         }
-        if let index = textFields.firstIndex(where: {textField in textField == currentField}) {
-            textFields[index + 1].becomeFirstResponder()
+        if let index = regTextFields.firstIndex(where: {textField in textField == currentField}) {
+            regTextFields[index + 1].becomeFirstResponder()
         }
         return true
     }

@@ -17,9 +17,10 @@
 		5251497B2809422A0055B8D0 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5251497A2809422A0055B8D0 /* RegisterViewController.swift */; };
 		5277D9742811DA3B00955C19 /* TitledScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5277D9732811DA3B00955C19 /* TitledScrollViewController.swift */; };
 		5277D9762811FE5200955C19 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5277D9752811FE5200955C19 /* ProfileViewController.swift */; };
-		5277D97C2811FFD100955C19 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5277D97A2811FFD100955C19 /* ProfileTableViewCell.swift */; };
-		5277D97D2811FFD100955C19 /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5277D97B2811FFD100955C19 /* ProfileTableViewCell.xib */; };
+		5277D97C2811FFD100955C19 /* ProfileDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5277D97A2811FFD100955C19 /* ProfileDataTableViewCell.swift */; };
+		5277D97D2811FFD100955C19 /* ProfileDataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5277D97B2811FFD100955C19 /* ProfileDataTableViewCell.xib */; };
 		5277D97F281281CA00955C19 /* UITableViewCell+NibName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5277D97E281281CA00955C19 /* UITableViewCell+NibName.swift */; };
+		52C8A34C281A7EBD00C5A887 /* NSObject+ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C8A34B281A7EBD00C5A887 /* NSObject+ClassName.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,9 +36,10 @@
 		5251497A2809422A0055B8D0 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		5277D9732811DA3B00955C19 /* TitledScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitledScrollViewController.swift; sourceTree = "<group>"; };
 		5277D9752811FE5200955C19 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		5277D97A2811FFD100955C19 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
-		5277D97B2811FFD100955C19 /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTableViewCell.xib; sourceTree = "<group>"; };
+		5277D97A2811FFD100955C19 /* ProfileDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataTableViewCell.swift; sourceTree = "<group>"; };
+		5277D97B2811FFD100955C19 /* ProfileDataTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileDataTableViewCell.xib; sourceTree = "<group>"; };
 		5277D97E281281CA00955C19 /* UITableViewCell+NibName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+NibName.swift"; sourceTree = "<group>"; };
+		52C8A34B281A7EBD00C5A887 /* NSObject+ClassName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+ClassName.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +72,7 @@
 		5228AD4C27FF5CEF0000122D /* WunderPferd */ = {
 			isa = PBXGroup;
 			children = (
-				5277D9782811FF5900955C19 /* TableRows */,
+				5277D9782811FF5900955C19 /* ProfileCells */,
 				5228AD4D27FF5CEF0000122D /* AppDelegate.swift */,
 				5228AD4F27FF5CEF0000122D /* SceneDelegate.swift */,
 				5228AD5327FF5CEF0000122D /* Main.storyboard */,
@@ -82,26 +84,27 @@
 				5251497A2809422A0055B8D0 /* RegisterViewController.swift */,
 				5277D9732811DA3B00955C19 /* TitledScrollViewController.swift */,
 				5277D9752811FE5200955C19 /* ProfileViewController.swift */,
+				52C8A34B281A7EBD00C5A887 /* NSObject+ClassName.swift */,
 			);
 			path = WunderPferd;
 			sourceTree = "<group>";
 		};
-		5277D9782811FF5900955C19 /* TableRows */ = {
+		5277D9782811FF5900955C19 /* ProfileCells */ = {
 			isa = PBXGroup;
 			children = (
-				5277D9792811FF7900955C19 /* ProfileTableViewCell */,
+				5277D9792811FF7900955C19 /* ProfileDataTableViewCell */,
 				5277D97E281281CA00955C19 /* UITableViewCell+NibName.swift */,
 			);
-			path = TableRows;
+			path = ProfileCells;
 			sourceTree = "<group>";
 		};
-		5277D9792811FF7900955C19 /* ProfileTableViewCell */ = {
+		5277D9792811FF7900955C19 /* ProfileDataTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				5277D97A2811FFD100955C19 /* ProfileTableViewCell.swift */,
-				5277D97B2811FFD100955C19 /* ProfileTableViewCell.xib */,
+				5277D97A2811FFD100955C19 /* ProfileDataTableViewCell.swift */,
+				5277D97B2811FFD100955C19 /* ProfileDataTableViewCell.xib */,
 			);
-			path = ProfileTableViewCell;
+			path = ProfileDataTableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,7 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5228AD5A27FF5CF50000122D /* LaunchScreen.storyboard in Resources */,
-				5277D97D2811FFD100955C19 /* ProfileTableViewCell.xib in Resources */,
+				5277D97D2811FFD100955C19 /* ProfileDataTableViewCell.xib in Resources */,
 				5228AD5727FF5CF50000122D /* Assets.xcassets in Resources */,
 				5228AD5527FF5CEF0000122D /* Main.storyboard in Resources */,
 			);
@@ -177,12 +180,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				520169C6280961AE00662E71 /* BrightButton.swift in Sources */,
-				5277D97C2811FFD100955C19 /* ProfileTableViewCell.swift in Sources */,
+				5277D97C2811FFD100955C19 /* ProfileDataTableViewCell.swift in Sources */,
 				5228AD5227FF5CEF0000122D /* AuthorizeViewController.swift in Sources */,
 				5228AD4E27FF5CEF0000122D /* AppDelegate.swift in Sources */,
 				5277D9742811DA3B00955C19 /* TitledScrollViewController.swift in Sources */,
 				5277D9762811FE5200955C19 /* ProfileViewController.swift in Sources */,
 				5228AD5027FF5CEF0000122D /* SceneDelegate.swift in Sources */,
+				52C8A34C281A7EBD00C5A887 /* NSObject+ClassName.swift in Sources */,
 				5277D97F281281CA00955C19 /* UITableViewCell+NibName.swift in Sources */,
 				5251497B2809422A0055B8D0 /* RegisterViewController.swift in Sources */,
 			);

@@ -25,8 +25,8 @@ class ProfileViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        let nib = UINib(nibName: ProfileTableViewCell.nibName, bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: ProfileTableViewCell.nibName)
+        let nib = UINib(nibName: ProfileDataTableViewCell.className, bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: ProfileDataTableViewCell.className)
     }
 }
 
@@ -40,7 +40,7 @@ extension ProfileViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: ProfileTableViewCell.nibName) as? ProfileTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ProfileDataTableViewCell.className) as? ProfileDataTableViewCell else {
             return UITableViewCell()
         }
         let tuple = source[indexPath.row]

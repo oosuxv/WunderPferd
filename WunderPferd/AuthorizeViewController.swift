@@ -18,9 +18,18 @@ class AuthorizeViewController: TitledScrollViewController {
         authScrollView.delegate = self
     }
     
+    @IBAction func registerTap(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let registerVC = storyboard.instantiateViewController(identifier: RegisterViewController.className)
+        registerVC.modalPresentationStyle = .fullScreen
+        show(registerVC, sender: self)
+    }
+    
     @IBOutlet var authTextFields: [UITextField]!
     @IBOutlet weak var authScrollView: UIScrollView!
     @IBOutlet weak var authTitleLabel: UILabel!
+    
+    
 }
 
 

@@ -37,6 +37,13 @@ class RegisterViewController: TitledScrollViewController {
         regTextFields.first?.becomeFirstResponder()
     }
     
+    @IBAction func doneTap(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let tabBarVC = storyboard.instantiateViewController(identifier: "UITabBarController")
+        tabBarVC.modalPresentationStyle = .fullScreen
+        show(tabBarVC, sender: self)
+    }
+    
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet var regTextFields: [UITextField]!
     @IBOutlet weak var regScrollView: UIScrollView!

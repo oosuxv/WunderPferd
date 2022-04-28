@@ -48,7 +48,6 @@ extension ProfileViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("\(indexPath.section) \(indexPath.row)")
         if indexPath.section == 0 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ProfileTitleTableViewCell.className) as? ProfileTitleTableViewCell else {
                 return UITableViewCell()

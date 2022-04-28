@@ -9,9 +9,10 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
+    weak var wideImageView: UIImageView?
+    weak var circledImageView: UIImageView?
     @IBOutlet weak var tableView: UITableView!
-    
-    
+
     var source: [(String, String)] = [
             ("first name", "Bob"),
             ("last name", "Bobson"),
@@ -31,6 +32,13 @@ class ProfileViewController: UIViewController {
                            forCellReuseIdentifier: ProfileTitleTableViewCell.className)
         tableView.register(UINib(nibName: ProfileDataTableViewCell.className, bundle: nil),
                            forCellReuseIdentifier: ProfileDataTableViewCell.className)
+    }
+    
+    @objc func loadImage() {
+        let picker = UIImagePickerController()
+        picker.allowsEditing = true
+        picker.delegate = self
+        present(picker, animated: true)
     }
 }
 
@@ -57,6 +65,13 @@ extension ProfileViewController: UITableViewDataSource {
             cell.circledImageView.layer.borderColor = UIColor.white.cgColor
             cell.circledImageView.layer.cornerRadius = cell.circledImageView.frame.height / 2
             cell.circledImageView.clipsToBounds = true
+            
+            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(loadImage))
+            cell.circledImageView.addGestureRecognizer(tapGestureRecognizer)
+            
+            self.circledImageView = cell.circledImageView
+            self.wideImageView = cell.wideImageView
+            
             return cell
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ProfileDataTableViewCell.className) as? ProfileDataTableViewCell else {
@@ -67,5 +82,18 @@ extension ProfileViewController: UITableViewDataSource {
             cell.value.text = tuple.1
             return cell
         }
+    }
+}
+
+extension ProfileViewController: UINavigationControllerDelegate {
+    // TODO: realize
+}
+
+extension ProfileViewController: UIImagePickerControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let image = info[.originalImage] as? UIImage else { return }
+        wideImageView?.image = image
+        circledImageView?.image = image
+        dismiss(animated: true)
     }
 }

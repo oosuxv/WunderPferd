@@ -71,8 +71,10 @@ extension ProfileViewController: UITableViewDataSource {
             let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(loadImage))
             cell.circledImageView.addGestureRecognizer(tapGestureRecognizer)
             
-            self.circledImageView = cell.circledImageView
-            self.wideImageView = cell.wideImageView
+            if let image = imageManager.image {
+                cell.circledImageView.image = image
+                cell.wideImageView.image = image
+            }
             
             return cell
         } else {
@@ -95,8 +97,7 @@ extension ProfileViewController: UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let image = info[.originalImage] as? UIImage else { return }
         imageManager.image = image
-        wideImageView?.image = imageManager.image
-        circledImageView?.image = imageManager.image	
+        self.tableView.reloadSections(IndexSet([0]), with: .automatic)
         dismiss(animated: true)
     }
 }

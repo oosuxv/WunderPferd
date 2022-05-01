@@ -8,8 +8,6 @@
 import UIKit
 
 class ProfileTitleTableViewCell: UITableViewCell {
-    
-    override
 
     @IBOutlet weak var wideImageView: UIImageView!
     @IBOutlet weak var circledImageView: UIImageView!

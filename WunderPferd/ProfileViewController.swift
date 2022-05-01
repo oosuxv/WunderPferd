@@ -9,8 +9,6 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
-    weak var wideImageView: UIImageView?
-    weak var circledImageView: UIImageView?
     @IBOutlet weak var tableView: UITableView!
     
     let imageManager = ProfileImageManager()

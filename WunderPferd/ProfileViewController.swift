@@ -12,7 +12,8 @@ class ProfileViewController: UIViewController {
     weak var wideImageView: UIImageView?
     weak var circledImageView: UIImageView?
     @IBOutlet weak var tableView: UITableView!
-
+    
+    let imageManager = ProfileImageManager()
     var source: [(String, String)] = [
             ("first name", "Bob"),
             ("last name", "Bobson"),
@@ -44,7 +45,6 @@ class ProfileViewController: UIViewController {
 
 extension ProfileViewController: UITableViewDelegate {
     // TODO: realize
-    
 }
 
 extension ProfileViewController: UITableViewDataSource {
@@ -94,8 +94,9 @@ extension ProfileViewController: UINavigationControllerDelegate {
 extension ProfileViewController: UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let image = info[.originalImage] as? UIImage else { return }
-        wideImageView?.image = image
-        circledImageView?.image = image
+        imageManager.image = image
+        wideImageView?.image = imageManager.image
+        circledImageView?.image = imageManager.image	
         dismiss(animated: true)
     }
 }

@@ -19,6 +19,7 @@
 		5277D9762811FE5200955C19 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5277D9752811FE5200955C19 /* ProfileViewController.swift */; };
 		5277D97C2811FFD100955C19 /* ProfileDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5277D97A2811FFD100955C19 /* ProfileDataTableViewCell.swift */; };
 		5277D97D2811FFD100955C19 /* ProfileDataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5277D97B2811FFD100955C19 /* ProfileDataTableViewCell.xib */; };
+		52AA6D31281E4CF5005C2E52 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA6D30281E4CF5005C2E52 /* ImageManager.swift */; };
 		52C8A34C281A7EBD00C5A887 /* NSObject+ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C8A34B281A7EBD00C5A887 /* NSObject+ClassName.swift */; };
 		52C8A355281A82A700C5A887 /* ProfileTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C8A353281A82A700C5A887 /* ProfileTitleTableViewCell.swift */; };
 		52C8A356281A82A700C5A887 /* ProfileTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52C8A354281A82A700C5A887 /* ProfileTitleTableViewCell.xib */; };
@@ -39,6 +40,7 @@
 		5277D9752811FE5200955C19 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		5277D97A2811FFD100955C19 /* ProfileDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataTableViewCell.swift; sourceTree = "<group>"; };
 		5277D97B2811FFD100955C19 /* ProfileDataTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileDataTableViewCell.xib; sourceTree = "<group>"; };
+		52AA6D30281E4CF5005C2E52 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		52C8A34B281A7EBD00C5A887 /* NSObject+ClassName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+ClassName.swift"; sourceTree = "<group>"; };
 		52C8A353281A82A700C5A887 /* ProfileTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTitleTableViewCell.swift; sourceTree = "<group>"; };
 		52C8A354281A82A700C5A887 /* ProfileTitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTitleTableViewCell.xib; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 		5228AD4C27FF5CEF0000122D /* WunderPferd */ = {
 			isa = PBXGroup;
 			children = (
+				52AA6D2F281E4CA6005C2E52 /* DataManagers */,
 				5277D9782811FF5900955C19 /* ProfileCells */,
 				5228AD4D27FF5CEF0000122D /* AppDelegate.swift */,
 				5228AD4F27FF5CEF0000122D /* SceneDelegate.swift */,
@@ -107,6 +110,14 @@
 				5277D97B2811FFD100955C19 /* ProfileDataTableViewCell.xib */,
 			);
 			path = ProfileDataTableViewCell;
+			sourceTree = "<group>";
+		};
+		52AA6D2F281E4CA6005C2E52 /* DataManagers */ = {
+			isa = PBXGroup;
+			children = (
+				52AA6D30281E4CF5005C2E52 /* ImageManager.swift */,
+			);
+			path = DataManagers;
 			sourceTree = "<group>";
 		};
 		52C8A352281A826900C5A887 /* ProfileTitleTableViewCell */ = {
@@ -200,6 +211,7 @@
 				5277D9762811FE5200955C19 /* ProfileViewController.swift in Sources */,
 				5228AD5027FF5CEF0000122D /* SceneDelegate.swift in Sources */,
 				52C8A34C281A7EBD00C5A887 /* NSObject+ClassName.swift in Sources */,
+				52AA6D31281E4CF5005C2E52 /* ImageManager.swift in Sources */,
 				5251497B2809422A0055B8D0 /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

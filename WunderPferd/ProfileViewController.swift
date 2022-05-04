@@ -42,7 +42,11 @@ class ProfileViewController: UIViewController {
 }
 
 extension ProfileViewController: UITableViewDelegate {
-    // TODO: realize
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 0 {
+            loadImage()
+        }
+    }
 }
 
 extension ProfileViewController: UITableViewDataSource {
@@ -65,9 +69,6 @@ extension ProfileViewController: UITableViewDataSource {
             cell.circledImageView.layer.borderColor = UIColor.white.cgColor
             cell.circledImageView.layer.cornerRadius = cell.circledImageView.frame.height / 2
             cell.circledImageView.clipsToBounds = true
-            
-            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(loadImage))
-            cell.circledImageView.addGestureRecognizer(tapGestureRecognizer)
             
             if let image = imageManager.image {
                 cell.circledImageView.image = image

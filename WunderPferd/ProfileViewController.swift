@@ -11,6 +11,7 @@ class ProfileViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    let imageManager = ProfileImageManager()
     var source: [(String, String)] = [
             ("first name", "Bob"),
             ("last name", "Bobson"),
@@ -22,30 +23,80 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableView.delegate = self
         tableView.dataSource = self
-        
-        let nib = UINib(nibName: ProfileTableViewCell.nibName, bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: ProfileTableViewCell.nibName)
+
+        tableView.register(UINib(nibName: ProfileTitleTableViewCell.className, bundle: nil),
+                           forCellReuseIdentifier: ProfileTitleTableViewCell.className)
+        tableView.register(UINib(nibName: ProfileDataTableViewCell.className, bundle: nil),
+                           forCellReuseIdentifier: ProfileDataTableViewCell.className)
+    }
+    
+    @objc func loadImage() {
+        let picker = UIImagePickerController()
+        picker.allowsEditing = true
+        picker.delegate = self
+        present(picker, animated: true)
     }
 }
 
 extension ProfileViewController: UITableViewDelegate {
-    // TODO: realize
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 0 {
+            loadImage()
+        }
+    }
 }
 
 extension ProfileViewController: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        2
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return source.count
+        section == 0 ? 1 : source.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: ProfileTableViewCell.nibName) as? ProfileTableViewCell else {
-            return UITableViewCell()
+        if indexPath.section == 0 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: ProfileTitleTableViewCell.className) as? ProfileTitleTableViewCell else {
+                return UITableViewCell()
+            }
+            cell.circledImageView.layer.borderWidth = 5
+            cell.circledImageView.layer.masksToBounds = false
+            cell.circledImageView.layer.borderColor = UIColor.white.cgColor
+            cell.circledImageView.layer.cornerRadius = cell.circledImageView.frame.height / 2
+            cell.circledImageView.clipsToBounds = true
+            
+            if let image = imageManager.image {
+                cell.circledImageView.image = image
+                cell.wideImageView.image = image
+            }
+            
+            return cell
+        } else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: ProfileDataTableViewCell.className) as? ProfileDataTableViewCell else {
+                return UITableViewCell()
+            }
+            let tuple = source[indexPath.row]
+            cell.attribute.text = tuple.0
+            cell.value.text = tuple.1
+            return cell
         }
-        let tuple = source[indexPath.row]
-        cell.attribute.text = tuple.0
-        cell.value.text = tuple.1
-        return cell
+    }
+}
+
+extension ProfileViewController: UINavigationControllerDelegate {
+    // TODO: realize
+}
+
+extension ProfileViewController: UIImagePickerControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let image = info[.originalImage] as? UIImage else { return }
+        imageManager.image = image
+        self.tableView.reloadSections(IndexSet([0]), with: .automatic)
+        dismiss(animated: true)
     }
 }

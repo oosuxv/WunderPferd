@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileTableViewCell: UITableViewCell {
+class ProfileDataTableViewCell: UITableViewCell {
     
     @IBOutlet weak var attribute: UILabel!
     @IBOutlet weak var value: UILabel!

@@ -11,6 +11,8 @@ class ProfileViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    let imageSectionIndex = 0
+    
     let imageManager = ProfileImageManager()
     var source: [(String, String)] = [
             ("first name", "Bob"),
@@ -43,7 +45,7 @@ class ProfileViewController: UIViewController {
 
 extension ProfileViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == 0 {
+        if indexPath.section == imageSectionIndex {
             loadImage()
         }
     }
@@ -56,11 +58,11 @@ extension ProfileViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        section == 0 ? 1 : source.count
+        section == imageSectionIndex ? 1 : source.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section == 0 {
+        if indexPath.section == imageSectionIndex {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ProfileTitleTableViewCell.className) as? ProfileTitleTableViewCell else {
                 return UITableViewCell()
             }
@@ -96,7 +98,7 @@ extension ProfileViewController: UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let image = info[.originalImage] as? UIImage else { return }
         imageManager.image = image
-        self.tableView.reloadSections(IndexSet([0]), with: .automatic)
+        self.tableView.reloadSections(IndexSet([imageSectionIndex]), with: .automatic)
         dismiss(animated: true)
     }
 }

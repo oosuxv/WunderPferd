@@ -8,7 +8,10 @@
 import UIKit
 
 class CompositionCollectionViewController: UIViewController {
-
+    
+    let networkManager: CharacterNetworkManager = NetworkManager()
+    let storageManager = StorageManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
@@ -21,6 +24,45 @@ class CompositionCollectionViewController: UIViewController {
         collectionView.register(nib, forCellWithReuseIdentifier: TestCollectionViewCell.className)
         collectionView.collectionViewLayout = layout()
         title = "джигурда"
+        
+//        let completion: (Character?, Error?) -> () = {
+//            responce, error in
+//            if let error = error {
+//                print(error)
+//            } else {
+//                print(responce?.id as Any)
+//                print(responce?.name as Any)
+//                print(responce?.gender.representedValue as Any)
+//                print(responce?.species as Any)
+//                print(responce?.status.representedValue as Any)
+//            }
+//        }
+        
+        
+//        networkManager.performRequest(url: "https://rickandmortyapi.com/api/character/2",
+//                                                 method: .get,
+//                                      onRequestCompleted: completion)
+        
+        let oldToken = storageManager.loadFromKeychain(key: .token)
+        print(oldToken as Any)
+        
+        storageManager.saveToKeychain("ololo", key: .token)
+        
+        let newToken = storageManager.loadFromKeychain(key: .token)
+        print(newToken as Any)
+        
+        networkManager.getCharacter(id: 2) {
+            responce, error in
+            if let error = error {
+                print(error)
+            } else {
+                print(responce?.id as Any)
+                print(responce?.name as Any)
+                print(responce?.gender.representedValue as Any)
+                print(responce?.species as Any)
+                print(responce?.status.representedValue as Any)
+            }
+        }
     }
 
     @IBOutlet weak var collectionView: UICollectionView!

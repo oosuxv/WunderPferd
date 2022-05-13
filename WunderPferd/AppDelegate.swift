@@ -14,6 +14,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let storageManager = StorageManager()
+        if !storageManager.userDefaultsBool(key: .notFirstLaunch) {
+            storageManager.cleanKeychain()
+            storageManager.saveToUserDefaults(bool: true, ket: .notFirstLaunch)
+        }
         return true
     }
 

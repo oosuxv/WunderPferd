@@ -21,12 +21,6 @@ class CollectionViewController: UIViewController {
         let nib = UINib(nibName: TestCollectionViewCell.className, bundle: nil)
         
         collectionView.register(nib, forCellWithReuseIdentifier: TestCollectionViewCell.className)
-        
-        networkdManager.performRequest(
-            url: "https://rickandmortyapi.com/api/character/2",
-            method: .get,
-            onRequestCompleted:
-        on)
     }
     
     @IBOutlet weak var collectionView: UICollectionView!

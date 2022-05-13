@@ -27,6 +27,12 @@
 		E7972C1D280EEFFC007319DA /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7972C1B280EEFFC007319DA /* LocationTableViewCell.swift */; };
 		E7972C1E280EEFFC007319DA /* LocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7972C1C280EEFFC007319DA /* LocationTableViewCell.xib */; };
 		E7972C21280EF810007319DA /* UITableViewCell+NibName.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7972C20280EF810007319DA /* UITableViewCell+NibName.swift */; };
+		E79E3760282E93C400FEA376 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = E79E375F282E93C400FEA376 /* KeychainAccess */; };
+		E79E3763282E94A300FEA376 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = E79E3762282E94A300FEA376 /* JGProgressHUD */; };
+		E79E3766282E968E00FEA376 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79E3765282E968E00FEA376 /* Character.swift */; };
+		E79E3768282E97AC00FEA376 /* CharacterStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79E3767282E97AC00FEA376 /* CharacterStatus.swift */; };
+		E79E376A282E997400FEA376 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79E3769282E997400FEA376 /* Gender.swift */; };
+		E79E376C282EA59C00FEA376 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79E376B282EA59C00FEA376 /* StorageManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +57,10 @@
 		E7972C1B280EEFFC007319DA /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
 		E7972C1C280EEFFC007319DA /* LocationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationTableViewCell.xib; sourceTree = "<group>"; };
 		E7972C20280EF810007319DA /* UITableViewCell+NibName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+NibName.swift"; sourceTree = "<group>"; };
+		E79E3765282E968E00FEA376 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		E79E3767282E97AC00FEA376 /* CharacterStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterStatus.swift; sourceTree = "<group>"; };
+		E79E3769282E997400FEA376 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
+		E79E376B282EA59C00FEA376 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +68,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E79E3760282E93C400FEA376 /* KeychainAccess in Frameworks */,
+				E79E3763282E94A300FEA376 /* JGProgressHUD in Frameworks */,
 				52C8A35B281C297700C5A887 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -106,7 +118,9 @@
 		52C8A35C281C29D500C5A887 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				E79E3764282E966D00FEA376 /* Responce */,
 				52C8A35D281C29F400C5A887 /* NetworkManager.swift */,
+				E79E376B282EA59C00FEA376 /* StorageManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -148,6 +162,16 @@
 			path = LocationTableViewCell;
 			sourceTree = "<group>";
 		};
+		E79E3764282E966D00FEA376 /* Responce */ = {
+			isa = PBXGroup;
+			children = (
+				E79E3765282E968E00FEA376 /* Character.swift */,
+				E79E3767282E97AC00FEA376 /* CharacterStatus.swift */,
+				E79E3769282E997400FEA376 /* Gender.swift */,
+			);
+			path = Responce;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -166,6 +190,8 @@
 			name = WunderPferd;
 			packageProductDependencies = (
 				52C8A35A281C297700C5A887 /* Alamofire */,
+				E79E375F282E93C400FEA376 /* KeychainAccess */,
+				E79E3762282E94A300FEA376 /* JGProgressHUD */,
 			);
 			productName = WunderPferd;
 			productReference = 5228AD4A27FF5CEF0000122D /* WunderPferd.app */;
@@ -197,6 +223,8 @@
 			mainGroup = 5228AD4127FF5CEF0000122D;
 			packageReferences = (
 				52C8A359281C297700C5A887 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				E79E375E282E93C400FEA376 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+				E79E3761282E94A300FEA376 /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
 			);
 			productRefGroup = 5228AD4B27FF5CEF0000122D /* Products */;
 			projectDirPath = "";
@@ -228,7 +256,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7816CFE2812E26600E9F9AB /* TestCollectionViewCell.swift in Sources */,
+				E79E3768282E97AC00FEA376 /* CharacterStatus.swift in Sources */,
 				E7816D052812E7D200E9F9AB /* NSObject+ClassName.swift in Sources */,
+				E79E376C282EA59C00FEA376 /* StorageManager.swift in Sources */,
 				E7816CFA2812DED500E9F9AB /* CollectionViewController.swift in Sources */,
 				520169C6280961AE00662E71 /* BrightButton.swift in Sources */,
 				E7972C1D280EEFFC007319DA /* LocationTableViewCell.swift in Sources */,
@@ -239,8 +269,10 @@
 				E7816D032812E2B600E9F9AB /* PLCollectionViewCell.swift in Sources */,
 				52C8A35E281C29F400C5A887 /* NetworkManager.swift in Sources */,
 				5228AD5027FF5CEF0000122D /* SceneDelegate.swift in Sources */,
+				E79E3766282E968E00FEA376 /* Character.swift in Sources */,
 				E7972C21280EF810007319DA /* UITableViewCell+NibName.swift in Sources */,
 				5251497B2809422A0055B8D0 /* RegisterViewController.swift in Sources */,
+				E79E376A282E997400FEA376 /* Gender.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,6 +498,22 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		E79E375E282E93C400FEA376 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		E79E3761282E94A300FEA376 /* XCRemoteSwiftPackageReference "JGProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JonasGessner/JGProgressHUD.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -473,6 +521,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 52C8A359281C297700C5A887 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		E79E375F282E93C400FEA376 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E79E375E282E93C400FEA376 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+		E79E3762282E94A300FEA376 /* JGProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E79E3761282E94A300FEA376 /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
+			productName = JGProgressHUD;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

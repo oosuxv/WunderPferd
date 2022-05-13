@@ -8,20 +8,24 @@
 import Foundation
 import Alamofire
 
-protocol NetworkManagerProtocol {
-    
+protocol CharacterNetworkManager {
+    func getCharacter(id: Int, completion: ((Character?, Error?) -> ())?)
 }
 
-class NetworkManager: NetworkManagerProtocol {
+extension NetworkManager: CharacterNetworkManager {
+    func getCharacter(id: Int, completion: ((Character?, Error?) -> ())?) {
+        performRequest(url: "https://rickandmortyapi.com/api/character/\(id)", method: .get, onRequestCompleted: completion)
+    }
+}
+
+class NetworkManager {
     func performRequest<ResponseType: Decodable>(
             url: String,
             method: HTTPMethod,
             parameters: Parameters? = nil,
             headers: HTTPHeaders? = nil,
-            onRequestStarted: (() -> ())?,
             onRequestCompleted: ((ResponseType?, Error?) -> ())?
         ) {
-            onRequestStarted?()
             AF.request(url,
                        method: method,
                        parameters: parameters,

@@ -19,6 +19,16 @@
 		5277D9762811FE5200955C19 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5277D9752811FE5200955C19 /* ProfileViewController.swift */; };
 		5277D97C2811FFD100955C19 /* ProfileDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5277D97A2811FFD100955C19 /* ProfileDataTableViewCell.swift */; };
 		5277D97D2811FFD100955C19 /* ProfileDataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5277D97B2811FFD100955C19 /* ProfileDataTableViewCell.xib */; };
+		52A8A7652830C33300C5B3EF /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 52A8A7642830C33300C5B3EF /* Alamofire */; };
+		52A8A7682830C3A900C5B3EF /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8A7672830C3A900C5B3EF /* NetworkManager.swift */; };
+		52A8A76B2830CB9400C5B3EF /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8A76A2830CB9400C5B3EF /* Router.swift */; };
+		52A8A76E2830CC2D00C5B3EF /* UsernameResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8A76D2830CC2D00C5B3EF /* UsernameResponse.swift */; };
+		52A8A77128313B8A00C5B3EF /* SnackBar in Frameworks */ = {isa = PBXBuildFile; productRef = 52A8A77028313B8A00C5B3EF /* SnackBar */; };
+		52A8A7732831516200C5B3EF /* BoldSnackBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8A7722831516200C5B3EF /* BoldSnackBar.swift */; };
+		52A8A775283177B900C5B3EF /* TokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8A774283177B900C5B3EF /* TokenResponse.swift */; };
+		52A8A7782831952C00C5B3EF /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 52A8A7772831952C00C5B3EF /* JGProgressHUD */; };
+		52A8A77B2831957E00C5B3EF /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 52A8A77A2831957E00C5B3EF /* KeychainAccess */; };
+		52A8A77D283196A700C5B3EF /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8A77C283196A700C5B3EF /* StorageManager.swift */; };
 		52AA6D31281E4CF5005C2E52 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA6D30281E4CF5005C2E52 /* ImageManager.swift */; };
 		52C8A34C281A7EBD00C5A887 /* NSObject+ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C8A34B281A7EBD00C5A887 /* NSObject+ClassName.swift */; };
 		52C8A355281A82A700C5A887 /* ProfileTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C8A353281A82A700C5A887 /* ProfileTitleTableViewCell.swift */; };
@@ -40,6 +50,12 @@
 		5277D9752811FE5200955C19 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		5277D97A2811FFD100955C19 /* ProfileDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataTableViewCell.swift; sourceTree = "<group>"; };
 		5277D97B2811FFD100955C19 /* ProfileDataTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileDataTableViewCell.xib; sourceTree = "<group>"; };
+		52A8A7672830C3A900C5B3EF /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		52A8A76A2830CB9400C5B3EF /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		52A8A76D2830CC2D00C5B3EF /* UsernameResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameResponse.swift; sourceTree = "<group>"; };
+		52A8A7722831516200C5B3EF /* BoldSnackBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoldSnackBar.swift; sourceTree = "<group>"; };
+		52A8A774283177B900C5B3EF /* TokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenResponse.swift; sourceTree = "<group>"; };
+		52A8A77C283196A700C5B3EF /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		52AA6D30281E4CF5005C2E52 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		52C8A34B281A7EBD00C5A887 /* NSObject+ClassName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+ClassName.swift"; sourceTree = "<group>"; };
 		52C8A353281A82A700C5A887 /* ProfileTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTitleTableViewCell.swift; sourceTree = "<group>"; };
@@ -51,6 +67,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52A8A77B2831957E00C5B3EF /* KeychainAccess in Frameworks */,
+				52A8A7652830C33300C5B3EF /* Alamofire in Frameworks */,
+				52A8A7782831952C00C5B3EF /* JGProgressHUD in Frameworks */,
+				52A8A77128313B8A00C5B3EF /* SnackBar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,7 +96,8 @@
 		5228AD4C27FF5CEF0000122D /* WunderPferd */ = {
 			isa = PBXGroup;
 			children = (
-				52AA6D2F281E4CA6005C2E52 /* DataManagers */,
+				52A8A7692830CAB600C5B3EF /* Controllers */,
+				52A8A7662830C37C00C5B3EF /* Services */,
 				5277D9782811FF5900955C19 /* ProfileCells */,
 				5228AD4D27FF5CEF0000122D /* AppDelegate.swift */,
 				5228AD4F27FF5CEF0000122D /* SceneDelegate.swift */,
@@ -85,10 +106,7 @@
 				5228AD5827FF5CF50000122D /* LaunchScreen.storyboard */,
 				5228AD5B27FF5CF50000122D /* Info.plist */,
 				520169C5280961AE00662E71 /* BrightButton.swift */,
-				5228AD5127FF5CEF0000122D /* AuthorizeViewController.swift */,
-				5251497A2809422A0055B8D0 /* RegisterViewController.swift */,
-				5277D9732811DA3B00955C19 /* TitledScrollViewController.swift */,
-				5277D9752811FE5200955C19 /* ProfileViewController.swift */,
+				52A8A7722831516200C5B3EF /* BoldSnackBar.swift */,
 				52C8A34B281A7EBD00C5A887 /* NSObject+ClassName.swift */,
 			);
 			path = WunderPferd;
@@ -112,12 +130,36 @@
 			path = ProfileDataTableViewCell;
 			sourceTree = "<group>";
 		};
-		52AA6D2F281E4CA6005C2E52 /* DataManagers */ = {
+		52A8A7662830C37C00C5B3EF /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				52A8A76C2830CBFC00C5B3EF /* Response */,
+				52A8A7672830C3A900C5B3EF /* NetworkManager.swift */,
 				52AA6D30281E4CF5005C2E52 /* ImageManager.swift */,
+				52A8A76A2830CB9400C5B3EF /* Router.swift */,
+				52A8A77C283196A700C5B3EF /* StorageManager.swift */,
 			);
-			path = DataManagers;
+			path = Services;
+			sourceTree = "<group>";
+		};
+		52A8A7692830CAB600C5B3EF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5228AD5127FF5CEF0000122D /* AuthorizeViewController.swift */,
+				5251497A2809422A0055B8D0 /* RegisterViewController.swift */,
+				5277D9732811DA3B00955C19 /* TitledScrollViewController.swift */,
+				5277D9752811FE5200955C19 /* ProfileViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		52A8A76C2830CBFC00C5B3EF /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				52A8A76D2830CC2D00C5B3EF /* UsernameResponse.swift */,
+				52A8A774283177B900C5B3EF /* TokenResponse.swift */,
+			);
+			path = Response;
 			sourceTree = "<group>";
 		};
 		52C8A352281A826900C5A887 /* ProfileTitleTableViewCell */ = {
@@ -145,6 +187,12 @@
 			dependencies = (
 			);
 			name = WunderPferd;
+			packageProductDependencies = (
+				52A8A7642830C33300C5B3EF /* Alamofire */,
+				52A8A77028313B8A00C5B3EF /* SnackBar */,
+				52A8A7772831952C00C5B3EF /* JGProgressHUD */,
+				52A8A77A2831957E00C5B3EF /* KeychainAccess */,
+			);
 			productName = WunderPferd;
 			productReference = 5228AD4A27FF5CEF0000122D /* WunderPferd.app */;
 			productType = "com.apple.product-type.application";
@@ -173,6 +221,12 @@
 				Base,
 			);
 			mainGroup = 5228AD4127FF5CEF0000122D;
+			packageReferences = (
+				52A8A7632830C33300C5B3EF /* XCRemoteSwiftPackageReference "Alamofire" */,
+				52A8A76F28313B8A00C5B3EF /* XCRemoteSwiftPackageReference "SnackBar" */,
+				52A8A7762831952C00C5B3EF /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
+				52A8A7792831957E00C5B3EF /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+			);
 			productRefGroup = 5228AD4B27FF5CEF0000122D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -202,16 +256,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52A8A77D283196A700C5B3EF /* StorageManager.swift in Sources */,
+				52A8A7682830C3A900C5B3EF /* NetworkManager.swift in Sources */,
+				52A8A7732831516200C5B3EF /* BoldSnackBar.swift in Sources */,
 				52C8A355281A82A700C5A887 /* ProfileTitleTableViewCell.swift in Sources */,
 				520169C6280961AE00662E71 /* BrightButton.swift in Sources */,
 				5277D97C2811FFD100955C19 /* ProfileDataTableViewCell.swift in Sources */,
+				52A8A76E2830CC2D00C5B3EF /* UsernameResponse.swift in Sources */,
 				5228AD5227FF5CEF0000122D /* AuthorizeViewController.swift in Sources */,
 				5228AD4E27FF5CEF0000122D /* AppDelegate.swift in Sources */,
 				5277D9742811DA3B00955C19 /* TitledScrollViewController.swift in Sources */,
 				5277D9762811FE5200955C19 /* ProfileViewController.swift in Sources */,
 				5228AD5027FF5CEF0000122D /* SceneDelegate.swift in Sources */,
+				52A8A76B2830CB9400C5B3EF /* Router.swift in Sources */,
 				52C8A34C281A7EBD00C5A887 /* NSObject+ClassName.swift in Sources */,
 				52AA6D31281E4CF5005C2E52 /* ImageManager.swift in Sources */,
+				52A8A775283177B900C5B3EF /* TokenResponse.swift in Sources */,
 				5251497B2809422A0055B8D0 /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,6 +488,64 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		52A8A7632830C33300C5B3EF /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		52A8A76F28313B8A00C5B3EF /* XCRemoteSwiftPackageReference "SnackBar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ahmedAlmasri/SnackBar.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.2;
+			};
+		};
+		52A8A7762831952C00C5B3EF /* XCRemoteSwiftPackageReference "JGProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JonasGessner/JGProgressHUD.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+		52A8A7792831957E00C5B3EF /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		52A8A7642830C33300C5B3EF /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 52A8A7632830C33300C5B3EF /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		52A8A77028313B8A00C5B3EF /* SnackBar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 52A8A76F28313B8A00C5B3EF /* XCRemoteSwiftPackageReference "SnackBar" */;
+			productName = SnackBar;
+		};
+		52A8A7772831952C00C5B3EF /* JGProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 52A8A7762831952C00C5B3EF /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
+			productName = JGProgressHUD;
+		};
+		52A8A77A2831957E00C5B3EF /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 52A8A7792831957E00C5B3EF /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5228AD4227FF5CEF0000122D /* Project object */;
 }

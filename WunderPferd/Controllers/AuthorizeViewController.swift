@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import JGProgressHUD
 
 class AuthorizeViewController: TitledScrollViewController {
 
@@ -16,6 +17,9 @@ class AuthorizeViewController: TitledScrollViewController {
         titleLabel = authTitleLabel
         textFields = authTextFields
         authScrollView.delegate = self
+        
+        hud.textLabel.text = "Connecting"
+        hud.vibrancyEnabled = true
     }
     
     @IBAction func registerTap(_ sender: Any) {
@@ -31,8 +35,10 @@ class AuthorizeViewController: TitledScrollViewController {
             BoldSnackBar.make(in: self.view, message: "Заполните все поля.", duration: .lengthLong).show()
             return
         }
+        hud.show(in: self.view)
         pnm.login(username, password) {
             response, error in
+            self.hud.dismiss()
             if let error = error {
                 BoldSnackBar.make(in: self.view, message: "Логин провалился", duration: .lengthLong).show()
                 print(error)
@@ -49,6 +55,7 @@ class AuthorizeViewController: TitledScrollViewController {
     }
     
     let pnm: ProfileNetworkManager = NetworkManager()
+    let hud = JGProgressHUD()
     
     let usernameFieldId = 0
     let passwordFieldId = 1

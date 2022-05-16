@@ -7,6 +7,7 @@
 
 import UIKit
 import SnackBar
+import JGProgressHUD
 
 class RegisterViewController: TitledScrollViewController {
     
@@ -17,6 +18,9 @@ class RegisterViewController: TitledScrollViewController {
         titleLabel = regTitleLabel
         textFields = regTextFields
         regScrollView.delegate = self
+        
+        hud.textLabel.text = "Connecting"
+        hud.vibrancyEnabled = true
         
         let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tap)
@@ -59,8 +63,9 @@ class RegisterViewController: TitledScrollViewController {
     private func registerUser(username: String, password: String) {
         pnm.register(username, password) {
             response, error in
+            self.hud.dismiss(animated: true)
             if let error = error {
-                BoldSnackBar.make(in: self.view, message: "Ошибка соединения. Попробуйте позже.", duration: .lengthLong).show()
+                BoldSnackBar.make(in: self.view, message: "Ошибка соединения.", duration: .lengthLong).show()
                 print(error)
             } else if let response = response {
                 let storageManager = StorageManager()
@@ -80,15 +85,18 @@ class RegisterViewController: TitledScrollViewController {
                 validateFields() else {
             return
         }
+        hud.show(in: self.view)
         pnm.checkUsername(username) {
             response, error in
             if let error = error {
+                self.hud.dismiss(animated: true)
                 BoldSnackBar.make(in: self.view, message: "Ошибка соединения. Попробуйте позже.", duration: .lengthLong).show()
                 print(error)
             } else if let response = response {
                 if response.result == .free {
                     self.registerUser(username: username, password: password)
                 } else {
+                    self.hud.dismiss(animated: true)
                     BoldSnackBar.make(in: self.view, message: response.result.representedValue, duration: .lengthLong).show()
                 }
             }
@@ -100,6 +108,7 @@ class RegisterViewController: TitledScrollViewController {
     let passwordConfirmationFieldId = 2
     
     let pnm: ProfileNetworkManager = NetworkManager()
+    let hud = JGProgressHUD()
 
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet var regTextFields: [UITextField]!

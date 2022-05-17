@@ -12,6 +12,7 @@ enum Router: URLRequestConvertible {
     case checkUsername([String: String])
     case register([String: String])
     case login([String: String])
+    case profile(String)
     
     var baseURL: URL {
         return URL(string: "https://nanopost.evolitist.com")!
@@ -22,6 +23,7 @@ enum Router: URLRequestConvertible {
         case .checkUsername: return .get
         case .register: return .post
         case .login: return .get
+        case .profile: return .get
         }
     }
     
@@ -30,11 +32,19 @@ enum Router: URLRequestConvertible {
         case .checkUsername: return "api/auth/checkUsername"
         case .register: return "api/auth/register"
         case .login: return "api/auth/login"
+        case .profile: return "/api/v1/profile"
         }
     }
     
     func asURLRequest() throws -> URLRequest {
-        let url = baseURL.appendingPathComponent(path)
+        var url = baseURL.appendingPathComponent(path)
+        switch self {
+        case let .profile(profileId):
+            url = url.appendingPathComponent(profileId)
+        default:
+            break
+        }
+        
         var request = URLRequest(url: url)
         request.method = method
         
@@ -45,6 +55,8 @@ enum Router: URLRequestConvertible {
             request = try JSONParameterEncoder().encode(parameters, into: request)
         case let .login(parameters):
             request = try URLEncodedFormParameterEncoder().encode(parameters, into: request)
+        case .profile:
+            break
         }
         return request
     }

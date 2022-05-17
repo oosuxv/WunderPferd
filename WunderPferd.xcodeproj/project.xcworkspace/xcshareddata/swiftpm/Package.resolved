@@ -10,6 +10,15 @@
       }
     },
     {
+      "identity" : "color-picker-for-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/hayashi311/Color-Picker-for-iOS.git",
+      "state" : {
+        "revision" : "3a760156bc0771f16a32bb84215b305dec13df6a",
+        "version" : "3.0.2"
+      }
+    },
+    {
       "identity" : "jgprogresshud",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/JonasGessner/JGProgressHUD.git",

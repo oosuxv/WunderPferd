@@ -29,6 +29,8 @@
 		52A8A7782831952C00C5B3EF /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 52A8A7772831952C00C5B3EF /* JGProgressHUD */; };
 		52A8A77B2831957E00C5B3EF /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 52A8A77A2831957E00C5B3EF /* KeychainAccess */; };
 		52A8A77D283196A700C5B3EF /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8A77C283196A700C5B3EF /* StorageManager.swift */; };
+		52A8A77F2832F4C900C5B3EF /* ProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8A77E2832F4C800C5B3EF /* ProfileResponse.swift */; };
+		52A8A7822833A0EA00C5B3EF /* Colorful in Frameworks */ = {isa = PBXBuildFile; productRef = 52A8A7812833A0EA00C5B3EF /* Colorful */; };
 		52AA6D31281E4CF5005C2E52 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA6D30281E4CF5005C2E52 /* ImageManager.swift */; };
 		52C8A34C281A7EBD00C5A887 /* NSObject+ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C8A34B281A7EBD00C5A887 /* NSObject+ClassName.swift */; };
 		52C8A355281A82A700C5A887 /* ProfileTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C8A353281A82A700C5A887 /* ProfileTitleTableViewCell.swift */; };
@@ -56,6 +58,7 @@
 		52A8A7722831516200C5B3EF /* BoldSnackBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoldSnackBar.swift; sourceTree = "<group>"; };
 		52A8A774283177B900C5B3EF /* TokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenResponse.swift; sourceTree = "<group>"; };
 		52A8A77C283196A700C5B3EF /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		52A8A77E2832F4C800C5B3EF /* ProfileResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileResponse.swift; sourceTree = "<group>"; };
 		52AA6D30281E4CF5005C2E52 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		52C8A34B281A7EBD00C5A887 /* NSObject+ClassName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+ClassName.swift"; sourceTree = "<group>"; };
 		52C8A353281A82A700C5A887 /* ProfileTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTitleTableViewCell.swift; sourceTree = "<group>"; };
@@ -70,6 +73,7 @@
 				52A8A77B2831957E00C5B3EF /* KeychainAccess in Frameworks */,
 				52A8A7652830C33300C5B3EF /* Alamofire in Frameworks */,
 				52A8A7782831952C00C5B3EF /* JGProgressHUD in Frameworks */,
+				52A8A7822833A0EA00C5B3EF /* Colorful in Frameworks */,
 				52A8A77128313B8A00C5B3EF /* SnackBar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -115,6 +119,7 @@
 		5277D9782811FF5900955C19 /* ProfileCells */ = {
 			isa = PBXGroup;
 			children = (
+				52A8A7832833A13000C5B3EF /* ProfileColorTableViewCell */,
 				52C8A352281A826900C5A887 /* ProfileTitleTableViewCell */,
 				5277D9792811FF7900955C19 /* ProfileDataTableViewCell */,
 			);
@@ -158,8 +163,16 @@
 			children = (
 				52A8A76D2830CC2D00C5B3EF /* UsernameResponse.swift */,
 				52A8A774283177B900C5B3EF /* TokenResponse.swift */,
+				52A8A77E2832F4C800C5B3EF /* ProfileResponse.swift */,
 			);
 			path = Response;
+			sourceTree = "<group>";
+		};
+		52A8A7832833A13000C5B3EF /* ProfileColorTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ProfileColorTableViewCell;
 			sourceTree = "<group>";
 		};
 		52C8A352281A826900C5A887 /* ProfileTitleTableViewCell */ = {
@@ -192,6 +205,7 @@
 				52A8A77028313B8A00C5B3EF /* SnackBar */,
 				52A8A7772831952C00C5B3EF /* JGProgressHUD */,
 				52A8A77A2831957E00C5B3EF /* KeychainAccess */,
+				52A8A7812833A0EA00C5B3EF /* Colorful */,
 			);
 			productName = WunderPferd;
 			productReference = 5228AD4A27FF5CEF0000122D /* WunderPferd.app */;
@@ -226,6 +240,7 @@
 				52A8A76F28313B8A00C5B3EF /* XCRemoteSwiftPackageReference "SnackBar" */,
 				52A8A7762831952C00C5B3EF /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
 				52A8A7792831957E00C5B3EF /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+				52A8A7802833A0E900C5B3EF /* XCRemoteSwiftPackageReference "Color-Picker-for-iOS" */,
 			);
 			productRefGroup = 5228AD4B27FF5CEF0000122D /* Products */;
 			projectDirPath = "";
@@ -258,6 +273,7 @@
 			files = (
 				52A8A77D283196A700C5B3EF /* StorageManager.swift in Sources */,
 				52A8A7682830C3A900C5B3EF /* NetworkManager.swift in Sources */,
+				52A8A77F2832F4C900C5B3EF /* ProfileResponse.swift in Sources */,
 				52A8A7732831516200C5B3EF /* BoldSnackBar.swift in Sources */,
 				52C8A355281A82A700C5A887 /* ProfileTitleTableViewCell.swift in Sources */,
 				520169C6280961AE00662E71 /* BrightButton.swift in Sources */,
@@ -522,6 +538,14 @@
 				kind = branch;
 			};
 		};
+		52A8A7802833A0E900C5B3EF /* XCRemoteSwiftPackageReference "Color-Picker-for-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hayashi311/Color-Picker-for-iOS.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -544,6 +568,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 52A8A7792831957E00C5B3EF /* XCRemoteSwiftPackageReference "KeychainAccess" */;
 			productName = KeychainAccess;
+		};
+		52A8A7812833A0EA00C5B3EF /* Colorful */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 52A8A7802833A0E900C5B3EF /* XCRemoteSwiftPackageReference "Color-Picker-for-iOS" */;
+			productName = Colorful;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -13,12 +13,14 @@ protocol ProfileNetworkManager {
     func checkUsername(_ username: String, completion: ((UsernameResponse?, Error?) -> ())?)
     func register(_ username: String, _ password: String, completion: ((TokenResponse?, Error?) -> ())?)
     func login(_ username: String, _ password: String, completion: ((TokenResponse?, Error?) -> ())?)
+    func getProfile(profileId: String, completion: ((Profile?, Error?) -> ())?)
 }
 
 class NetworkManager {
     
     func performRequest<ResponseType: Decodable>(
             request: URLRequestConvertible,
+            headers: HTTPHeaders? = nil,
             onRequestCompleted: ((ResponseType?, Error?) -> ())?
     ) {
         AF.request(request)
@@ -57,11 +59,11 @@ extension NetworkManager: ProfileNetworkManager {
     
     func login(_ username: String, _ password: String, completion: ((TokenResponse?, Error?) -> ())?) {
         let request = Router.login(["username" : username, "password" : password])
-        do {
-            print(try request.asURLRequest() as Any)
-        } catch {
-            
-        }
+        performRequest(request: request, onRequestCompleted: completion)
+    }
+    
+    func getProfile(profileId: String, completion: ((Profile?, Error?) -> ())?) {
+        let request = Router.profile(profileId)
         performRequest(request: request, onRequestCompleted: completion)
     }
 }

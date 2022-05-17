@@ -11,6 +11,8 @@ class ProfileViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    let pnm: ProfileNetworkManager = NetworkManager()
+    let storageManager = StorageManager()
     let imageManager = ProfileImageManager()
     var source: [(String, String)] = [
             ("first name", "Bob"),
@@ -64,6 +66,7 @@ extension ProfileViewController: UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ProfileTitleTableViewCell.className) as? ProfileTitleTableViewCell else {
                 return UITableViewCell()
             }
+            
             cell.circledImageView.layer.borderWidth = 5
             cell.circledImageView.layer.masksToBounds = false
             cell.circledImageView.layer.borderColor = UIColor.white.cgColor
@@ -75,6 +78,17 @@ extension ProfileViewController: UITableViewDataSource {
                 cell.wideImageView.image = image
             }
             
+            if let userId = storageManager.loadFromKeychain(key: .userId) {
+                pnm.getProfile(profileId: userId) {
+                    response, error in
+                    if let error = error {
+                        BoldSnackBar.make(in: self.view, message: "Ошибка соединения.", duration: .lengthLong).show()
+                        print(error)
+                    } else if let response = response {
+                        cell.loginLabel.text = response.username
+                    }
+                }
+            }
             return cell
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ProfileDataTableViewCell.className) as? ProfileDataTableViewCell else {

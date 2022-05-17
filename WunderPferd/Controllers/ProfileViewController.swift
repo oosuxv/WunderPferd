@@ -82,7 +82,6 @@ extension ProfileViewController: UITableViewDataSource {
                 pnm.getProfile(profileId: userId) {
                     response, error in
                     if let error = error {
-                        BoldSnackBar.make(in: self.view, message: "Ошибка соединения.", duration: .lengthLong).show()
                         print(error)
                     } else if let response = response {
                         cell.loginLabel.text = response.username

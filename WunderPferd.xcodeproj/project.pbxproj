@@ -119,7 +119,6 @@
 		5277D9782811FF5900955C19 /* ProfileCells */ = {
 			isa = PBXGroup;
 			children = (
-				52A8A7832833A13000C5B3EF /* ProfileColorTableViewCell */,
 				52C8A352281A826900C5A887 /* ProfileTitleTableViewCell */,
 				5277D9792811FF7900955C19 /* ProfileDataTableViewCell */,
 			);
@@ -166,13 +165,6 @@
 				52A8A77E2832F4C800C5B3EF /* ProfileResponse.swift */,
 			);
 			path = Response;
-			sourceTree = "<group>";
-		};
-		52A8A7832833A13000C5B3EF /* ProfileColorTableViewCell */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ProfileColorTableViewCell;
 			sourceTree = "<group>";
 		};
 		52C8A352281A826900C5A887 /* ProfileTitleTableViewCell */ = {

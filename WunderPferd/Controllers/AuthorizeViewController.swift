@@ -15,7 +15,7 @@ class AuthorizeViewController: TitledScrollViewController {
         
         scrollView = authScrollView
         titleLabel = authTitleLabel
-        textFields = authTextFields
+        textFields = [authLoginField, authPasswordField]
         authScrollView.delegate = self
         
         hud.textLabel.text = "Connecting"
@@ -30,8 +30,8 @@ class AuthorizeViewController: TitledScrollViewController {
     }
     
     @IBAction func enterTap(_ sender: Any) {
-        guard let username = authTextFields[usernameFieldId].text,
-              let password = authTextFields[passwordFieldId].text else {
+        guard let username = authLoginField.text,
+              let password = authPasswordField.text else {
             BoldSnackBar.make(in: self.view, message: "Заполните все поля.", duration: .lengthLong).show()
             return
         }
@@ -57,12 +57,10 @@ class AuthorizeViewController: TitledScrollViewController {
     let pnm: ProfileNetworkManager = NetworkManager()
     let hud = JGProgressHUD()
     
-    let usernameFieldId = 0
-    let passwordFieldId = 1
-    
-    @IBOutlet var authTextFields: [UITextField]!
     @IBOutlet weak var authScrollView: UIScrollView!
     @IBOutlet weak var authTitleLabel: UILabel!
+    @IBOutlet weak var authLoginField: UITextField!
+    @IBOutlet weak var authPasswordField: UITextField!
 }
 
 

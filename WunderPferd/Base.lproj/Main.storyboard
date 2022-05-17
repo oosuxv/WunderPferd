@@ -136,10 +136,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="authLoginField" destination="tV7-8b-fxZ" id="xEP-AV-z4D"/>
+                        <outlet property="authPasswordField" destination="7IC-vo-Dcc" id="lG3-G5-Tmx"/>
                         <outlet property="authScrollView" destination="u8O-yz-O7G" id="tUa-vV-FYO"/>
                         <outlet property="authTitleLabel" destination="LEb-VP-yy2" id="Ge6-dE-diY"/>
-                        <outletCollection property="authTextFields" destination="tV7-8b-fxZ" collectionClass="NSMutableArray" id="vwb-dy-XUX"/>
-                        <outletCollection property="authTextFields" destination="7IC-vo-Dcc" collectionClass="NSMutableArray" id="9Sh-sI-KGW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

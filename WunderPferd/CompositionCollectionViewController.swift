@@ -9,7 +9,7 @@ import UIKit
 
 class CompositionCollectionViewController: UIViewController {
     
-    let networkManager: CharacterNetworkManager = NetworkManager()
+    let networkManager = ServiceLocator.characterNetworkManager()
     let storageManager = StorageManager()
     
     override func viewDidLoad() {
@@ -66,6 +66,9 @@ class CompositionCollectionViewController: UIViewController {
     }
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var aButton: UIButton!
+    @IBOutlet weak var aButtonTrailingConstraint: NSLayoutConstraint!
+
     
     func layout() -> UICollectionViewLayout {
         let spacing: CGFloat = 10
@@ -90,13 +93,12 @@ class CompositionCollectionViewController: UIViewController {
     }
     
     @IBAction func tapA(_ sender: Any) {
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        if let targetVc = storyBoard.instantiateViewController(withIdentifier: AuthorizeViewController.className) as? AuthorizeViewController {
-            targetVc.title = "auth"  //  менять тайтл не стоит, стоит сделать метод передачи данных
-            targetVc.printPipint(string: Self.className)  //  правильная передача данных
-            navigationController?.show(targetVc, sender: nil)  // показывает новый контроллер
-//            targetVc.modalPresentationStyle = .fullScreen  // настройка отображения
-//            navigationController?.present(targetVc, animated: true)  // показывает контроллер поверх
+        UIView.animate(withDuration: 0.3, delay: 1, options: .curveEaseInOut) { [weak self] in
+            self?.aButtonTrailingConstraint.constant = 100
+            self?.view.setNeedsLayout() // заставляет layout пересчитаться
+            self?.view.layoutIfNeeded()
+        } completion: { _ in
+            
         }
     }
     //    func proivder() -> UICollectionViewCompositionalLayoutSectionProvider {

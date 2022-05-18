@@ -46,26 +46,26 @@ class RegisterViewController: TitledScrollViewController {
         guard let username = regTextFields[usernameFieldId].text,
                 let password = regTextFields[passwordFieldId].text,
                 let passwordConfirmation = regTextFields[passwordConfirmationFieldId].text else {
-            ErrorNotificationSnackBar.make(in: self.view, message: "Заполните все поля.", duration: .lengthLong).show()
+            ErrorMessageSnackBar.showMessage(in: view, message: "Заполните все поля.")
             return false
         }
         if username == "" || password == "" || passwordConfirmation == "" {
-            ErrorNotificationSnackBar.make(in: self.view, message: "Заполните все поля.", duration: .lengthLong).show()
+            ErrorMessageSnackBar.showMessage(in: view, message: "Заполните все поля.")
             return false
         }
         if password != passwordConfirmation {
-            ErrorNotificationSnackBar.make(in: self.view, message: "Пароли не совпадают.", duration: .lengthLong).show()
+            ErrorMessageSnackBar.showMessage(in: view, message: "Пароли не совпадают.")
             return false
         }
         return true
     }
     
     private func registerUser(username: String, password: String) {
-        pnm.register(username, password) {
+        profileNetworkManager.register(username, password) {
             response, error in
             self.hud.dismiss(animated: true)
             if let error = error {
-                ErrorNotificationSnackBar.make(in: self.view, message: "Ошибка соединения.", duration: .lengthLong).show()
+                ErrorMessageSnackBar.showMessage(in: self.view, message: "Ошибка соединения.")
                 print(error)
             } else if let response = response {
                 let storageManager = StorageManager()
@@ -86,18 +86,18 @@ class RegisterViewController: TitledScrollViewController {
             return
         }
         hud.show(in: self.view)
-        pnm.checkUsername(username) {
+        profileNetworkManager.checkUsername(username) {
             response, error in
             if let error = error {
                 self.hud.dismiss(animated: true)
-                ErrorNotificationSnackBar.make(in: self.view, message: "Ошибка соединения. Попробуйте позже.", duration: .lengthLong).show()
+                ErrorMessageSnackBar.showMessage(in: self.view, message: "Ошибка соединения. Попробуйте позже.")
                 print(error)
             } else if let response = response {
                 if response.result == .free {
                     self.registerUser(username: username, password: password)
                 } else {
                     self.hud.dismiss(animated: true)
-                    ErrorNotificationSnackBar.make(in: self.view, message: response.result.representedValue, duration: .lengthLong).show()
+                    ErrorMessageSnackBar.showMessage(in: self.view, message: response.result.representedValue)
                 }
             }
         }
@@ -107,7 +107,7 @@ class RegisterViewController: TitledScrollViewController {
     let passwordFieldId = 1
     let passwordConfirmationFieldId = 2
     
-    let pnm: ProfileNetworkManager = NetworkManager()
+    let profileNetworkManager: ProfileNetworkManager = NetworkManager()
     let hud = JGProgressHUD()
 
     @IBOutlet weak var stackView: UIStackView!

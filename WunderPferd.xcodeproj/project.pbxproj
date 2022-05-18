@@ -24,7 +24,7 @@
 		52A8A76B2830CB9400C5B3EF /* URLRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8A76A2830CB9400C5B3EF /* URLRequestBuilder.swift */; };
 		52A8A76E2830CC2D00C5B3EF /* UsernameResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8A76D2830CC2D00C5B3EF /* UsernameResponse.swift */; };
 		52A8A77128313B8A00C5B3EF /* SnackBar in Frameworks */ = {isa = PBXBuildFile; productRef = 52A8A77028313B8A00C5B3EF /* SnackBar */; };
-		52A8A7732831516200C5B3EF /* ErrorNotificationSnackBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8A7722831516200C5B3EF /* ErrorNotificationSnackBar.swift */; };
+		52A8A7732831516200C5B3EF /* ErrorMessageSnackBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8A7722831516200C5B3EF /* ErrorMessageSnackBar.swift */; };
 		52A8A775283177B900C5B3EF /* TokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8A774283177B900C5B3EF /* TokenResponse.swift */; };
 		52A8A7782831952C00C5B3EF /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 52A8A7772831952C00C5B3EF /* JGProgressHUD */; };
 		52A8A77B2831957E00C5B3EF /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 52A8A77A2831957E00C5B3EF /* KeychainAccess */; };
@@ -55,7 +55,7 @@
 		52A8A7672830C3A900C5B3EF /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		52A8A76A2830CB9400C5B3EF /* URLRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestBuilder.swift; sourceTree = "<group>"; };
 		52A8A76D2830CC2D00C5B3EF /* UsernameResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameResponse.swift; sourceTree = "<group>"; };
-		52A8A7722831516200C5B3EF /* ErrorNotificationSnackBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorNotificationSnackBar.swift; sourceTree = "<group>"; };
+		52A8A7722831516200C5B3EF /* ErrorMessageSnackBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessageSnackBar.swift; sourceTree = "<group>"; };
 		52A8A774283177B900C5B3EF /* TokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenResponse.swift; sourceTree = "<group>"; };
 		52A8A77C283196A700C5B3EF /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		52A8A77E2832F4C800C5B3EF /* ProfileResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileResponse.swift; sourceTree = "<group>"; };
@@ -110,7 +110,7 @@
 				5228AD5827FF5CF50000122D /* LaunchScreen.storyboard */,
 				5228AD5B27FF5CF50000122D /* Info.plist */,
 				520169C5280961AE00662E71 /* BrightButton.swift */,
-				52A8A7722831516200C5B3EF /* ErrorNotificationSnackBar.swift */,
+				52A8A7722831516200C5B3EF /* ErrorMessageSnackBar.swift */,
 				52C8A34B281A7EBD00C5A887 /* NSObject+ClassName.swift */,
 			);
 			path = WunderPferd;
@@ -266,7 +266,7 @@
 				52A8A77D283196A700C5B3EF /* StorageManager.swift in Sources */,
 				52A8A7682830C3A900C5B3EF /* NetworkManager.swift in Sources */,
 				52A8A77F2832F4C900C5B3EF /* ProfileResponse.swift in Sources */,
-				52A8A7732831516200C5B3EF /* ErrorNotificationSnackBar.swift in Sources */,
+				52A8A7732831516200C5B3EF /* ErrorMessageSnackBar.swift in Sources */,
 				52C8A355281A82A700C5A887 /* ProfileTitleTableViewCell.swift in Sources */,
 				520169C6280961AE00662E71 /* BrightButton.swift in Sources */,
 				5277D97C2811FFD100955C19 /* ProfileDataTableViewCell.swift in Sources */,

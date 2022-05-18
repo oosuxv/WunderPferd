@@ -5,10 +5,10 @@
 //  Created by Vadim Gorodilov on 15.05.2022.
 //
 
-import Foundation
+import UIKit
 import SnackBar
 
-class ErrorNotificationSnackBar: SnackBar {
+class ErrorMessageSnackBar: SnackBar {
     
     override var style: SnackBarStyle {
         var style = SnackBarStyle()
@@ -16,5 +16,9 @@ class ErrorNotificationSnackBar: SnackBar {
         style.textColor = .black
         style.font = style.font.withSize(30)
         return style
+    }
+    
+    static func showMessage(in view: UIView, message: String) {
+        make(in: view, message: message, duration: .lengthLong).show()
     }
 }

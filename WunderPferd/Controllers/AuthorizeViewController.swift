@@ -32,15 +32,15 @@ class AuthorizeViewController: TitledScrollViewController {
     @IBAction func loginButtonTap(_ sender: Any) {
         guard let username = authLoginField.text,
               let password = authPasswordField.text else {
-            ErrorNotificationSnackBar.make(in: self.view, message: "Заполните все поля.", duration: .lengthLong).show()
+            ErrorMessageSnackBar.showMessage(in: view, message: "Заполните все поля.")
             return
         }
         hud.show(in: self.view)
-        pnm.login(username, password) {
+        profileNetworkManager.login(username, password) {
             response, error in
             self.hud.dismiss()
             if let error = error {
-                ErrorNotificationSnackBar.make(in: self.view, message: "Логин провалился", duration: .lengthLong).show()
+                ErrorMessageSnackBar.showMessage(in: self.view, message: "Логин провалился")
                 print(error)
             } else if let response = response {
                 let storageManager = StorageManager()
@@ -54,7 +54,7 @@ class AuthorizeViewController: TitledScrollViewController {
         }
     }
     
-    let pnm: ProfileNetworkManager = NetworkManager()
+    let profileNetworkManager: ProfileNetworkManager = NetworkManager()
     let hud = JGProgressHUD()
     
     @IBOutlet weak var authScrollView: UIScrollView!

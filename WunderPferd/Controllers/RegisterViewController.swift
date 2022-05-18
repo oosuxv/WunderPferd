@@ -42,7 +42,7 @@ class RegisterViewController: TitledScrollViewController {
         regTextFields.first?.becomeFirstResponder()
     }
     
-    private func validateFields() -> Bool {
+    private func hasNoValidationErrors() -> Bool {
         guard let username = regTextFields[usernameFieldId].text,
                 let password = regTextFields[passwordFieldId].text,
                 let passwordConfirmation = regTextFields[passwordConfirmationFieldId].text else {
@@ -64,10 +64,7 @@ class RegisterViewController: TitledScrollViewController {
         profileNetworkManager.register(username, password) {
             response, error in
             self.hud.dismiss(animated: true)
-            if let error = error {
-                ErrorMessageSnackBar.showMessage(in: self.view, message: "Ошибка соединения.")
-                print(error)
-            } else if let response = response {
+            if let response = response {
                 let storageManager = StorageManager()
                 storageManager.saveToKeychain(response.token, key: .token)
                 storageManager.saveToKeychain(response.userId, key: .userId)
@@ -75,31 +72,33 @@ class RegisterViewController: TitledScrollViewController {
                 let tabBarVC = storyboard.instantiateViewController(identifier: "UITabBarController")
                 tabBarVC.modalPresentationStyle = .fullScreen
                 self.show(tabBarVC, sender: self)
+                return
             }
+            ErrorMessageSnackBar.showMessage(in: self.view, message: "Ошибка соединения.")
         }
     }
     
     @IBAction func doneTap(_ sender: Any) {
-        guard let username = regTextFields[usernameFieldId].text,
-                let password = regTextFields[passwordFieldId].text,
-                validateFields() else {
+        guard hasNoValidationErrors(),
+                let username = regTextFields[usernameFieldId].text,
+                let password = regTextFields[passwordFieldId].text
+                 else {
             return
         }
         hud.show(in: self.view)
         profileNetworkManager.checkUsername(username) {
-            response, error in
-            if let error = error {
-                self.hud.dismiss(animated: true)
-                ErrorMessageSnackBar.showMessage(in: self.view, message: "Ошибка соединения. Попробуйте позже.")
-                print(error)
-            } else if let response = response {
+            response, error  in
+            if let response = response {
                 if response.result == .free {
                     self.registerUser(username: username, password: password)
                 } else {
                     self.hud.dismiss(animated: true)
                     ErrorMessageSnackBar.showMessage(in: self.view, message: response.result.representedValue)
                 }
+                return
             }
+            self.hud.dismiss(animated: true)
+            ErrorMessageSnackBar.showMessage(in: self.view, message: "Ошибка соединения. Попробуйте позже.")
         }
     }
     

@@ -39,10 +39,7 @@ class AuthorizeViewController: TitledScrollViewController {
         profileNetworkManager.login(username, password) {
             response, error in
             self.hud.dismiss()
-            if let error = error {
-                ErrorMessageSnackBar.showMessage(in: self.view, message: "Логин провалился")
-                print(error)
-            } else if let response = response {
+            if let response = response {
                 let storageManager = StorageManager()
                 storageManager.saveToKeychain(response.token, key: .token)
                 storageManager.saveToKeychain(response.userId, key: .userId)
@@ -50,7 +47,9 @@ class AuthorizeViewController: TitledScrollViewController {
                 let tabBarVC = storyboard.instantiateViewController(identifier: "UITabBarController")
                 tabBarVC.modalPresentationStyle = .fullScreen
                 self.show(tabBarVC, sender: self)
+                return
             }
+            ErrorMessageSnackBar.showMessage(in: self.view, message: "Логин провалился")
         }
     }
     

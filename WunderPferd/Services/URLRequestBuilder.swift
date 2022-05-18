@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-enum Router: URLRequestConvertible {
+enum URLRequestBuilder: URLRequestConvertible {
     case checkUsername([String: String])
     case register([String: String])
     case login([String: String])

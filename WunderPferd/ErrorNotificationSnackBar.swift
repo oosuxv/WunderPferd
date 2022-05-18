@@ -8,7 +8,7 @@
 import Foundation
 import SnackBar
 
-class BoldSnackBar: SnackBar {
+class ErrorNotificationSnackBar: SnackBar {
     
     override var style: SnackBarStyle {
         var style = SnackBarStyle()

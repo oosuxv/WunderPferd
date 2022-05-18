@@ -22,17 +22,17 @@ class AuthorizeViewController: TitledScrollViewController {
         hud.vibrancyEnabled = true
     }
     
-    @IBAction func registerTap(_ sender: Any) {
+    @IBAction func registerButtonTap(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let registerVC = storyboard.instantiateViewController(identifier: RegisterViewController.className)
         registerVC.modalPresentationStyle = .fullScreen
         show(registerVC, sender: self)
     }
     
-    @IBAction func enterTap(_ sender: Any) {
+    @IBAction func loginButtonTap(_ sender: Any) {
         guard let username = authLoginField.text,
               let password = authPasswordField.text else {
-            BoldSnackBar.make(in: self.view, message: "Заполните все поля.", duration: .lengthLong).show()
+            ErrorNotificationSnackBar.make(in: self.view, message: "Заполните все поля.", duration: .lengthLong).show()
             return
         }
         hud.show(in: self.view)
@@ -40,7 +40,7 @@ class AuthorizeViewController: TitledScrollViewController {
             response, error in
             self.hud.dismiss()
             if let error = error {
-                BoldSnackBar.make(in: self.view, message: "Логин провалился", duration: .lengthLong).show()
+                ErrorNotificationSnackBar.make(in: self.view, message: "Логин провалился", duration: .lengthLong).show()
                 print(error)
             } else if let response = response {
                 let storageManager = StorageManager()

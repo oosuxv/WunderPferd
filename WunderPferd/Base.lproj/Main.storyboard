@@ -65,8 +65,7 @@
                                                     </attributedString>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="enterTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ptq-Qf-Z2b"/>
-                                                    <action selector="enterTap:" destination="b2E-QX-Mtp" eventType="touchUpInside" id="sIV-TR-DPI"/>
+                                                    <action selector="loginButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pjE-Ww-hAb"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kcX-2K-8fe">
@@ -86,7 +85,7 @@
                                                     </attributedString>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="registerTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eVB-GX-aOT"/>
+                                                    <action selector="registerButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9QM-nd-mMv"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -143,7 +142,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <exit id="b2E-QX-Mtp" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="951" y="698"/>
         </scene>

@@ -48,22 +48,22 @@ class NetworkManager {
 extension NetworkManager: ProfileNetworkManager {
     
     func checkUsername(_ username: String, completion: ((UsernameResponse?, Error?) -> ())?) {
-        let request = Router.checkUsername(["username" : username])
+        let request = URLRequestBuilder.checkUsername(["username" : username])
         performRequest(request: request, onRequestCompleted: completion)
     }
     
     func register(_ username: String, _ password: String, completion: ((TokenResponse?, Error?) -> ())?) {
-        let request = Router.register(["username" : username, "password" : password])
+        let request = URLRequestBuilder.register(["username" : username, "password" : password])
         performRequest(request: request, onRequestCompleted: completion)
     }
     
     func login(_ username: String, _ password: String, completion: ((TokenResponse?, Error?) -> ())?) {
-        let request = Router.login(["username" : username, "password" : password])
+        let request = URLRequestBuilder.login(["username" : username, "password" : password])
         performRequest(request: request, onRequestCompleted: completion)
     }
     
     func getProfile(profileId: String, completion: ((Profile?, Error?) -> ())?) {
-        let request = Router.profile(profileId)
+        let request = URLRequestBuilder.profile(profileId)
         performRequest(request: request, onRequestCompleted: completion)
     }
 }

@@ -46,15 +46,15 @@ class RegisterViewController: TitledScrollViewController {
         guard let username = regTextFields[usernameFieldId].text,
                 let password = regTextFields[passwordFieldId].text,
                 let passwordConfirmation = regTextFields[passwordConfirmationFieldId].text else {
-            BoldSnackBar.make(in: self.view, message: "Заполните все поля.", duration: .lengthLong).show()
+            ErrorNotificationSnackBar.make(in: self.view, message: "Заполните все поля.", duration: .lengthLong).show()
             return false
         }
         if username == "" || password == "" || passwordConfirmation == "" {
-            BoldSnackBar.make(in: self.view, message: "Заполните все поля.", duration: .lengthLong).show()
+            ErrorNotificationSnackBar.make(in: self.view, message: "Заполните все поля.", duration: .lengthLong).show()
             return false
         }
         if password != passwordConfirmation {
-            BoldSnackBar.make(in: self.view, message: "Пароли не совпадают.", duration: .lengthLong).show()
+            ErrorNotificationSnackBar.make(in: self.view, message: "Пароли не совпадают.", duration: .lengthLong).show()
             return false
         }
         return true
@@ -65,7 +65,7 @@ class RegisterViewController: TitledScrollViewController {
             response, error in
             self.hud.dismiss(animated: true)
             if let error = error {
-                BoldSnackBar.make(in: self.view, message: "Ошибка соединения.", duration: .lengthLong).show()
+                ErrorNotificationSnackBar.make(in: self.view, message: "Ошибка соединения.", duration: .lengthLong).show()
                 print(error)
             } else if let response = response {
                 let storageManager = StorageManager()
@@ -90,14 +90,14 @@ class RegisterViewController: TitledScrollViewController {
             response, error in
             if let error = error {
                 self.hud.dismiss(animated: true)
-                BoldSnackBar.make(in: self.view, message: "Ошибка соединения. Попробуйте позже.", duration: .lengthLong).show()
+                ErrorNotificationSnackBar.make(in: self.view, message: "Ошибка соединения. Попробуйте позже.", duration: .lengthLong).show()
                 print(error)
             } else if let response = response {
                 if response.result == .free {
                     self.registerUser(username: username, password: password)
                 } else {
                     self.hud.dismiss(animated: true)
-                    BoldSnackBar.make(in: self.view, message: response.result.representedValue, duration: .lengthLong).show()
+                    ErrorNotificationSnackBar.make(in: self.view, message: response.result.representedValue, duration: .lengthLong).show()
                 }
             }
         }

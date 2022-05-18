@@ -85,7 +85,7 @@ class RegisterViewController: TitledScrollViewController {
                  else {
             return
         }
-        hud.show(in: self.view)
+        hud.show(in:    self.view)
         profileNetworkManager.checkUsername(username) {
             [weak self] response, error in
             if let response = response {

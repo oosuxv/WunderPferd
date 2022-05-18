@@ -11,9 +11,8 @@ class ProfileViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    let pnm: ProfileNetworkManager = NetworkManager()
     let storageManager = StorageManager()
-    let imageManager = ProfileImageManager()
+    let profileDataManager = ProfileDataManager()
     var source: [(String, String)] = [
             ("first name", "Bob"),
             ("last name", "Bobson"),
@@ -73,21 +72,12 @@ extension ProfileViewController: UITableViewDataSource {
             cell.circledImageView.layer.cornerRadius = cell.circledImageView.frame.height / 2
             cell.circledImageView.clipsToBounds = true
             
-            if let image = imageManager.image {
+            if let image = profileDataManager.image {
                 cell.circledImageView.image = image
                 cell.wideImageView.image = image
             }
             
-            if let userId = storageManager.loadFromKeychain(key: .userId) {
-                pnm.getProfile(profileId: userId) {
-                    response, error in
-                    if let error = error {
-                        print(error)
-                    } else if let response = response {
-                        cell.loginLabel.text = response.username
-                    }
-                }
-            }
+            profileDataManager.requestUsername(completion:  { username in cell.loginLabel.text = username })
             return cell
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ProfileDataTableViewCell.className) as? ProfileDataTableViewCell else {
@@ -108,7 +98,7 @@ extension ProfileViewController: UINavigationControllerDelegate {
 extension ProfileViewController: UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let image = info[.originalImage] as? UIImage else { return }
-        imageManager.image = image
+        profileDataManager.image = image
         self.tableView.reloadSections(IndexSet([0]), with: .automatic)
         dismiss(animated: true)
     }

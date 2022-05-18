@@ -62,8 +62,8 @@ class RegisterViewController: TitledScrollViewController {
     
     private func registerUser(username: String, password: String) {
         profileNetworkManager.register(username, password) {
-            response, error in
-            self.hud.dismiss(animated: true)
+            [weak self] response, error in
+            self?.hud.dismiss(animated: true)
             if let response = response {
                 let storageManager = StorageManager()
                 storageManager.saveToKeychain(response.token, key: .token)
@@ -71,10 +71,10 @@ class RegisterViewController: TitledScrollViewController {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let tabBarVC = storyboard.instantiateViewController(identifier: "UITabBarController")
                 tabBarVC.modalPresentationStyle = .fullScreen
-                self.show(tabBarVC, sender: self)
+                self?.show(tabBarVC, sender: self)
                 return
             }
-            ErrorMessageSnackBar.showMessage(in: self.view, message: "Ошибка соединения.")
+            ErrorMessageSnackBar.showMessage(in: self?.view, message: "Ошибка соединения.")
         }
     }
     
@@ -87,18 +87,18 @@ class RegisterViewController: TitledScrollViewController {
         }
         hud.show(in: self.view)
         profileNetworkManager.checkUsername(username) {
-            response, error  in
+            [weak self] response, error in
             if let response = response {
                 if response.result == .free {
-                    self.registerUser(username: username, password: password)
+                    self?.registerUser(username: username, password: password)
                 } else {
-                    self.hud.dismiss(animated: true)
-                    ErrorMessageSnackBar.showMessage(in: self.view, message: response.result.representedValue)
+                    self?.hud.dismiss(animated: true)
+                    ErrorMessageSnackBar.showMessage(in: self?.view, message: response.result.representedValue)
                 }
                 return
             }
-            self.hud.dismiss(animated: true)
-            ErrorMessageSnackBar.showMessage(in: self.view, message: "Ошибка соединения. Попробуйте позже.")
+            self?.hud.dismiss(animated: true)
+            ErrorMessageSnackBar.showMessage(in: self?.view, message: "Ошибка соединения. Попробуйте позже.")
         }
     }
     

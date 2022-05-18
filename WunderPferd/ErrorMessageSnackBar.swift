@@ -18,7 +18,9 @@ class ErrorMessageSnackBar: SnackBar {
         return style
     }
     
-    static func showMessage(in view: UIView, message: String) {
-        make(in: view, message: message, duration: .lengthLong).show()
+    static func showMessage(in view: UIView?, message: String) {
+        if let view = view {
+            make(in: view, message: message, duration: .lengthLong).show()
+        }
     }
 }

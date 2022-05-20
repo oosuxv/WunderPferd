@@ -18,7 +18,6 @@ class StorageManager {
     
     private struct Constants {
         static let serviceId = "StorageManagerKeychain.Service.Id"
-        
     }
     
     func saveToKeychain(_ string: String, key: StorageManagerKey) {

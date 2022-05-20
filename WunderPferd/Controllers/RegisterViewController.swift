@@ -81,11 +81,10 @@ class RegisterViewController: TitledScrollViewController {
     @IBAction func doneTap(_ sender: Any) {
         guard hasNoValidationErrors(),
                 let username = regTextFields[usernameFieldId].text,
-                let password = regTextFields[passwordFieldId].text
-                 else {
+                let password = regTextFields[passwordFieldId].text else {
             return
         }
-        hud.show(in:    self.view)
+        hud.show(in: self.view)
         profileNetworkManager.checkUsername(username) {
             [weak self] response, error in
             if let response = response {

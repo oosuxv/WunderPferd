@@ -12,8 +12,27 @@ class CompositionCollectionViewController: UIViewController {
     let networkManager = ServiceLocator.characterNetworkManager()
     let storageManager = StorageManager()
     
+    func olololPrint(_ string: String, completion: () -> ()) {
+      print(string)
+      completion()
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let semaphore = DispatchSemaphore(value: 1)
+        let dispatchQueue = DispatchQueue(label: "mabel")
+        dispatchQueue.async {
+            semaphore.wait()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                self.olololPrint("dql") {
+                    semaphore.signal()
+                }
+            }
+        }
+        dispatchQueue.async {
+            print("second")
+        }
         collectionView.delegate = self
         collectionView.dataSource = self
 //        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "UICollectionViewCell")

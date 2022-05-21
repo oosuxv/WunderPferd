@@ -12,7 +12,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     let storageManager = StorageManager()
-    let profileDataManager = ProfileDataManager()
+    let profileDataManager = ProfileDataProvider()
     var source: [(String, String)] = [
             ("first name", "Bob"),
             ("last name", "Bobson"),

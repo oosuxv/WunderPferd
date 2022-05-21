@@ -13,6 +13,7 @@ class StorageManager {
     enum StorageManagerKey: String {
         case token
         case userId
+        case username
         case notFirstLaunch
     }
     
@@ -40,12 +41,20 @@ class StorageManager {
         return nil
     }
     
-    func saveToUserDefaults(bool: Bool, key: StorageManagerKey) {
+    func saveBoolToUserDefaults(bool: Bool, key: StorageManagerKey) {
         UserDefaults.standard.set(bool, forKey: key.rawValue)
     }
     
     func userDefaultsBool(key: StorageManagerKey) -> Bool {
         UserDefaults.standard.bool(forKey: key.rawValue)
+    }
+    
+    func saveStringToUserDefaults(_ string: String, key: StorageManagerKey) {
+        UserDefaults.standard.set(string, forKey: key.rawValue)
+    }
+    
+    func userDefaultsString(key: StorageManagerKey) -> String? {
+        UserDefaults.standard.string(forKey: key.rawValue)
     }
     
     func cleanKeychain() {

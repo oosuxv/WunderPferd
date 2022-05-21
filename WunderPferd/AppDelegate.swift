@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let storageManager = StorageManager()
         if !storageManager.userDefaultsBool(key: .notFirstLaunch) {
             storageManager.cleanKeychain()
-            storageManager.saveToUserDefaults(bool: true, key: .notFirstLaunch)
+            storageManager.saveBoolToUserDefaults(bool: true, key: .notFirstLaunch)
         }
         return true
     }

@@ -45,7 +45,7 @@ class StorageManager {
         UserDefaults.standard.set(bool, forKey: key.rawValue)
     }
     
-    func userDefaultsBool(key: StorageManagerKey) -> Bool {
+    func loadUserDefaultsBool(key: StorageManagerKey) -> Bool {
         UserDefaults.standard.bool(forKey: key.rawValue)
     }
     
@@ -53,7 +53,7 @@ class StorageManager {
         UserDefaults.standard.set(string, forKey: key.rawValue)
     }
     
-    func userDefaultsString(key: StorageManagerKey) -> String? {
+    func loadUserDefaultsString(key: StorageManagerKey) -> String? {
         UserDefaults.standard.string(forKey: key.rawValue)
     }
     
@@ -64,5 +64,9 @@ class StorageManager {
         } catch {
             print(error as Any)
         }
+    }
+    
+    func cleanUserDefaults() {
+        UserDefaults.standard.removeObject(forKey: StorageManagerKey.username.rawValue)
     }
 }

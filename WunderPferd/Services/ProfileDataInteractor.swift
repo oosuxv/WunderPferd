@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileDataProvider {
+class ProfileDataInteractor {
     lazy var storageManager = StorageManager()
     lazy var networkManager = NetworkManager()
     lazy var profileImageManager = ProfileImageManager()
@@ -30,7 +30,7 @@ class ProfileDataProvider {
     }
     
     func requestUsername(completion: @escaping (String) -> ()) {
-        if let username = storageManager.userDefaultsString(key: .username) {
+        if let username = storageManager.loadUserDefaultsString(key: .username) {
             completion(username)
         } else {
             if let userId = storageManager.loadFromKeychain(key: .userId) {
@@ -47,5 +47,11 @@ class ProfileDataProvider {
                 // TODO: log error
             }
         }
+    }
+    
+    func loginUser(token: String, userId: String) {
+        storageManager.saveToKeychain(token, key: .token)
+        storageManager.saveToKeychain(userId, key: .userId)
+        storageManager.cleanUserDefaults();
     }
 }

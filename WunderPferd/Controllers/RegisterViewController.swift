@@ -65,9 +65,8 @@ class RegisterViewController: TitledScrollViewController {
             [weak self] response, error in
             self?.hud.dismiss(animated: true)
             if let response = response {
-                let storageManager = StorageManager()
-                storageManager.saveToKeychain(response.token, key: .token)
-                storageManager.saveToKeychain(response.userId, key: .userId)
+                let profileDataInteractor = ProfileDataInteractor()
+                profileDataInteractor.loginUser(token: response.token, userId: response.userId)
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let tabBarVC = storyboard.instantiateViewController(identifier: "UITabBarController")
                 tabBarVC.modalPresentationStyle = .fullScreen

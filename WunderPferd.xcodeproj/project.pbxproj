@@ -33,7 +33,7 @@
 		52A8A7822833A0EA00C5B3EF /* Colorful in Frameworks */ = {isa = PBXBuildFile; productRef = 52A8A7812833A0EA00C5B3EF /* Colorful */; };
 		52A8A7892834FF2E00C5B3EF /* UsernameStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8A7882834FF2E00C5B3EF /* UsernameStatus.swift */; };
 		52A8A78B2838CEC900C5B3EF /* ProfileImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8A78A2838CEC900C5B3EF /* ProfileImageManager.swift */; };
-		52AA6D31281E4CF5005C2E52 /* ProfileDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA6D30281E4CF5005C2E52 /* ProfileDataProvider.swift */; };
+		52AA6D31281E4CF5005C2E52 /* ProfileDataInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA6D30281E4CF5005C2E52 /* ProfileDataInteractor.swift */; };
 		52C8A34C281A7EBD00C5A887 /* NSObject+ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C8A34B281A7EBD00C5A887 /* NSObject+ClassName.swift */; };
 		52C8A355281A82A700C5A887 /* ProfileTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C8A353281A82A700C5A887 /* ProfileTitleTableViewCell.swift */; };
 		52C8A356281A82A700C5A887 /* ProfileTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52C8A354281A82A700C5A887 /* ProfileTitleTableViewCell.xib */; };
@@ -63,7 +63,7 @@
 		52A8A77E2832F4C800C5B3EF /* ProfileResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileResponse.swift; sourceTree = "<group>"; };
 		52A8A7882834FF2E00C5B3EF /* UsernameStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameStatus.swift; sourceTree = "<group>"; };
 		52A8A78A2838CEC900C5B3EF /* ProfileImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageManager.swift; sourceTree = "<group>"; };
-		52AA6D30281E4CF5005C2E52 /* ProfileDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataProvider.swift; sourceTree = "<group>"; };
+		52AA6D30281E4CF5005C2E52 /* ProfileDataInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataInteractor.swift; sourceTree = "<group>"; };
 		52C8A34B281A7EBD00C5A887 /* NSObject+ClassName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+ClassName.swift"; sourceTree = "<group>"; };
 		52C8A353281A82A700C5A887 /* ProfileTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTitleTableViewCell.swift; sourceTree = "<group>"; };
 		52C8A354281A82A700C5A887 /* ProfileTitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTitleTableViewCell.xib; sourceTree = "<group>"; };
@@ -143,7 +143,7 @@
 			children = (
 				52A8A76C2830CBFC00C5B3EF /* Response */,
 				52A8A7672830C3A900C5B3EF /* NetworkManager.swift */,
-				52AA6D30281E4CF5005C2E52 /* ProfileDataProvider.swift */,
+				52AA6D30281E4CF5005C2E52 /* ProfileDataInteractor.swift */,
 				52A8A76A2830CB9400C5B3EF /* URLRequestBuilder.swift */,
 				52A8A77C283196A700C5B3EF /* StorageManager.swift */,
 				52A8A78A2838CEC900C5B3EF /* ProfileImageManager.swift */,
@@ -286,7 +286,7 @@
 				5228AD5027FF5CEF0000122D /* SceneDelegate.swift in Sources */,
 				52A8A76B2830CB9400C5B3EF /* URLRequestBuilder.swift in Sources */,
 				52C8A34C281A7EBD00C5A887 /* NSObject+ClassName.swift in Sources */,
-				52AA6D31281E4CF5005C2E52 /* ProfileDataProvider.swift in Sources */,
+				52AA6D31281E4CF5005C2E52 /* ProfileDataInteractor.swift in Sources */,
 				52A8A775283177B900C5B3EF /* TokenResponse.swift in Sources */,
 				5251497B2809422A0055B8D0 /* RegisterViewController.swift in Sources */,
 			);

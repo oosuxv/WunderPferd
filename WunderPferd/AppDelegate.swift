@@ -10,10 +10,8 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let storageManager = StorageManager()
+        let storageManager: StorageManager = ServiceLocator.shared.storageManager
         if !storageManager.loadUserDefaultsBool(key: .notFirstLaunch) {
             storageManager.cleanKeychain()
             storageManager.saveBoolToUserDefaults(bool: true, key: .notFirstLaunch)

@@ -8,14 +8,25 @@
 import Foundation
 import KeychainAccess
 
-class StorageManager {
-    
-    enum StorageManagerKey: String {
-        case token
-        case userId
-        case username
-        case notFirstLaunch
-    }
+enum StorageManagerKey: String {
+    case token
+    case userId
+    case username
+    case notFirstLaunch
+}
+
+protocol StorageManager {
+    func saveToKeychain(_ string: String, key: StorageManagerKey)
+    func loadFromKeychain(key: StorageManagerKey) -> String?
+    func saveBoolToUserDefaults(bool: Bool, key: StorageManagerKey)
+    func loadUserDefaultsBool(key: StorageManagerKey) -> Bool
+    func saveStringToUserDefaults(_ string: String, key: StorageManagerKey)
+    func loadUserDefaultsString(key: StorageManagerKey) -> String?
+    func cleanKeychain()
+    func cleanUserDefaults()
+}
+
+class KeychainDefaultsStorageManager: StorageManager {
     
     private struct Constants {
         static let serviceId = "StorageManagerKeychain.Service.Id"

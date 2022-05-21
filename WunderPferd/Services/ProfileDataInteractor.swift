@@ -8,9 +8,9 @@
 import UIKit
 
 class ProfileDataInteractor {
-    lazy var storageManager = StorageManager()
-    lazy var networkManager = NetworkManager()
-    lazy var profileImageManager = ProfileImageManager()
+    let storageManager: StorageManager = ServiceLocator.shared.storageManager
+    let networkManager: ProfileNetworkManager = ServiceLocator.shared.networkManager
+    let profileImageManager: ProfileImageManager = ServiceLocator.shared.profileImageManager
 
     var image: UIImage? {
         get {

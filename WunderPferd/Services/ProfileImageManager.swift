@@ -7,7 +7,14 @@
 
 import UIKit
 
-class ProfileImageManager {
+protocol ProfileImageManager {
+    
+    func saveImage(image: UIImage?, userId: String)
+    func loadImage(userId: String) -> UIImage?
+}
+
+class FileProfileImageManager: ProfileImageManager {
+    
     private let fileName = "profile.png"
     
     func saveImage(image: UIImage?, userId: String) {
@@ -26,7 +33,7 @@ class ProfileImageManager {
         return nil
     }
     
-    func documentDirectoryPath() -> URL? {
+    private func documentDirectoryPath() -> URL? {
         let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return path.first
     }

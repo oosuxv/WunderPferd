@@ -11,8 +11,7 @@ class ProfileViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    let storageManager = StorageManager()
-    let profileDataManager = ProfileDataInteractor()
+    let profileDataInteractor = ProfileDataInteractor()
     var source: [(String, String)] = [
             ("first name", "Bob"),
             ("last name", "Bobson"),
@@ -72,12 +71,12 @@ extension ProfileViewController: UITableViewDataSource {
             cell.circledImageView.layer.cornerRadius = cell.circledImageView.frame.height / 2
             cell.circledImageView.clipsToBounds = true
             
-            if let image = profileDataManager.image {
+            if let image = profileDataInteractor.image {
                 cell.circledImageView.image = image
                 cell.wideImageView.image = image
             }
             
-            profileDataManager.requestUsername(completion:  { username in cell.loginLabel.text = username })
+            profileDataInteractor.requestUsername(completion:  { username in cell.loginLabel.text = username })
             return cell
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ProfileDataTableViewCell.className) as? ProfileDataTableViewCell else {
@@ -98,7 +97,7 @@ extension ProfileViewController: UINavigationControllerDelegate {
 extension ProfileViewController: UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let image = info[.originalImage] as? UIImage else { return }
-        profileDataManager.image = image
+        profileDataInteractor.image = image
         self.tableView.reloadSections(IndexSet([0]), with: .automatic)
         dismiss(animated: true)
     }

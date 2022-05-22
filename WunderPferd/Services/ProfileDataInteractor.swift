@@ -19,7 +19,6 @@ class ProfileDataInteractor {
             } else {
                 return nil
             }
-                
         }
         
         set(newImage) {

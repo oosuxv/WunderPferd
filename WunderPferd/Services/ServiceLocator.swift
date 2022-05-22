@@ -9,11 +9,12 @@ import Foundation
 
 final class ServiceLocator {
 
-    static var shared = ServiceLocator() // Singleton
+    static let shared = ServiceLocator() // Singleton
 
-    let storageManager: StorageManager
-    let networkManager: ProfileNetworkManager
-    let profileImageManager: ProfileImageManager
+    var storageManager: StorageManager
+    var networkManager: ProfileNetworkManager
+    var profileImageManager: ProfileImageManager
+    var profileDataInteractor: ProfileDataInteractor
     
     init(storageManager: StorageManager = KeychainDefaultsStorageManager(),
          networkManager: ProfileNetworkManager = NetworkManager(),
@@ -21,5 +22,6 @@ final class ServiceLocator {
         self.storageManager = storageManager
         self.networkManager = networkManager
         self.profileImageManager = profileImageManager
+        self.profileDataInteractor = DefaultProfileDataInteractor(storageManager: storageManager, networkManager: networkManager, profileImageManager: profileImageManager)
     }
 }

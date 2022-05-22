@@ -40,7 +40,7 @@ class AuthorizeViewController: TitledScrollViewController {
             [weak self] response, error in
             self?.hud.dismiss()
             if let response = response {
-                let profileDataInteractor = ProfileDataInteractor()
+                let profileDataInteractor = ServiceLocator.shared.profileDataInteractor
                 profileDataInteractor.loginUser(token: response.token, userId: response.userId)
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let tabBarVC = storyboard.instantiateViewController(identifier: "UITabBarController")

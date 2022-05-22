@@ -11,7 +11,7 @@ class ProfileViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    let profileDataInteractor = ProfileDataInteractor()
+    var profileDataInteractor = ServiceLocator.shared.profileDataInteractor
     var source: [(String, String)] = [
             ("first name", "Bob"),
             ("last name", "Bobson"),

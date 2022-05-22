@@ -7,10 +7,22 @@
 
 import UIKit
 
-class ProfileDataInteractor {
-    let storageManager: StorageManager = ServiceLocator.shared.storageManager
-    let networkManager: ProfileNetworkManager = ServiceLocator.shared.networkManager
-    let profileImageManager: ProfileImageManager = ServiceLocator.shared.profileImageManager
+protocol ProfileDataInteractor {
+    var image: UIImage? { get set }
+    func requestUsername(completion: @escaping (String) -> ())
+    func loginUser(token: String, userId: String)
+}
+
+class DefaultProfileDataInteractor: ProfileDataInteractor {
+    private let storageManager: StorageManager
+    private let networkManager: ProfileNetworkManager
+    private let profileImageManager: ProfileImageManager
+    
+    init(storageManager: StorageManager, networkManager: ProfileNetworkManager, profileImageManager: ProfileImageManager) {
+        self.storageManager = storageManager
+        self.networkManager = networkManager
+        self.profileImageManager = profileImageManager
+    }
 
     var image: UIImage? {
         get {

@@ -83,7 +83,6 @@ extension ProfileViewController: UITableViewDataSource {
                 } else {
                     print(error as Any)
                 }
-                
             })
             return cell
         } else {

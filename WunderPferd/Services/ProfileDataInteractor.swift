@@ -40,7 +40,8 @@ class ProfileDataInteractor {
                         completion(response.username, nil)
                     } else {
                         completion(nil, error)
-                    }                }
+                    }
+                }
             } else {
                 let error = AppError(message: "userId is not present in Keychain")
                 completion(nil, error)

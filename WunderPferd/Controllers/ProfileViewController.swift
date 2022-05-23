@@ -11,7 +11,7 @@ class ProfileViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    let imageManager = ProfileImageManager()
+    let profileDataInteractor = ProfileDataInteractor()
     var source: [(String, String)] = [
             ("first name", "Bob"),
             ("last name", "Bobson"),
@@ -64,17 +64,26 @@ extension ProfileViewController: UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ProfileTitleTableViewCell.className) as? ProfileTitleTableViewCell else {
                 return UITableViewCell()
             }
+            
             cell.circledImageView.layer.borderWidth = 5
             cell.circledImageView.layer.masksToBounds = false
             cell.circledImageView.layer.borderColor = UIColor.white.cgColor
             cell.circledImageView.layer.cornerRadius = cell.circledImageView.frame.height / 2
             cell.circledImageView.clipsToBounds = true
             
-            if let image = imageManager.image {
+            if let image = profileDataInteractor.image {
                 cell.circledImageView.image = image
                 cell.wideImageView.image = image
             }
             
+            profileDataInteractor.requestUsername(completion:  {
+                username, error in
+                if let username = username {
+                    cell.loginLabel.text = username
+                } else {
+                    print(error as Any)
+                }
+            })
             return cell
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ProfileDataTableViewCell.className) as? ProfileDataTableViewCell else {
@@ -95,7 +104,7 @@ extension ProfileViewController: UINavigationControllerDelegate {
 extension ProfileViewController: UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let image = info[.originalImage] as? UIImage else { return }
-        imageManager.image = image
+        profileDataInteractor.image = image
         self.tableView.reloadSections(IndexSet([0]), with: .automatic)
         dismiss(animated: true)
     }

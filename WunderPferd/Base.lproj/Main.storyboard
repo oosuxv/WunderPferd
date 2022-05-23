@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,14 +21,14 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uFR-GO-Ldm">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Авторизация" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LEb-VP-yy2">
-                                                <rect key="frame" x="16" y="225" width="382" height="42"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Авторизация" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LEb-VP-yy2">
+                                                <rect key="frame" x="16" y="135" width="382" height="42"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="36"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Авторизуйтесь, чтоб получить доступ к полному функционалу приложения" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kav-IW-HQp" userLabel="authDescr">
-                                                <rect key="frame" x="16" y="293" width="382" height="86"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Авторизуйтесь, чтоб получить доступ к полному функционалу приложения" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kav-IW-HQp" userLabel="authDescr">
+                                                <rect key="frame" x="16" y="203" width="382" height="162"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -40,7 +39,7 @@
                                                     <constraint firstAttribute="height" constant="70" id="o1j-1Z-8D9"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                                <textInputTraits key="textInputTraits" textContentType="username"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="username"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7IC-vo-Dcc">
                                                 <rect key="frame" x="16" y="479" width="382" height="70"/>
@@ -48,7 +47,7 @@
                                                     <constraint firstAttribute="height" constant="70" id="9Dq-UC-AbI"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES" textContentType="password"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JFv-A5-bUF">
                                                 <rect key="frame" x="0.0" y="701" width="414" height="51"/>
@@ -66,8 +65,7 @@
                                                     </attributedString>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="enterTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ptq-Qf-Z2b"/>
-                                                    <action selector="enterTap:" destination="b2E-QX-Mtp" eventType="touchUpInside" id="sIV-TR-DPI"/>
+                                                    <action selector="loginButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pjE-Ww-hAb"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kcX-2K-8fe">
@@ -87,7 +85,7 @@
                                                     </attributedString>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="registerTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eVB-GX-aOT"/>
+                                                    <action selector="registerButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9QM-nd-mMv"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -137,14 +135,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="authLoginField" destination="tV7-8b-fxZ" id="xEP-AV-z4D"/>
+                        <outlet property="authPasswordField" destination="7IC-vo-Dcc" id="lG3-G5-Tmx"/>
                         <outlet property="authScrollView" destination="u8O-yz-O7G" id="tUa-vV-FYO"/>
                         <outlet property="authTitleLabel" destination="LEb-VP-yy2" id="Ge6-dE-diY"/>
-                        <outletCollection property="authTextFields" destination="tV7-8b-fxZ" collectionClass="NSMutableArray" id="vwb-dy-XUX"/>
-                        <outletCollection property="authTextFields" destination="7IC-vo-Dcc" collectionClass="NSMutableArray" id="9Sh-sI-KGW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <exit id="b2E-QX-Mtp" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="951" y="698"/>
         </scene>
@@ -337,7 +334,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Pkq-Os-M36">
                                 <rect key="frame" x="0.0" y="88" width="414" height="638"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xD3-rQ-poq">
@@ -403,8 +400,5 @@
         <image name="person.crop.circle.fill" catalog="system" width="128" height="121"/>
         <image name="planets" width="31" height="30"/>
         <image name="profile" width="43" height="30"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

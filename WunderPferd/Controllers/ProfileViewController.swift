@@ -76,7 +76,15 @@ extension ProfileViewController: UITableViewDataSource {
                 cell.wideImageView.image = image
             }
             
-            profileDataInteractor.requestUsername(completion:  { username in cell.loginLabel.text = username })
+            profileDataInteractor.requestUsername(completion:  {
+                username, error in
+                if let username = username {
+                    cell.loginLabel.text = username
+                } else {
+                    print(error as Any)
+                }
+                
+            })
             return cell
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ProfileDataTableViewCell.className) as? ProfileDataTableViewCell else {

@@ -28,22 +28,22 @@ class ProfileDataInteractor {
         }
     }
     
-    func requestUsername(completion: @escaping (String) -> ()) {
+    func requestUsername(completion: @escaping (String?, Error?) -> ()) {
         if let username = storageManager.loadUserDefaultsString(key: .username) {
-            completion(username)
+            completion(username, nil)
         } else {
             if let userId = storageManager.loadFromKeychain(key: .userId) {
                 networkManager.getProfile(profileId: userId) {
                     response, error in
                     if let response = response {
                         self.storageManager.saveStringToUserDefaults(response.username, key: .username)
-                        completion(response.username)
-                        return
-                    }
-                    // TODO: log error
-                }
+                        completion(response.username, nil)
+                    } else {
+                        completion(nil, error)
+                    }                }
             } else {
-                // TODO: log error
+                let error = AppError(message: "userId is not present in Keychain")
+                completion(nil, error)
             }
         }
     }

@@ -315,6 +315,8 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7oN-ji-aQS">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <navigationBarAppearance key="standardAppearance"/>
+                        <navigationBarAppearance key="scrollEdgeAppearance"/>
                     </navigationBar>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BwN-Bq-xDo">
                         <autoresizingMask key="autoresizingMask"/>
@@ -369,17 +371,17 @@
             </objects>
             <point key="canvasLocation" x="3283" y="38"/>
         </scene>
-        <!--Planet View Controller-->
+        <!--Выбор планеты-->
         <scene sceneID="bDj-pe-wzV">
             <objects>
                 <viewController id="QWP-4y-9nU" customClass="PlanetViewController" customModule="WunderPferd" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="eNI-9F-k4j" customClass="Please">
+                    <view key="view" contentMode="scaleToFill" id="eNI-9F-k4j">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Sab-M2-0s8">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <color key="backgroundColor" red="0.4941176471" green="0.90980392160000001" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="DUe-OD-hte"/>
@@ -391,7 +393,13 @@
                             <constraint firstItem="Sab-M2-0s8" firstAttribute="top" secondItem="DUe-OD-hte" secondAttribute="top" id="qKw-Bs-X8a"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="STf-KY-VY0"/>
+                    <navigationItem key="navigationItem" title="Выбор планеты" id="STf-KY-VY0">
+                        <barButtonItem key="rightBarButtonItem" title="Reload" image="arrow.clockwise" catalog="system" id="1Re-Qa-S8K">
+                            <connections>
+                                <action selector="reloadButtonTap:" destination="QWP-4y-9nU" id="hT0-Ur-UhR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Sab-M2-0s8" id="XkM-d3-7a4"/>
                     </connections>
@@ -402,6 +410,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
         <image name="person.crop.circle.fill" catalog="system" width="128" height="121"/>
         <image name="planets" width="31" height="30"/>
         <image name="profile" width="43" height="30"/>

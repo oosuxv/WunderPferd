@@ -21,6 +21,7 @@
 		524A6BD4283CB69700ADAF47 /* RickURLRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524A6BD3283CB69700ADAF47 /* RickURLRequestBuilder.swift */; };
 		524A6BD7283CB79A00ADAF47 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524A6BD6283CB79A00ADAF47 /* Location.swift */; };
 		524A6BD9283CBC0800ADAF47 /* LocationsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524A6BD8283CBC0800ADAF47 /* LocationsResponse.swift */; };
+		524A6BDB283D67D500ADAF47 /* PageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524A6BDA283D67D500ADAF47 /* PageInfo.swift */; };
 		5251497B2809422A0055B8D0 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5251497A2809422A0055B8D0 /* RegisterViewController.swift */; };
 		5277D9742811DA3B00955C19 /* TitledScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5277D9732811DA3B00955C19 /* TitledScrollViewController.swift */; };
 		5277D9762811FE5200955C19 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5277D9752811FE5200955C19 /* ProfileViewController.swift */; };
@@ -67,6 +68,7 @@
 		524A6BD3283CB69700ADAF47 /* RickURLRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickURLRequestBuilder.swift; sourceTree = "<group>"; };
 		524A6BD6283CB79A00ADAF47 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		524A6BD8283CBC0800ADAF47 /* LocationsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsResponse.swift; sourceTree = "<group>"; };
+		524A6BDA283D67D500ADAF47 /* PageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageInfo.swift; sourceTree = "<group>"; };
 		5251497A2809422A0055B8D0 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		5277D9732811DA3B00955C19 /* TitledScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitledScrollViewController.swift; sourceTree = "<group>"; };
 		5277D9752811FE5200955C19 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 			children = (
 				524A6BD6283CB79A00ADAF47 /* Location.swift */,
 				524A6BD8283CBC0800ADAF47 /* LocationsResponse.swift */,
+				524A6BDA283D67D500ADAF47 /* PageInfo.swift */,
 			);
 			path = RickResponse;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				5228AD5227FF5CEF0000122D /* AuthorizeViewController.swift in Sources */,
 				5228AD4E27FF5CEF0000122D /* AppDelegate.swift in Sources */,
 				52A8A78B2838CEC900C5B3EF /* ProfileImageManager.swift in Sources */,
+				524A6BDB283D67D500ADAF47 /* PageInfo.swift in Sources */,
 				524A6BD2283CB64700ADAF47 /* RickNetworkManager.swift in Sources */,
 				5277D9742811DA3B00955C19 /* TitledScrollViewController.swift in Sources */,
 				524A6BCC283CA8A300ADAF47 /* ProfileNetworkManager.swift in Sources */,

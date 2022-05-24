@@ -8,5 +8,6 @@
 import Foundation
 
 struct LocationsResponse: Decodable {
+    let info: PageInfo
     let results: [Location]
 }

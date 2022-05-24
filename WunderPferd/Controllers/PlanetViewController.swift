@@ -10,7 +10,8 @@ import UIKit
 class PlanetViewController: UIViewController {
     
     private let rickNetworkManager = ServiceLocator.shared.rickNetworkManager
-    private var currentPage = 1
+    private var nextPage = 1
+    private var maxPages = Int.max
     private var locationList: [Location] = []
     
     @IBOutlet weak var tableView: UITableView!
@@ -24,22 +25,44 @@ class PlanetViewController: UIViewController {
                            forCellReuseIdentifier: PlanetTableViewCell.className)
         loadData {
             [weak self] in
-            guard let self = self else { return }
+            guard let self = self else {
+                return
+            }
             self.tableView.reloadData()
-            self.currentPage += 1
+            self.nextPage += 1
         }
     }
     
     func loadData(completion: @escaping () -> ()) {
-        rickNetworkManager.getLocations(page: currentPage) {
+        guard nextPage < maxPages else {
+            return
+        }
+        rickNetworkManager.getLocations(page: nextPage) {
             [weak self] locations, error in
-            guard let self = self else { return }
+            guard let self = self else {
+                return
+            }
             if let locations = locations {
                 self.locationList.append(contentsOf: locations.results)
+                self.maxPages = locations.info.pages
                 completion()
             } else {
                 print(error as Any)
             }
+        }
+    }
+    
+    @IBAction func reloadButtonTap(_ sender: Any) {
+        nextPage = 1
+        maxPages = Int.max
+        locationList.removeAll()
+        loadData {
+            [weak self] in
+            guard let self = self else {
+                return
+            }
+            self.tableView.reloadData()
+            self.nextPage += 1
         }
     }
 }
@@ -58,18 +81,18 @@ extension PlanetViewController: UITableViewDataSource {
         let location = locationList[indexPath.row]
         cell.locationLabel.text = location.name
         cell.typeLabel.text = location.type
-        cell.populationLabel.text = String(location.residents.count)
+        cell.populationLabel.text = "population: \(location.residents.count)"
         
         if indexPath.row == locationList.count - 1 {
             loadData{
                 [weak self] in
-                guard let self = self else { return }
-                print("loading page \(self.currentPage)")
+                guard let self = self else {
+                    return
+                }
                 self.tableView.reloadData()
-                self.currentPage += 1
+                self.nextPage += 1
             }
         }
-        
         return cell
     }
     

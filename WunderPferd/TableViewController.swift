@@ -8,6 +8,8 @@
 import UIKit
 
 class TableViewController: UIViewController {
+    
+    var imageService = ServiceLocator.imageService()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,17 +18,15 @@ class TableViewController: UIViewController {
         
         let nib = UINib(nibName: LocationTableViewCell.nibName, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: LocationTableViewCell.nibName)
+        
+        for i in 10...80 {
+            source.append(("Char \(i)", "desc \(i)", "https://rickandmortyapi.com/api/character/avatar/\(i).jpeg"))
+        }
     }
     
     @IBOutlet weak var tableView: UITableView!
-    var source: [(String, String)] = [
-        ("oneTitle", "oneSubtitle"),
-        ("1", "2"),
-        ("Fuck you", "asshole"),
-        ("more", "data"),
-        ("other", "stuff"),
-        ("please", "stop")
-    ]
+    var source: [(String, String, String)] = []
+    
     /*
     // MARK: - Navigation
 
@@ -48,9 +48,6 @@ extension TableViewController: UITableViewDelegate {
 
 extension TableViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return 1
-        }
         return source.count
     }
     
@@ -62,11 +59,17 @@ extension TableViewController: UITableViewDataSource {
         let tuple = source[indexPath.row]
         cell.title.text = tuple.0
         cell.subtitle.text = tuple.1
+        cell.id = tuple.2
+        imageService.getImage(urlString: tuple.2) {
+            image in
+            guard let image = image else { return }
+            cell.myImage.image = image
+        }
         return cell
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        3
+        1
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

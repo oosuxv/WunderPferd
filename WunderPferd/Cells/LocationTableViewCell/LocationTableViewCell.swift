@@ -19,7 +19,8 @@ class LocationTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+    var id: String?
+    @IBOutlet weak var myImage: UIImageView!
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var subtitle: UILabel!
 }

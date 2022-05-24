@@ -34,6 +34,7 @@
 		E79E376A282E997400FEA376 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79E3769282E997400FEA376 /* Gender.swift */; };
 		E79E376C282EA59C00FEA376 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79E376B282EA59C00FEA376 /* StorageManager.swift */; };
 		E79E376E2833E63300FEA376 /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79E376D2833E63300FEA376 /* ServiceLocator.swift */; };
+		E7FD76FE283D17B000D62B85 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FD76FD283D17B000D62B85 /* ImageService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		E79E3769282E997400FEA376 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		E79E376B282EA59C00FEA376 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		E79E376D2833E63300FEA376 /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
+		E7FD76FD283D17B000D62B85 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				E79E3764282E966D00FEA376 /* Responce */,
 				52C8A35D281C29F400C5A887 /* NetworkManager.swift */,
 				E79E376B282EA59C00FEA376 /* StorageManager.swift */,
+				E7FD76FD283D17B000D62B85 /* ImageService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 				5228AD4E27FF5CEF0000122D /* AppDelegate.swift in Sources */,
 				E7816D032812E2B600E9F9AB /* PLCollectionViewCell.swift in Sources */,
 				52C8A35E281C29F400C5A887 /* NetworkManager.swift in Sources */,
+				E7FD76FE283D17B000D62B85 /* ImageService.swift in Sources */,
 				5228AD5027FF5CEF0000122D /* SceneDelegate.swift in Sources */,
 				E79E3766282E968E00FEA376 /* Character.swift in Sources */,
 				E79E376E2833E63300FEA376 /* ServiceLocator.swift in Sources */,

@@ -77,7 +77,7 @@ class RegisterViewController: TitledScrollViewController {
         }
     }
     
-    @IBAction func doneTap(_ sender: Any) {
+    @IBAction func doneButtonTap(_ sender: Any) {
         guard hasNoValidationErrors(),
                 let username = regTextFields[usernameFieldId].text,
                 let password = regTextFields[passwordFieldId].text else {

@@ -36,6 +36,7 @@
 		52A8A78D28395C2E00C5B3EF /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8A78C28395C2E00C5B3EF /* ServiceLocator.swift */; };
 		52A8A78F28397FEA00C5B3EF /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8A78E28397FEA00C5B3EF /* CustomError.swift */; };
 		52A8A793283B9A5100C5B3EF /* PlanetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8A792283B9A5100C5B3EF /* PlanetViewController.swift */; };
+		52A8A791283B8A4800C5B3EF /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8A790283B8A4800C5B3EF /* AppError.swift */; };
 		52AA6D31281E4CF5005C2E52 /* ProfileDataInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA6D30281E4CF5005C2E52 /* ProfileDataInteractor.swift */; };
 		52C8A34C281A7EBD00C5A887 /* NSObject+ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C8A34B281A7EBD00C5A887 /* NSObject+ClassName.swift */; };
 		52C8A355281A82A700C5A887 /* ProfileTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C8A353281A82A700C5A887 /* ProfileTitleTableViewCell.swift */; };
@@ -69,6 +70,7 @@
 		52A8A78C28395C2E00C5B3EF /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
 		52A8A78E28397FEA00C5B3EF /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		52A8A792283B9A5100C5B3EF /* PlanetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetViewController.swift; sourceTree = "<group>"; };
+		52A8A790283B8A4800C5B3EF /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		52AA6D30281E4CF5005C2E52 /* ProfileDataInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataInteractor.swift; sourceTree = "<group>"; };
 		52C8A34B281A7EBD00C5A887 /* NSObject+ClassName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+ClassName.swift"; sourceTree = "<group>"; };
 		52C8A353281A82A700C5A887 /* ProfileTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTitleTableViewCell.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				52A8A7722831516200C5B3EF /* ErrorMessageSnackBar.swift */,
 				52C8A34B281A7EBD00C5A887 /* NSObject+ClassName.swift */,
 				52A8A78E28397FEA00C5B3EF /* CustomError.swift */,
+				52A8A790283B8A4800C5B3EF /* AppError.swift */,
 			);
 			path = WunderPferd;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				52AA6D31281E4CF5005C2E52 /* ProfileDataInteractor.swift in Sources */,
 				52A8A775283177B900C5B3EF /* TokenResponse.swift in Sources */,
 				5251497B2809422A0055B8D0 /* RegisterViewController.swift in Sources */,
+				52A8A791283B8A4800C5B3EF /* AppError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

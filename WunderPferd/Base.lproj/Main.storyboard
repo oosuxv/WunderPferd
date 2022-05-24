@@ -392,6 +392,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="STf-KY-VY0"/>
+                    <connections>
+                        <outlet property="tableView" destination="Sab-M2-0s8" id="XkM-d3-7a4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="shd-0H-YhX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

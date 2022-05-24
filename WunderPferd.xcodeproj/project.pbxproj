@@ -14,6 +14,13 @@
 		5228AD5527FF5CEF0000122D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5228AD5327FF5CEF0000122D /* Main.storyboard */; };
 		5228AD5727FF5CF50000122D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5228AD5627FF5CF50000122D /* Assets.xcassets */; };
 		5228AD5A27FF5CF50000122D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5228AD5827FF5CF50000122D /* LaunchScreen.storyboard */; };
+		524A6BCC283CA8A300ADAF47 /* ProfileNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524A6BCB283CA8A300ADAF47 /* ProfileNetworkManager.swift */; };
+		524A6BCF283CA8FF00ADAF47 /* PlanetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524A6BCD283CA8FF00ADAF47 /* PlanetTableViewCell.swift */; };
+		524A6BD0283CA8FF00ADAF47 /* PlanetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 524A6BCE283CA8FF00ADAF47 /* PlanetTableViewCell.xib */; };
+		524A6BD2283CB64700ADAF47 /* RickNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524A6BD1283CB64700ADAF47 /* RickNetworkManager.swift */; };
+		524A6BD4283CB69700ADAF47 /* RickURLRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524A6BD3283CB69700ADAF47 /* RickURLRequestBuilder.swift */; };
+		524A6BD7283CB79A00ADAF47 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524A6BD6283CB79A00ADAF47 /* Location.swift */; };
+		524A6BD9283CBC0800ADAF47 /* LocationsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524A6BD8283CBC0800ADAF47 /* LocationsResponse.swift */; };
 		5251497B2809422A0055B8D0 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5251497A2809422A0055B8D0 /* RegisterViewController.swift */; };
 		5277D9742811DA3B00955C19 /* TitledScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5277D9732811DA3B00955C19 /* TitledScrollViewController.swift */; };
 		5277D9762811FE5200955C19 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5277D9752811FE5200955C19 /* ProfileViewController.swift */; };
@@ -21,7 +28,7 @@
 		5277D97D2811FFD100955C19 /* ProfileDataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5277D97B2811FFD100955C19 /* ProfileDataTableViewCell.xib */; };
 		52A8A7652830C33300C5B3EF /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 52A8A7642830C33300C5B3EF /* Alamofire */; };
 		52A8A7682830C3A900C5B3EF /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8A7672830C3A900C5B3EF /* NetworkManager.swift */; };
-		52A8A76B2830CB9400C5B3EF /* URLRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8A76A2830CB9400C5B3EF /* URLRequestBuilder.swift */; };
+		52A8A76B2830CB9400C5B3EF /* ProfileURLRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8A76A2830CB9400C5B3EF /* ProfileURLRequestBuilder.swift */; };
 		52A8A76E2830CC2D00C5B3EF /* UsernameResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8A76D2830CC2D00C5B3EF /* UsernameResponse.swift */; };
 		52A8A77128313B8A00C5B3EF /* SnackBar in Frameworks */ = {isa = PBXBuildFile; productRef = 52A8A77028313B8A00C5B3EF /* SnackBar */; };
 		52A8A7732831516200C5B3EF /* ErrorMessageSnackBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8A7722831516200C5B3EF /* ErrorMessageSnackBar.swift */; };
@@ -35,8 +42,8 @@
 		52A8A78B2838CEC900C5B3EF /* ProfileImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8A78A2838CEC900C5B3EF /* ProfileImageManager.swift */; };
 		52A8A78D28395C2E00C5B3EF /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8A78C28395C2E00C5B3EF /* ServiceLocator.swift */; };
 		52A8A78F28397FEA00C5B3EF /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8A78E28397FEA00C5B3EF /* CustomError.swift */; };
-		52A8A793283B9A5100C5B3EF /* PlanetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8A792283B9A5100C5B3EF /* PlanetViewController.swift */; };
 		52A8A791283B8A4800C5B3EF /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8A790283B8A4800C5B3EF /* AppError.swift */; };
+		52A8A793283B9A5100C5B3EF /* PlanetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8A792283B9A5100C5B3EF /* PlanetViewController.swift */; };
 		52AA6D31281E4CF5005C2E52 /* ProfileDataInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA6D30281E4CF5005C2E52 /* ProfileDataInteractor.swift */; };
 		52C8A34C281A7EBD00C5A887 /* NSObject+ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C8A34B281A7EBD00C5A887 /* NSObject+ClassName.swift */; };
 		52C8A355281A82A700C5A887 /* ProfileTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C8A353281A82A700C5A887 /* ProfileTitleTableViewCell.swift */; };
@@ -53,13 +60,20 @@
 		5228AD5627FF5CF50000122D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5228AD5927FF5CF50000122D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5228AD5B27FF5CF50000122D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		524A6BCB283CA8A300ADAF47 /* ProfileNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNetworkManager.swift; sourceTree = "<group>"; };
+		524A6BCD283CA8FF00ADAF47 /* PlanetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetTableViewCell.swift; sourceTree = "<group>"; };
+		524A6BCE283CA8FF00ADAF47 /* PlanetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlanetTableViewCell.xib; sourceTree = "<group>"; };
+		524A6BD1283CB64700ADAF47 /* RickNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickNetworkManager.swift; sourceTree = "<group>"; };
+		524A6BD3283CB69700ADAF47 /* RickURLRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickURLRequestBuilder.swift; sourceTree = "<group>"; };
+		524A6BD6283CB79A00ADAF47 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		524A6BD8283CBC0800ADAF47 /* LocationsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsResponse.swift; sourceTree = "<group>"; };
 		5251497A2809422A0055B8D0 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		5277D9732811DA3B00955C19 /* TitledScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitledScrollViewController.swift; sourceTree = "<group>"; };
 		5277D9752811FE5200955C19 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		5277D97A2811FFD100955C19 /* ProfileDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataTableViewCell.swift; sourceTree = "<group>"; };
 		5277D97B2811FFD100955C19 /* ProfileDataTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileDataTableViewCell.xib; sourceTree = "<group>"; };
 		52A8A7672830C3A900C5B3EF /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		52A8A76A2830CB9400C5B3EF /* URLRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestBuilder.swift; sourceTree = "<group>"; };
+		52A8A76A2830CB9400C5B3EF /* ProfileURLRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileURLRequestBuilder.swift; sourceTree = "<group>"; };
 		52A8A76D2830CC2D00C5B3EF /* UsernameResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameResponse.swift; sourceTree = "<group>"; };
 		52A8A7722831516200C5B3EF /* ErrorMessageSnackBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessageSnackBar.swift; sourceTree = "<group>"; };
 		52A8A774283177B900C5B3EF /* TokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenResponse.swift; sourceTree = "<group>"; };
@@ -69,8 +83,8 @@
 		52A8A78A2838CEC900C5B3EF /* ProfileImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageManager.swift; sourceTree = "<group>"; };
 		52A8A78C28395C2E00C5B3EF /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
 		52A8A78E28397FEA00C5B3EF /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
-		52A8A792283B9A5100C5B3EF /* PlanetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetViewController.swift; sourceTree = "<group>"; };
 		52A8A790283B8A4800C5B3EF /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		52A8A792283B9A5100C5B3EF /* PlanetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetViewController.swift; sourceTree = "<group>"; };
 		52AA6D30281E4CF5005C2E52 /* ProfileDataInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataInteractor.swift; sourceTree = "<group>"; };
 		52C8A34B281A7EBD00C5A887 /* NSObject+ClassName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+ClassName.swift"; sourceTree = "<group>"; };
 		52C8A353281A82A700C5A887 /* ProfileTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTitleTableViewCell.swift; sourceTree = "<group>"; };
@@ -114,7 +128,7 @@
 			children = (
 				52A8A7692830CAB600C5B3EF /* Controllers */,
 				52A8A7662830C37C00C5B3EF /* Services */,
-				5277D9782811FF5900955C19 /* ProfileCells */,
+				5277D9782811FF5900955C19 /* Cells */,
 				5228AD4D27FF5CEF0000122D /* AppDelegate.swift */,
 				5228AD4F27FF5CEF0000122D /* SceneDelegate.swift */,
 				5228AD5327FF5CEF0000122D /* Main.storyboard */,
@@ -130,13 +144,32 @@
 			path = WunderPferd;
 			sourceTree = "<group>";
 		};
-		5277D9782811FF5900955C19 /* ProfileCells */ = {
+		524A6BCA283CA41800ADAF47 /* PlanetTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				524A6BCD283CA8FF00ADAF47 /* PlanetTableViewCell.swift */,
+				524A6BCE283CA8FF00ADAF47 /* PlanetTableViewCell.xib */,
+			);
+			path = PlanetTableViewCell;
+			sourceTree = "<group>";
+		};
+		524A6BD5283CB77E00ADAF47 /* RickResponse */ = {
+			isa = PBXGroup;
+			children = (
+				524A6BD6283CB79A00ADAF47 /* Location.swift */,
+				524A6BD8283CBC0800ADAF47 /* LocationsResponse.swift */,
+			);
+			path = RickResponse;
+			sourceTree = "<group>";
+		};
+		5277D9782811FF5900955C19 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				524A6BCA283CA41800ADAF47 /* PlanetTableViewCell */,
 				52C8A352281A826900C5A887 /* ProfileTitleTableViewCell */,
 				5277D9792811FF7900955C19 /* ProfileDataTableViewCell */,
 			);
-			path = ProfileCells;
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		5277D9792811FF7900955C19 /* ProfileDataTableViewCell */ = {
@@ -151,13 +184,17 @@
 		52A8A7662830C37C00C5B3EF /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				52A8A76C2830CBFC00C5B3EF /* Response */,
+				524A6BD5283CB77E00ADAF47 /* RickResponse */,
+				52A8A76C2830CBFC00C5B3EF /* ProfileResponse */,
 				52A8A7672830C3A900C5B3EF /* NetworkManager.swift */,
 				52AA6D30281E4CF5005C2E52 /* ProfileDataInteractor.swift */,
-				52A8A76A2830CB9400C5B3EF /* URLRequestBuilder.swift */,
+				52A8A76A2830CB9400C5B3EF /* ProfileURLRequestBuilder.swift */,
 				52A8A77C283196A700C5B3EF /* StorageManager.swift */,
 				52A8A78A2838CEC900C5B3EF /* ProfileImageManager.swift */,
 				52A8A78C28395C2E00C5B3EF /* ServiceLocator.swift */,
+				524A6BCB283CA8A300ADAF47 /* ProfileNetworkManager.swift */,
+				524A6BD1283CB64700ADAF47 /* RickNetworkManager.swift */,
+				524A6BD3283CB69700ADAF47 /* RickURLRequestBuilder.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -174,7 +211,7 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		52A8A76C2830CBFC00C5B3EF /* Response */ = {
+		52A8A76C2830CBFC00C5B3EF /* ProfileResponse */ = {
 			isa = PBXGroup;
 			children = (
 				52A8A76D2830CC2D00C5B3EF /* UsernameResponse.swift */,
@@ -182,7 +219,7 @@
 				52A8A77E2832F4C800C5B3EF /* ProfileResponse.swift */,
 				52A8A7882834FF2E00C5B3EF /* UsernameStatus.swift */,
 			);
-			path = Response;
+			path = ProfileResponse;
 			sourceTree = "<group>";
 		};
 		52C8A352281A826900C5A887 /* ProfileTitleTableViewCell */ = {
@@ -267,6 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5228AD5A27FF5CF50000122D /* LaunchScreen.storyboard in Resources */,
+				524A6BD0283CA8FF00ADAF47 /* PlanetTableViewCell.xib in Resources */,
 				5277D97D2811FFD100955C19 /* ProfileDataTableViewCell.xib in Resources */,
 				52C8A356281A82A700C5A887 /* ProfileTitleTableViewCell.xib in Resources */,
 				5228AD5727FF5CF50000122D /* Assets.xcassets in Resources */,
@@ -286,8 +324,12 @@
 				52A8A77F2832F4C900C5B3EF /* ProfileResponse.swift in Sources */,
 				52A8A7732831516200C5B3EF /* ErrorMessageSnackBar.swift in Sources */,
 				52A8A7892834FF2E00C5B3EF /* UsernameStatus.swift in Sources */,
+				524A6BD9283CBC0800ADAF47 /* LocationsResponse.swift in Sources */,
 				52C8A355281A82A700C5A887 /* ProfileTitleTableViewCell.swift in Sources */,
+				524A6BD7283CB79A00ADAF47 /* Location.swift in Sources */,
+				524A6BD4283CB69700ADAF47 /* RickURLRequestBuilder.swift in Sources */,
 				52A8A78D28395C2E00C5B3EF /* ServiceLocator.swift in Sources */,
+				524A6BCF283CA8FF00ADAF47 /* PlanetTableViewCell.swift in Sources */,
 				52A8A78F28397FEA00C5B3EF /* CustomError.swift in Sources */,
 				520169C6280961AE00662E71 /* BrightButton.swift in Sources */,
 				5277D97C2811FFD100955C19 /* ProfileDataTableViewCell.swift in Sources */,
@@ -295,10 +337,12 @@
 				5228AD5227FF5CEF0000122D /* AuthorizeViewController.swift in Sources */,
 				5228AD4E27FF5CEF0000122D /* AppDelegate.swift in Sources */,
 				52A8A78B2838CEC900C5B3EF /* ProfileImageManager.swift in Sources */,
+				524A6BD2283CB64700ADAF47 /* RickNetworkManager.swift in Sources */,
 				5277D9742811DA3B00955C19 /* TitledScrollViewController.swift in Sources */,
+				524A6BCC283CA8A300ADAF47 /* ProfileNetworkManager.swift in Sources */,
 				5277D9762811FE5200955C19 /* ProfileViewController.swift in Sources */,
 				5228AD5027FF5CEF0000122D /* SceneDelegate.swift in Sources */,
-				52A8A76B2830CB9400C5B3EF /* URLRequestBuilder.swift in Sources */,
+				52A8A76B2830CB9400C5B3EF /* ProfileURLRequestBuilder.swift in Sources */,
 				52C8A34C281A7EBD00C5A887 /* NSObject+ClassName.swift in Sources */,
 				52A8A793283B9A5100C5B3EF /* PlanetViewController.swift in Sources */,
 				52AA6D31281E4CF5005C2E52 /* ProfileDataInteractor.swift in Sources */,

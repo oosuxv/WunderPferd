@@ -12,16 +12,20 @@ final class ServiceLocator {
     static let shared = ServiceLocator() // Singleton
 
     var storageManager: StorageManager
-    var networkManager: ProfileNetworkManager
+    var profileNetworkManager: ProfileNetworkManager
     var profileImageManager: ProfileImageManager
     var profileDataInteractor: ProfileDataInteractor
+    var rickNetworkManager: RickNetworkManager
     
     init(storageManager: StorageManager = KeychainDefaultsStorageManager(),
-         networkManager: ProfileNetworkManager = NetworkManager(),
-         profileImageManager: ProfileImageManager = FileProfileImageManager()) {
+         profileNetworkManager: ProfileNetworkManager = NetworkManager(),
+         profileImageManager: ProfileImageManager = FileProfileImageManager(),
+         rickNetworkManager: RickNetworkManager = NetworkManager()
+    ) {
         self.storageManager = storageManager
-        self.networkManager = networkManager
+        self.profileNetworkManager = profileNetworkManager
         self.profileImageManager = profileImageManager
-        self.profileDataInteractor = DefaultProfileDataInteractor(storageManager: storageManager, networkManager: networkManager, profileImageManager: profileImageManager)
+        self.rickNetworkManager = rickNetworkManager
+        self.profileDataInteractor = DefaultProfileDataInteractor(storageManager: storageManager, networkManager: profileNetworkManager, profileImageManager: profileImageManager)
     }
 }

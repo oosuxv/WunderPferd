@@ -19,7 +19,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rjy-rV-Vdt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="423"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.55000000000000004" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W4B-jj-qex">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.55000000000000004" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W4B-jj-qex">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="216"/>
                                 <color key="backgroundColor" red="0.4941176471" green="0.90980392160000001" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -47,6 +47,7 @@
                             <constraint firstAttribute="trailing" secondItem="W4B-jj-qex" secondAttribute="trailing" id="G11-IN-MXM"/>
                             <constraint firstAttribute="trailing" secondItem="65H-pY-tBI" secondAttribute="trailing" id="KXE-fe-IG8"/>
                             <constraint firstItem="cMY-Q7-MoD" firstAttribute="top" secondItem="rjy-rV-Vdt" secondAttribute="top" constant="77" id="OGe-3m-oGB"/>
+                            <constraint firstItem="65H-pY-tBI" firstAttribute="top" secondItem="W4B-jj-qex" secondAttribute="bottom" constant="83" id="WOO-hE-Cn2"/>
                             <constraint firstItem="cMY-Q7-MoD" firstAttribute="centerX" secondItem="rjy-rV-Vdt" secondAttribute="trailing" multiplier="0.5" id="X8X-u0-2oC"/>
                             <constraint firstItem="W4B-jj-qex" firstAttribute="leading" secondItem="rjy-rV-Vdt" secondAttribute="leading" id="Z7a-Jl-ddv"/>
                             <constraint firstAttribute="height" constant="423" id="fYP-K1-o8y"/>

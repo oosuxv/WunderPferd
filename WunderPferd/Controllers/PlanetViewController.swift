@@ -9,7 +9,7 @@ import UIKit
 
 class PlanetViewController: UIViewController {
     
-    private let rickNetworkManager = ServiceLocator.shared.rickNetworkManager
+    private let rickNetworkManager = ServiceLocator.rickNetworkManager()
     private var nextPage = 1
     private var maxPages = Int.max
     private var locationList: [Location] = []

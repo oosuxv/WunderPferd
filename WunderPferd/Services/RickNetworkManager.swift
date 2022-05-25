@@ -10,4 +10,5 @@ import Foundation
 protocol RickNetworkManager {
     
     func getLocations(page: Int, completion: ((LocationsResponse?, Error?) -> ())?)
+    func getMultipleCharacters(ids: String, completion: (([Character]?, Error?) -> ())?)
 }

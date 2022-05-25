@@ -62,6 +62,11 @@ extension NetworkManager: ProfileNetworkManager {
 
 extension NetworkManager: RickNetworkManager {
     
+    func getMultipleCharacters(ids: String, completion: (([Character]?, Error?) -> ())?) {
+        let request = RickURLRequestBuilder.characters(ids)
+        performRequest(request: request, onRequestCompleted: completion)
+    }
+    
     func getLocations(page: Int, completion: ((LocationsResponse?, Error?) -> ())?) {
         let request = RickURLRequestBuilder.locations(page)
         performRequest(request: request, onRequestCompleted: completion)

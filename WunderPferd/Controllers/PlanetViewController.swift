@@ -69,7 +69,9 @@ class PlanetViewController: UIViewController {
 
 extension PlanetViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // TODO: move to planet controller
+        let characterListViewController = CharacterListViewController()
+        characterListViewController.setLocation(locationList[indexPath.row])
+        navigationController?.pushViewController(characterListViewController, animated: true)
     }
 }
 

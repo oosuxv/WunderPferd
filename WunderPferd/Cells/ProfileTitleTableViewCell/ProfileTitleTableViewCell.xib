@@ -50,7 +50,6 @@
                             <constraint firstItem="65H-pY-tBI" firstAttribute="top" secondItem="W4B-jj-qex" secondAttribute="bottom" constant="83" id="WOO-hE-Cn2"/>
                             <constraint firstItem="cMY-Q7-MoD" firstAttribute="centerX" secondItem="rjy-rV-Vdt" secondAttribute="trailing" multiplier="0.5" id="X8X-u0-2oC"/>
                             <constraint firstItem="W4B-jj-qex" firstAttribute="leading" secondItem="rjy-rV-Vdt" secondAttribute="leading" id="Z7a-Jl-ddv"/>
-                            <constraint firstAttribute="height" constant="423" id="fYP-K1-o8y"/>
                             <constraint firstItem="65H-pY-tBI" firstAttribute="leading" secondItem="rjy-rV-Vdt" secondAttribute="leading" id="ptK-vK-kN3"/>
                         </constraints>
                     </view>

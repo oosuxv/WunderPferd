@@ -394,6 +394,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Выбор планеты" id="STf-KY-VY0">
+                        <barButtonItem key="backBarButtonItem" title=" " id="Aiv-ZK-tRb"/>
                         <barButtonItem key="rightBarButtonItem" title="Reload" image="arrow.clockwise" catalog="system" id="1Re-Qa-S8K">
                             <connections>
                                 <action selector="reloadButtonTap:" destination="QWP-4y-9nU" id="hT0-Ur-UhR"/>

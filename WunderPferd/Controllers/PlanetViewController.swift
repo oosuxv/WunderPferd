@@ -11,7 +11,8 @@ class PlanetViewController: UIViewController {
     
     private let locationNetworkManager = ServiceLocator.locationNetworkManager()
     private var nextPage = 1
-    private var maxPages = Int.max
+    private var allPagesLoaded = false
+    private var isLoading = false
     private var locationList: [Location] = []
     
     @IBOutlet weak var tableView: UITableView!
@@ -23,20 +24,14 @@ class PlanetViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(UINib(nibName: PlanetTableViewCell.className, bundle: nil),
                            forCellReuseIdentifier: PlanetTableViewCell.className)
-        loadData {
-            [weak self] in
-            guard let self = self else {
-                return
-            }
-            self.tableView.reloadData()
-            self.nextPage += 1
-        }
+        loadData()
     }
     
-    func loadData(completion: @escaping () -> ()) {
-        guard nextPage < maxPages else {
+    func loadData() {
+        guard !allPagesLoaded && !isLoading else {
             return
         }
+        isLoading = true
         locationNetworkManager.getLocations(page: nextPage) {
             [weak self] locations, error in
             guard let self = self else {
@@ -44,8 +39,10 @@ class PlanetViewController: UIViewController {
             }
             if let locations = locations {
                 self.locationList.append(contentsOf: locations.results)
-                self.maxPages = locations.info.pages
-                completion()
+                self.tableView.reloadData()
+                self.allPagesLoaded = self.nextPage >= locations.info.pages
+                self.nextPage += 1
+                self.isLoading = false
             } else {
                 ErrorMessageSnackBar.showMessage(in: self.view, message: "ошибка загрузки данных")
                 print(error as Any)
@@ -55,22 +52,22 @@ class PlanetViewController: UIViewController {
     
     @IBAction func reloadButtonTap(_ sender: Any) {
         nextPage = 1
-        maxPages = Int.max
+        allPagesLoaded = false
+        isLoading = false
         locationList.removeAll()
-        loadData {
-            [weak self] in
-            guard let self = self else {
-                return
-            }
-            self.tableView.reloadData()
-            self.nextPage += 1
-        }
+        loadData()
     }
 }
 
 extension PlanetViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // TODO: move to planet controller
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row > locationList.count - 5 {
+            loadData()
+        }
     }
 }
 
@@ -83,17 +80,6 @@ extension PlanetViewController: UITableViewDataSource {
         cell.locationLabel.text = location.name
         cell.typeLabel.text = location.type
         cell.populationLabel.text = "population: \(location.residents.count)"
-        
-        if indexPath.row == locationList.count - 1 {
-            loadData{
-                [weak self] in
-                guard let self = self else {
-                    return
-                }
-                self.tableView.reloadData()
-                self.nextPage += 1
-            }
-        }
         return cell
     }
     

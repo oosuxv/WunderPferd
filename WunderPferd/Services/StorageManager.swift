@@ -8,25 +8,14 @@
 import Foundation
 import KeychainAccess
 
-enum StorageManagerKey: String {
-    case token
-    case userId
-    case username
-    case notFirstLaunch
-}
-
-protocol StorageManager {
-    func saveToKeychain(_ string: String, key: StorageManagerKey)
-    func loadFromKeychain(key: StorageManagerKey) -> String?
-    func saveBoolToUserDefaults(bool: Bool, key: StorageManagerKey)
-    func loadUserDefaultsBool(key: StorageManagerKey) -> Bool
-    func saveStringToUserDefaults(_ string: String, key: StorageManagerKey)
-    func loadUserDefaultsString(key: StorageManagerKey) -> String?
-    func cleanKeychain()
-    func cleanUserDefaults()
-}
-
-class KeychainDefaultsStorageManager: StorageManager {
+class StorageManager {
+    
+    enum StorageManagerKey: String {
+        case token
+        case userId
+        case username
+        case notFirstLaunch
+    }
     
     private struct Constants {
         static let serviceId = "StorageManagerKeychain.Service.Id"
@@ -79,5 +68,36 @@ class KeychainDefaultsStorageManager: StorageManager {
     
     func cleanUserDefaults() {
         UserDefaults.standard.removeObject(forKey: StorageManagerKey.username.rawValue)
+    }
+}
+
+extension StorageManager: FirstStartService {
+    func processFirstStart() {
+        if !loadUserDefaultsBool(key: .notFirstLaunch) {
+            cleanKeychain()
+            saveBoolToUserDefaults(bool: true, key: .notFirstLaunch)
+        }
+    }
+}
+
+extension StorageManager: LoginDataManager {
+    func loginUser(token: String, userId: String) {
+        saveToKeychain(token, key: .token)
+        saveToKeychain(userId, key: .userId)
+        cleanUserDefaults();
+    }
+}
+
+extension StorageManager: UserDataManager {
+    func loadUsername() -> String? {
+        loadUserDefaultsString(key: .username)
+    }
+    
+    func loadUserId() -> String? {
+        loadFromKeychain(key: .userId)
+    }
+    
+    func saveUsername(username: String) {
+        saveStringToUserDefaults(username, key: .username)
     }
 }

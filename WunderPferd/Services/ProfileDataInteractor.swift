@@ -10,23 +10,24 @@ import UIKit
 protocol ProfileDataInteractor {
     var image: UIImage? { get set }
     func requestUsername(completion: @escaping (String?, Error?) -> ())
-    func loginUser(token: String, userId: String)
 }
 
 class DefaultProfileDataInteractor: ProfileDataInteractor {
-    private let storageManager: StorageManager
-    private let networkManager: ProfileNetworkManager
+    private let userDataManager: UserDataManager
+    private let profileNetworkManager: ProfileNetworkManager
     private let profileImageManager: ProfileImageManager
     
-    init(storageManager: StorageManager, networkManager: ProfileNetworkManager, profileImageManager: ProfileImageManager) {
-        self.storageManager = storageManager
-        self.networkManager = networkManager
+    init(userDataManager: UserDataManager,
+         profileNetworkManager: ProfileNetworkManager,
+         profileImageManager: ProfileImageManager) {
+        self.userDataManager = userDataManager
+        self.profileNetworkManager = profileNetworkManager
         self.profileImageManager = profileImageManager
     }
 
     var image: UIImage? {
         get {
-            if let userId = storageManager.loadFromKeychain(key: .userId) {
+            if let userId = userDataManager.loadUserId() {
                 return profileImageManager.loadImage(userId: userId)
             } else {
                 return nil
@@ -34,21 +35,21 @@ class DefaultProfileDataInteractor: ProfileDataInteractor {
         }
         
         set(newImage) {
-            if let userId = storageManager.loadFromKeychain(key: .userId) {
+            if let userId = userDataManager.loadUserId() {
                 profileImageManager.saveImage(image: newImage, userId: userId)
             }
         }
     }
     
     func requestUsername(completion: @escaping (String?, Error?) -> ()) {
-        if let username = storageManager.loadUserDefaultsString(key: .username) {
+        if let username = userDataManager.loadUsername() {
             completion(username, nil)
         } else {
-            if let userId = storageManager.loadFromKeychain(key: .userId) {
-                networkManager.getProfile(profileId: userId) {
+            if let userId = userDataManager.loadUserId() {
+                profileNetworkManager.getProfile(profileId: userId) {
                     response, error in
                     if let response = response {
-                        self.storageManager.saveStringToUserDefaults(response.username, key: .username)
+                        self.userDataManager.saveUsername(username: response.username)
                         completion(response.username, nil)
                     } else {
                         completion(nil, error)
@@ -59,11 +60,5 @@ class DefaultProfileDataInteractor: ProfileDataInteractor {
                 completion(nil, error)
             }
         }
-    }
-    
-    func loginUser(token: String, userId: String) {
-        storageManager.saveToKeychain(token, key: .token)
-        storageManager.saveToKeychain(userId, key: .userId)
-        storageManager.cleanUserDefaults();
     }
 }

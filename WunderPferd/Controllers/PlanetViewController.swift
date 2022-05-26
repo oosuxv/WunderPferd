@@ -9,7 +9,7 @@ import UIKit
 
 class PlanetViewController: UIViewController {
     
-    private let rickNetworkManager = ServiceLocator.rickNetworkManager()
+    private let locationNetworkManager = ServiceLocator.locationNetworkManager()
     private var nextPage = 1
     private var maxPages = Int.max
     private var locationList: [Location] = []
@@ -37,7 +37,7 @@ class PlanetViewController: UIViewController {
         guard nextPage < maxPages else {
             return
         }
-        rickNetworkManager.getLocations(page: nextPage) {
+        locationNetworkManager.getLocations(page: nextPage) {
             [weak self] locations, error in
             guard let self = self else {
                 return

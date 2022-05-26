@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol RickNetworkManager {
+protocol LocationNetworkManager {
     
     func getLocations(page: Int, completion: ((LocationsResponse?, Error?) -> ())?)
 }

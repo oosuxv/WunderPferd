@@ -61,19 +61,19 @@ class RegisterViewController: TitledScrollViewController {
     }
     
     private func registerUser(username: String, password: String) {
-        profileNetworkManager.register(username, password) {
+        registerNetworkManager.register(username, password) {
             [weak self] response, error in
-            self?.hud.dismiss(animated: true)
+            guard let self = self else { return }
+            self.hud.dismiss(animated: true)
             if let response = response {
-                let profileDataInteractor = ServiceLocator.profileDataInteractor()
-                profileDataInteractor.loginUser(token: response.token, userId: response.userId)
+                self.loginDataManager.loginUser(token: response.token, userId: response.userId)
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let tabBarVC = storyboard.instantiateViewController(identifier: "UITabBarController")
                 tabBarVC.modalPresentationStyle = .fullScreen
-                self?.show(tabBarVC, sender: self)
+                self.show(tabBarVC, sender: self)
                 return
             }
-            ErrorMessageSnackBar.showMessage(in: self?.view, message: "Ошибка соединения.")
+            ErrorMessageSnackBar.showMessage(in: self.view, message: "Ошибка соединения.")
         }
     }
     
@@ -84,19 +84,20 @@ class RegisterViewController: TitledScrollViewController {
             return
         }
         hud.show(in: self.view)
-        profileNetworkManager.checkUsername(username) {
+        registerNetworkManager.checkUsername(username) {
             [weak self] response, error in
+            guard let self = self else { return }
             if let response = response {
                 if response.result == .free {
-                    self?.registerUser(username: username, password: password)
+                    self.registerUser(username: username, password: password)
                 } else {
-                    self?.hud.dismiss(animated: true)
-                    ErrorMessageSnackBar.showMessage(in: self?.view, message: response.result.representedValue)
+                    self.hud.dismiss(animated: true)
+                    ErrorMessageSnackBar.showMessage(in: self.view, message: response.result.representedValue)
                 }
                 return
             }
-            self?.hud.dismiss(animated: true)
-            ErrorMessageSnackBar.showMessage(in: self?.view, message: "Ошибка соединения. Попробуйте позже.")
+            self.hud.dismiss(animated: true)
+            ErrorMessageSnackBar.showMessage(in: self.view, message: "Ошибка соединения. Попробуйте позже.")
         }
     }
     
@@ -104,7 +105,8 @@ class RegisterViewController: TitledScrollViewController {
     let passwordFieldId = 1
     let passwordConfirmationFieldId = 2
     
-    let profileNetworkManager: ProfileNetworkManager = NetworkManager()
+    let registerNetworkManager: RegisterNetworkManager = ServiceLocator.registerNetworkManager()
+    let loginDataManager: LoginDataManager = ServiceLocator.loginDataManager()
     let hud = JGProgressHUD()
 
     @IBOutlet weak var stackView: UIStackView!

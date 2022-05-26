@@ -9,27 +9,39 @@ import Foundation
 
 final class ServiceLocator {
     
-    static func storageManager() -> StorageManager {
-        return KeychainDefaultsStorageManager()
+    static func firstStartService() -> FirstStartService {
+        StorageManager()
+    }
+    
+    static func authorizeNetworkManager() -> AuthorizeNetworkManager {
+        NetworkManager()
+    }
+    
+    static func registerNetworkManager() -> RegisterNetworkManager {
+        NetworkManager()
     }
 
     static func profileNetworkManager() -> ProfileNetworkManager {
-        return NetworkManager()
+        NetworkManager()
     }
     
     static func profileImageManager() -> ProfileImageManager {
-        return FileProfileImageManager()
+        FileProfileImageManager()
+    }
+    
+    static func loginDataManager() -> LoginDataManager {
+        StorageManager()
     }
     
     static func profileDataInteractor() -> ProfileDataInteractor {
-        return DefaultProfileDataInteractor(
-            storageManager: storageManager(),
-            networkManager: profileNetworkManager(),
+        DefaultProfileDataInteractor(
+            userDataManager: StorageManager(),
+            profileNetworkManager: profileNetworkManager(),
             profileImageManager: profileImageManager()
         )
     }
     
-    static func rickNetworkManager() -> RickNetworkManager {
-        return NetworkManager()
+    static func locationNetworkManager() -> LocationNetworkManager {
+        NetworkManager()
     }
 }

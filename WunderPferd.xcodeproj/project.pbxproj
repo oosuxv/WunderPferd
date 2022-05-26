@@ -17,11 +17,16 @@
 		524A6BCC283CA8A300ADAF47 /* ProfileNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524A6BCB283CA8A300ADAF47 /* ProfileNetworkManager.swift */; };
 		524A6BCF283CA8FF00ADAF47 /* PlanetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524A6BCD283CA8FF00ADAF47 /* PlanetTableViewCell.swift */; };
 		524A6BD0283CA8FF00ADAF47 /* PlanetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 524A6BCE283CA8FF00ADAF47 /* PlanetTableViewCell.xib */; };
-		524A6BD2283CB64700ADAF47 /* RickNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524A6BD1283CB64700ADAF47 /* RickNetworkManager.swift */; };
+		524A6BD2283CB64700ADAF47 /* LocationNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524A6BD1283CB64700ADAF47 /* LocationNetworkManager.swift */; };
 		524A6BD4283CB69700ADAF47 /* RickURLRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524A6BD3283CB69700ADAF47 /* RickURLRequestBuilder.swift */; };
 		524A6BD7283CB79A00ADAF47 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524A6BD6283CB79A00ADAF47 /* Location.swift */; };
 		524A6BD9283CBC0800ADAF47 /* LocationsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524A6BD8283CBC0800ADAF47 /* LocationsResponse.swift */; };
 		524A6BDB283D67D500ADAF47 /* PageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524A6BDA283D67D500ADAF47 /* PageInfo.swift */; };
+		524A6BF0283EB0B700ADAF47 /* FirstStartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524A6BEF283EB0B700ADAF47 /* FirstStartService.swift */; };
+		524A6BF2283EB9FF00ADAF47 /* AuthorizeNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524A6BF1283EB9FF00ADAF47 /* AuthorizeNetworkManager.swift */; };
+		524A6BF4283EBC1200ADAF47 /* RegisterNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524A6BF3283EBC1100ADAF47 /* RegisterNetworkManager.swift */; };
+		524A6BF6283F5B3000ADAF47 /* LoginDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524A6BF5283F5B3000ADAF47 /* LoginDataManager.swift */; };
+		524A6BF8283F60BB00ADAF47 /* UserDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524A6BF7283F60BB00ADAF47 /* UserDataManager.swift */; };
 		5251497B2809422A0055B8D0 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5251497A2809422A0055B8D0 /* RegisterViewController.swift */; };
 		5277D9742811DA3B00955C19 /* TitledScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5277D9732811DA3B00955C19 /* TitledScrollViewController.swift */; };
 		5277D9762811FE5200955C19 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5277D9752811FE5200955C19 /* ProfileViewController.swift */; };
@@ -64,11 +69,16 @@
 		524A6BCB283CA8A300ADAF47 /* ProfileNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNetworkManager.swift; sourceTree = "<group>"; };
 		524A6BCD283CA8FF00ADAF47 /* PlanetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetTableViewCell.swift; sourceTree = "<group>"; };
 		524A6BCE283CA8FF00ADAF47 /* PlanetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlanetTableViewCell.xib; sourceTree = "<group>"; };
-		524A6BD1283CB64700ADAF47 /* RickNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickNetworkManager.swift; sourceTree = "<group>"; };
+		524A6BD1283CB64700ADAF47 /* LocationNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationNetworkManager.swift; sourceTree = "<group>"; };
 		524A6BD3283CB69700ADAF47 /* RickURLRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickURLRequestBuilder.swift; sourceTree = "<group>"; };
 		524A6BD6283CB79A00ADAF47 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		524A6BD8283CBC0800ADAF47 /* LocationsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsResponse.swift; sourceTree = "<group>"; };
 		524A6BDA283D67D500ADAF47 /* PageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageInfo.swift; sourceTree = "<group>"; };
+		524A6BEF283EB0B700ADAF47 /* FirstStartService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstStartService.swift; sourceTree = "<group>"; };
+		524A6BF1283EB9FF00ADAF47 /* AuthorizeNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizeNetworkManager.swift; sourceTree = "<group>"; };
+		524A6BF3283EBC1100ADAF47 /* RegisterNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNetworkManager.swift; sourceTree = "<group>"; };
+		524A6BF5283F5B3000ADAF47 /* LoginDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataManager.swift; sourceTree = "<group>"; };
+		524A6BF7283F60BB00ADAF47 /* UserDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataManager.swift; sourceTree = "<group>"; };
 		5251497A2809422A0055B8D0 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		5277D9732811DA3B00955C19 /* TitledScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitledScrollViewController.swift; sourceTree = "<group>"; };
 		5277D9752811FE5200955C19 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -189,15 +199,20 @@
 			children = (
 				524A6BD5283CB77E00ADAF47 /* RickResponse */,
 				52A8A76C2830CBFC00C5B3EF /* ProfileResponse */,
-				52A8A7672830C3A900C5B3EF /* NetworkManager.swift */,
-				52AA6D30281E4CF5005C2E52 /* ProfileDataInteractor.swift */,
+				524A6BD3283CB69700ADAF47 /* RickURLRequestBuilder.swift */,
 				52A8A76A2830CB9400C5B3EF /* ProfileURLRequestBuilder.swift */,
+				52A8A7672830C3A900C5B3EF /* NetworkManager.swift */,
+				524A6BF1283EB9FF00ADAF47 /* AuthorizeNetworkManager.swift */,
+				524A6BD1283CB64700ADAF47 /* LocationNetworkManager.swift */,
+				524A6BF3283EBC1100ADAF47 /* RegisterNetworkManager.swift */,
+				524A6BCB283CA8A300ADAF47 /* ProfileNetworkManager.swift */,
+				52AA6D30281E4CF5005C2E52 /* ProfileDataInteractor.swift */,
 				52A8A77C283196A700C5B3EF /* StorageManager.swift */,
+				524A6BF5283F5B3000ADAF47 /* LoginDataManager.swift */,
+				524A6BF7283F60BB00ADAF47 /* UserDataManager.swift */,
 				52A8A78A2838CEC900C5B3EF /* ProfileImageManager.swift */,
 				52A8A78C28395C2E00C5B3EF /* ServiceLocator.swift */,
-				524A6BCB283CA8A300ADAF47 /* ProfileNetworkManager.swift */,
-				524A6BD1283CB64700ADAF47 /* RickNetworkManager.swift */,
-				524A6BD3283CB69700ADAF47 /* RickURLRequestBuilder.swift */,
+				524A6BEF283EB0B700ADAF47 /* FirstStartService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -326,6 +341,7 @@
 				52A8A7682830C3A900C5B3EF /* NetworkManager.swift in Sources */,
 				52A8A77F2832F4C900C5B3EF /* ProfileResponse.swift in Sources */,
 				52A8A7732831516200C5B3EF /* ErrorMessageSnackBar.swift in Sources */,
+				524A6BF0283EB0B700ADAF47 /* FirstStartService.swift in Sources */,
 				52A8A7892834FF2E00C5B3EF /* UsernameStatus.swift in Sources */,
 				524A6BD9283CBC0800ADAF47 /* LocationsResponse.swift in Sources */,
 				52C8A355281A82A700C5A887 /* ProfileTitleTableViewCell.swift in Sources */,
@@ -334,14 +350,18 @@
 				52A8A78D28395C2E00C5B3EF /* ServiceLocator.swift in Sources */,
 				524A6BCF283CA8FF00ADAF47 /* PlanetTableViewCell.swift in Sources */,
 				52A8A78F28397FEA00C5B3EF /* CustomError.swift in Sources */,
+				524A6BF6283F5B3000ADAF47 /* LoginDataManager.swift in Sources */,
 				520169C6280961AE00662E71 /* BrightButton.swift in Sources */,
 				5277D97C2811FFD100955C19 /* ProfileDataTableViewCell.swift in Sources */,
 				52A8A76E2830CC2D00C5B3EF /* UsernameResponse.swift in Sources */,
+				524A6BF2283EB9FF00ADAF47 /* AuthorizeNetworkManager.swift in Sources */,
 				5228AD5227FF5CEF0000122D /* AuthorizeViewController.swift in Sources */,
 				5228AD4E27FF5CEF0000122D /* AppDelegate.swift in Sources */,
+				524A6BF8283F60BB00ADAF47 /* UserDataManager.swift in Sources */,
 				52A8A78B2838CEC900C5B3EF /* ProfileImageManager.swift in Sources */,
 				524A6BDB283D67D500ADAF47 /* PageInfo.swift in Sources */,
-				524A6BD2283CB64700ADAF47 /* RickNetworkManager.swift in Sources */,
+				524A6BF4283EBC1200ADAF47 /* RegisterNetworkManager.swift in Sources */,
+				524A6BD2283CB64700ADAF47 /* LocationNetworkManager.swift in Sources */,
 				5277D9742811DA3B00955C19 /* TitledScrollViewController.swift in Sources */,
 				524A6BCC283CA8A300ADAF47 /* ProfileNetworkManager.swift in Sources */,
 				5277D9762811FE5200955C19 /* ProfileViewController.swift in Sources */,

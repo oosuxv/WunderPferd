@@ -72,3 +72,11 @@ extension NetworkManager: RegisterNetworkManager {
         performRequest(request: request, onRequestCompleted: completion)
     }
 }
+
+extension NetworkManager: CharacterNetworkManager {
+    
+    func getMultipleCharacters(ids: String, completion: (([Character]?, Error?) -> ())?) {
+        let request = RickURLRequestBuilder.characters(ids)
+        performRequest(request: request, onRequestCompleted: completion)
+    }
+}

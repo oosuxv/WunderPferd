@@ -27,6 +27,13 @@
 		524A6BF4283EBC1200ADAF47 /* RegisterNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524A6BF3283EBC1100ADAF47 /* RegisterNetworkManager.swift */; };
 		524A6BF6283F5B3000ADAF47 /* LoginDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524A6BF5283F5B3000ADAF47 /* LoginDataManager.swift */; };
 		524A6BF8283F60BB00ADAF47 /* UserDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524A6BF7283F60BB00ADAF47 /* UserDataManager.swift */; };
+		524A6C06284022E200ADAF47 /* CharacterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524A6C04284022E200ADAF47 /* CharacterListViewController.swift */; };
+		524A6C07284022E200ADAF47 /* CharacterListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 524A6C05284022E200ADAF47 /* CharacterListViewController.xib */; };
+		524A6C0B2840235C00ADAF47 /* CharacterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 524A6C092840235C00ADAF47 /* CharacterCollectionViewCell.xib */; };
+		524A6C0C2840235C00ADAF47 /* CharacterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524A6C0A2840235C00ADAF47 /* CharacterCollectionViewCell.swift */; };
+		524A6C0E2840239700ADAF47 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524A6C0D2840239700ADAF47 /* Character.swift */; };
+		524A6C10284023A300ADAF47 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524A6C0F284023A300ADAF47 /* Gender.swift */; };
+		524A6C122840247B00ADAF47 /* CharacterNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524A6C112840247B00ADAF47 /* CharacterNetworkManager.swift */; };
 		5251497B2809422A0055B8D0 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5251497A2809422A0055B8D0 /* RegisterViewController.swift */; };
 		5277D9742811DA3B00955C19 /* TitledScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5277D9732811DA3B00955C19 /* TitledScrollViewController.swift */; };
 		5277D9762811FE5200955C19 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5277D9752811FE5200955C19 /* ProfileViewController.swift */; };
@@ -79,6 +86,13 @@
 		524A6BF3283EBC1100ADAF47 /* RegisterNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNetworkManager.swift; sourceTree = "<group>"; };
 		524A6BF5283F5B3000ADAF47 /* LoginDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataManager.swift; sourceTree = "<group>"; };
 		524A6BF7283F60BB00ADAF47 /* UserDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataManager.swift; sourceTree = "<group>"; };
+		524A6C04284022E200ADAF47 /* CharacterListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterListViewController.swift; sourceTree = "<group>"; };
+		524A6C05284022E200ADAF47 /* CharacterListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CharacterListViewController.xib; sourceTree = "<group>"; };
+		524A6C092840235C00ADAF47 /* CharacterCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CharacterCollectionViewCell.xib; sourceTree = "<group>"; };
+		524A6C0A2840235C00ADAF47 /* CharacterCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterCollectionViewCell.swift; sourceTree = "<group>"; };
+		524A6C0D2840239700ADAF47 /* Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		524A6C0F284023A300ADAF47 /* Gender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
+		524A6C112840247B00ADAF47 /* CharacterNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterNetworkManager.swift; sourceTree = "<group>"; };
 		5251497A2809422A0055B8D0 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		5277D9732811DA3B00955C19 /* TitledScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitledScrollViewController.swift; sourceTree = "<group>"; };
 		5277D9752811FE5200955C19 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -168,6 +182,8 @@
 		524A6BD5283CB77E00ADAF47 /* RickResponse */ = {
 			isa = PBXGroup;
 			children = (
+				524A6C0F284023A300ADAF47 /* Gender.swift */,
+				524A6C0D2840239700ADAF47 /* Character.swift */,
 				524A6BD6283CB79A00ADAF47 /* Location.swift */,
 				524A6BD8283CBC0800ADAF47 /* LocationsResponse.swift */,
 				524A6BDA283D67D500ADAF47 /* PageInfo.swift */,
@@ -175,9 +191,19 @@
 			path = RickResponse;
 			sourceTree = "<group>";
 		};
+		524A6C082840233B00ADAF47 /* CharacterCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				524A6C0A2840235C00ADAF47 /* CharacterCollectionViewCell.swift */,
+				524A6C092840235C00ADAF47 /* CharacterCollectionViewCell.xib */,
+			);
+			path = CharacterCollectionViewCell;
+			sourceTree = "<group>";
+		};
 		5277D9782811FF5900955C19 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				524A6C082840233B00ADAF47 /* CharacterCollectionViewCell */,
 				524A6BCA283CA41800ADAF47 /* PlanetTableViewCell */,
 				52C8A352281A826900C5A887 /* ProfileTitleTableViewCell */,
 				5277D9792811FF7900955C19 /* ProfileDataTableViewCell */,
@@ -213,6 +239,7 @@
 				52A8A78A2838CEC900C5B3EF /* ProfileImageManager.swift */,
 				52A8A78C28395C2E00C5B3EF /* ServiceLocator.swift */,
 				524A6BEF283EB0B700ADAF47 /* FirstStartService.swift */,
+				524A6C112840247B00ADAF47 /* CharacterNetworkManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -220,6 +247,8 @@
 		52A8A7692830CAB600C5B3EF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				524A6C04284022E200ADAF47 /* CharacterListViewController.swift */,
+				524A6C05284022E200ADAF47 /* CharacterListViewController.xib */,
 				5228AD5127FF5CEF0000122D /* AuthorizeViewController.swift */,
 				5251497A2809422A0055B8D0 /* RegisterViewController.swift */,
 				5277D9732811DA3B00955C19 /* TitledScrollViewController.swift */,
@@ -321,9 +350,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				524A6C07284022E200ADAF47 /* CharacterListViewController.xib in Resources */,
 				5228AD5A27FF5CF50000122D /* LaunchScreen.storyboard in Resources */,
 				524A6BD0283CA8FF00ADAF47 /* PlanetTableViewCell.xib in Resources */,
 				5277D97D2811FFD100955C19 /* ProfileDataTableViewCell.xib in Resources */,
+				524A6C0B2840235C00ADAF47 /* CharacterCollectionViewCell.xib in Resources */,
 				52C8A356281A82A700C5A887 /* ProfileTitleTableViewCell.xib in Resources */,
 				5228AD5727FF5CF50000122D /* Assets.xcassets in Resources */,
 				5228AD5527FF5CEF0000122D /* Main.storyboard in Resources */,
@@ -337,8 +368,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				524A6C0E2840239700ADAF47 /* Character.swift in Sources */,
 				52A8A77D283196A700C5B3EF /* StorageManager.swift in Sources */,
 				52A8A7682830C3A900C5B3EF /* NetworkManager.swift in Sources */,
+				524A6C06284022E200ADAF47 /* CharacterListViewController.swift in Sources */,
 				52A8A77F2832F4C900C5B3EF /* ProfileResponse.swift in Sources */,
 				52A8A7732831516200C5B3EF /* ErrorMessageSnackBar.swift in Sources */,
 				524A6BF0283EB0B700ADAF47 /* FirstStartService.swift in Sources */,
@@ -353,6 +386,7 @@
 				524A6BF6283F5B3000ADAF47 /* LoginDataManager.swift in Sources */,
 				520169C6280961AE00662E71 /* BrightButton.swift in Sources */,
 				5277D97C2811FFD100955C19 /* ProfileDataTableViewCell.swift in Sources */,
+				524A6C122840247B00ADAF47 /* CharacterNetworkManager.swift in Sources */,
 				52A8A76E2830CC2D00C5B3EF /* UsernameResponse.swift in Sources */,
 				524A6BF2283EB9FF00ADAF47 /* AuthorizeNetworkManager.swift in Sources */,
 				5228AD5227FF5CEF0000122D /* AuthorizeViewController.swift in Sources */,
@@ -366,10 +400,12 @@
 				524A6BCC283CA8A300ADAF47 /* ProfileNetworkManager.swift in Sources */,
 				5277D9762811FE5200955C19 /* ProfileViewController.swift in Sources */,
 				5228AD5027FF5CEF0000122D /* SceneDelegate.swift in Sources */,
+				524A6C0C2840235C00ADAF47 /* CharacterCollectionViewCell.swift in Sources */,
 				52A8A76B2830CB9400C5B3EF /* ProfileURLRequestBuilder.swift in Sources */,
 				52C8A34C281A7EBD00C5A887 /* NSObject+ClassName.swift in Sources */,
 				52A8A793283B9A5100C5B3EF /* PlanetViewController.swift in Sources */,
 				52AA6D31281E4CF5005C2E52 /* ProfileDataInteractor.swift in Sources */,
+				524A6C10284023A300ADAF47 /* Gender.swift in Sources */,
 				52A8A775283177B900C5B3EF /* TokenResponse.swift in Sources */,
 				5251497B2809422A0055B8D0 /* RegisterViewController.swift in Sources */,
 				52A8A791283B8A4800C5B3EF /* AppError.swift in Sources */,

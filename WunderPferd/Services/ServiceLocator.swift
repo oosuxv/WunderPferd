@@ -44,4 +44,8 @@ final class ServiceLocator {
     static func locationNetworkManager() -> LocationNetworkManager {
         NetworkManager()
     }
+    
+    static func characterNetworkManager() -> CharacterNetworkManager {
+        NetworkManager()
+    }
 }

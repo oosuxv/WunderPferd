@@ -13,4 +13,5 @@ struct Location: Decodable {
     let type: String
     let dimension: String
     let residents: [String]
+    var page: Int?
 }

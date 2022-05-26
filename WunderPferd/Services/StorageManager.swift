@@ -70,3 +70,34 @@ class StorageManager {
         UserDefaults.standard.removeObject(forKey: StorageManagerKey.username.rawValue)
     }
 }
+
+extension StorageManager: FirstStartService {
+    func processFirstStart() {
+        if !loadUserDefaultsBool(key: .notFirstLaunch) {
+            cleanKeychain()
+            saveBoolToUserDefaults(bool: true, key: .notFirstLaunch)
+        }
+    }
+}
+
+extension StorageManager: LoginDataManager {
+    func loginUser(token: String, userId: String) {
+        saveToKeychain(token, key: .token)
+        saveToKeychain(userId, key: .userId)
+        cleanUserDefaults();
+    }
+}
+
+extension StorageManager: UserDataManager {
+    func loadUsername() -> String? {
+        loadUserDefaultsString(key: .username)
+    }
+    
+    func loadUserId() -> String? {
+        loadFromKeychain(key: .userId)
+    }
+    
+    func saveUsername(username: String) {
+        saveStringToUserDefaults(username, key: .username)
+    }
+}

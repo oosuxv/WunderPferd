@@ -36,23 +36,24 @@ class AuthorizeViewController: TitledScrollViewController {
             return
         }
         hud.show(in: self.view)
-        profileNetworkManager.login(username, password) {
+        authorizeNetworkManager.login(username, password) {
             [weak self] response, error in
-            self?.hud.dismiss()
+            guard let self = self else { return }
+            self.hud.dismiss()
             if let response = response {
-                let profileDataInteractor = ProfileDataInteractor()
-                profileDataInteractor.loginUser(token: response.token, userId: response.userId)
+                self.loginDataManager.loginUser(token: response.token, userId: response.userId)
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let tabBarVC = storyboard.instantiateViewController(identifier: "UITabBarController")
                 tabBarVC.modalPresentationStyle = .fullScreen
-                self?.show(tabBarVC, sender: self)
+                self.show(tabBarVC, sender: self)
                 return
             }
-            ErrorMessageSnackBar.showMessage(in: self?.view, message: "Логин провалился")
+            ErrorMessageSnackBar.showMessage(in: self.view, message: "Логин провалился")
         }
     }
     
-    let profileNetworkManager: ProfileNetworkManager = NetworkManager()
+    let authorizeNetworkManager: AuthorizeNetworkManager = ServiceLocator.authorizeNetworkManager()
+    let loginDataManager: LoginDataManager = ServiceLocator.loginDataManager()
     let hud = JGProgressHUD()
     
     @IBOutlet weak var authScrollView: UIScrollView!

@@ -11,11 +11,8 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let storageManager = StorageManager()
-        if !storageManager.loadUserDefaultsBool(key: .notFirstLaunch) {
-            storageManager.cleanKeychain()
-            storageManager.saveBoolToUserDefaults(bool: true, key: .notFirstLaunch)
-        }
+        let firstStartService = ServiceLocator.firstStartService()
+        firstStartService.processFirstStart()
         return true
     }
 

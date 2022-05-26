@@ -8,14 +8,6 @@
 import Foundation
 import Alamofire
 
-protocol ProfileNetworkManager {
-    
-    func checkUsername(_ username: String, completion: ((UsernameResponse?, Error?) -> ())?)
-    func register(_ username: String, _ password: String, completion: ((TokenResponse?, Error?) -> ())?)
-    func login(_ username: String, _ password: String, completion: ((TokenResponse?, Error?) -> ())?)
-    func getProfile(profileId: String, completion: ((Profile?, Error?) -> ())?)
-}
-
 class NetworkManager {
     
     func performRequest<ResponseType: Decodable>(
@@ -47,23 +39,36 @@ class NetworkManager {
 
 extension NetworkManager: ProfileNetworkManager {
     
+    func getProfile(profileId: String, completion: ((Profile?, Error?) -> ())?) {
+        let request = ProfileURLRequestBuilder.profile(profileId)
+        performRequest(request: request, onRequestCompleted: completion)
+    }
+}
+
+extension NetworkManager: AuthorizeNetworkManager {
+    func login(_ username: String, _ password: String, completion: ((TokenResponse?, Error?) -> ())?) {
+        let request = ProfileURLRequestBuilder.login(["username" : username, "password" : password])
+        performRequest(request: request, onRequestCompleted: completion)
+    }
+}
+
+extension NetworkManager: LocationNetworkManager {
+    
+    func getLocations(page: Int, completion: ((LocationsResponse?, Error?) -> ())?) {
+        let request = RickURLRequestBuilder.locations(page)
+        performRequest(request: request, onRequestCompleted: completion)
+    }
+}
+
+extension NetworkManager: RegisterNetworkManager {
+    
     func checkUsername(_ username: String, completion: ((UsernameResponse?, Error?) -> ())?) {
-        let request = URLRequestBuilder.checkUsername(["username" : username])
+        let request = ProfileURLRequestBuilder.checkUsername(["username" : username])
         performRequest(request: request, onRequestCompleted: completion)
     }
     
     func register(_ username: String, _ password: String, completion: ((TokenResponse?, Error?) -> ())?) {
-        let request = URLRequestBuilder.register(["username" : username, "password" : password])
-        performRequest(request: request, onRequestCompleted: completion)
-    }
-    
-    func login(_ username: String, _ password: String, completion: ((TokenResponse?, Error?) -> ())?) {
-        let request = URLRequestBuilder.login(["username" : username, "password" : password])
-        performRequest(request: request, onRequestCompleted: completion)
-    }
-    
-    func getProfile(profileId: String, completion: ((Profile?, Error?) -> ())?) {
-        let request = URLRequestBuilder.profile(profileId)
+        let request = ProfileURLRequestBuilder.register(["username" : username, "password" : password])
         performRequest(request: request, onRequestCompleted: completion)
     }
 }

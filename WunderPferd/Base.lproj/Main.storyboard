@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -160,7 +160,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="giQ-RA-lHK">
-                                                <rect key="frame" x="21" y="138.5" width="57" height="76"/>
+                                                <rect key="frame" x="21" y="139" width="57" height="75.666666666666671"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="77" id="7Zr-aK-91c"/>
@@ -212,7 +212,7 @@
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="24"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="doneTap:" destination="cRU-8w-f3E" eventType="touchUpInside" id="Yl7-yC-bR4"/>
+                                                    <action selector="doneButtonTap:" destination="cRU-8w-f3E" eventType="touchUpInside" id="AvI-ke-jPc"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -315,7 +315,12 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7oN-ji-aQS">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <navigationBarAppearance key="standardAppearance"/>
+                        <navigationBarAppearance key="scrollEdgeAppearance"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BwN-Bq-xDo">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="QWP-4y-9nU" kind="relationship" relationship="rootViewController" id="Mc9-nd-ZhR"/>
                     </connections>
@@ -366,37 +371,46 @@
             </objects>
             <point key="canvasLocation" x="3283" y="38"/>
         </scene>
-        <!--View Controller-->
+        <!--Выбор планеты-->
         <scene sceneID="bDj-pe-wzV">
             <objects>
-                <viewController id="QWP-4y-9nU" sceneMemberID="viewController">
+                <viewController id="QWP-4y-9nU" customClass="PlanetViewController" customModule="WunderPferd" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eNI-9F-k4j">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Placeholder view" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OKp-Wa-pY3">
-                                <rect key="frame" x="0.0" y="381" width="414" height="51"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Sab-M2-0s8">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="DUe-OD-hte"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="OKp-Wa-pY3" firstAttribute="leading" secondItem="DUe-OD-hte" secondAttribute="leading" id="8qc-TM-WxI"/>
-                            <constraint firstItem="DUe-OD-hte" firstAttribute="trailing" secondItem="OKp-Wa-pY3" secondAttribute="trailing" id="aeZ-kZ-1Fn"/>
-                            <constraint firstItem="OKp-Wa-pY3" firstAttribute="centerY" secondItem="DUe-OD-hte" secondAttribute="bottom" multiplier="0.5" id="i6X-kU-3Sy"/>
+                            <constraint firstItem="Sab-M2-0s8" firstAttribute="trailing" secondItem="DUe-OD-hte" secondAttribute="trailing" id="4gt-vD-edf"/>
+                            <constraint firstItem="Sab-M2-0s8" firstAttribute="leading" secondItem="DUe-OD-hte" secondAttribute="leading" id="9l0-9M-xSS"/>
+                            <constraint firstItem="Sab-M2-0s8" firstAttribute="bottom" secondItem="DUe-OD-hte" secondAttribute="bottom" id="gz5-i4-OlW"/>
+                            <constraint firstItem="Sab-M2-0s8" firstAttribute="top" secondItem="DUe-OD-hte" secondAttribute="top" id="qKw-Bs-X8a"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="STf-KY-VY0"/>
+                    <navigationItem key="navigationItem" title="Выбор планеты" id="STf-KY-VY0">
+                        <barButtonItem key="rightBarButtonItem" title="Reload" image="arrow.clockwise" catalog="system" id="1Re-Qa-S8K">
+                            <connections>
+                                <action selector="reloadButtonTap:" destination="QWP-4y-9nU" id="hT0-Ur-UhR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="Sab-M2-0s8" id="XkM-d3-7a4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="shd-0H-YhX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3283" y="698"/>
+            <point key="canvasLocation" x="3282.608695652174" y="697.76785714285711"/>
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
         <image name="person.crop.circle.fill" catalog="system" width="128" height="121"/>
         <image name="planets" width="31" height="30"/>
         <image name="profile" width="43" height="30"/>

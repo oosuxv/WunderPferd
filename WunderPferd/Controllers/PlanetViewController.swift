@@ -47,6 +47,7 @@ class PlanetViewController: UIViewController {
                 self.maxPages = locations.info.pages
                 completion()
             } else {
+                ErrorMessageSnackBar.showMessage(in: self.view, message: "ошибка загрузки данных")
                 print(error as Any)
             }
         }

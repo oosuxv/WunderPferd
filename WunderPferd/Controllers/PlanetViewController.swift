@@ -12,7 +12,6 @@ class PlanetViewController: UIViewController {
     private let locationNetworkManager = ServiceLocator.locationNetworkManager()
     private var nextPage = 1
     private var maxPages = Int.max
-    private var folio: Folio!
     private var locationList: [Location] = []
     
     @IBOutlet weak var tableView: UITableView!
@@ -131,7 +130,7 @@ extension PlanetViewController: UITableViewDelegate {
     }
 }
 
-extension PlanetViewController: UITableViewDataSource, FolioDelegate  {
+extension PlanetViewController: UITableViewDataSource  {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: PlanetTableViewCell.className) as? PlanetTableViewCell else {
@@ -150,16 +149,5 @@ extension PlanetViewController: UITableViewDataSource, FolioDelegate  {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         1
-    }
-    
-    func reachedBottom(in tableView: UITableView) {
-        print("bottom")
-        loadData(direction: .down) {
-            self.tableView.reloadData()
-        }
-    }
-    
-    func reachedTop(in tableView: UITableView) {
-        print("top")
     }
 }

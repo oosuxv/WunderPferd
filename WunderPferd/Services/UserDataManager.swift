@@ -11,4 +11,5 @@ protocol UserDataManager {
     func loadUsername() -> String?
     func loadUserId() -> String?
     func saveUsername(username: String)
+    func logoutUser()
 }

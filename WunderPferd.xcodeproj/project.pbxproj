@@ -36,6 +36,9 @@
 		524A6C122840247B00ADAF47 /* CharacterNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524A6C112840247B00ADAF47 /* CharacterNetworkManager.swift */; };
 		524A6C142840B90300ADAF47 /* ImageNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524A6C132840B90300ADAF47 /* ImageNetworkManager.swift */; };
 		524A6C162840BBA600ADAF47 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524A6C152840BBA600ADAF47 /* ImageService.swift */; };
+		524A6C252842CC0700ADAF47 /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524A6C242842CC0700ADAF47 /* RootTabBarController.swift */; };
+		524A6C292842CEBA00ADAF47 /* ProfileColorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524A6C272842CEBA00ADAF47 /* ProfileColorTableViewCell.swift */; };
+		524A6C2A2842CEBA00ADAF47 /* ProfileColorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 524A6C282842CEBA00ADAF47 /* ProfileColorTableViewCell.xib */; };
 		5251497B2809422A0055B8D0 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5251497A2809422A0055B8D0 /* RegisterViewController.swift */; };
 		5277D9742811DA3B00955C19 /* TitledScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5277D9732811DA3B00955C19 /* TitledScrollViewController.swift */; };
 		5277D9762811FE5200955C19 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5277D9752811FE5200955C19 /* ProfileViewController.swift */; };
@@ -97,6 +100,21 @@
 		524A6C112840247B00ADAF47 /* CharacterNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterNetworkManager.swift; sourceTree = "<group>"; };
 		524A6C132840B90300ADAF47 /* ImageNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageNetworkManager.swift; sourceTree = "<group>"; };
 		524A6C152840BBA600ADAF47 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
+		524A6C182842AA1B00ADAF47 /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BlackItalic.ttf"; sourceTree = "<group>"; };
+		524A6C192842AA1B00ADAF47 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		524A6C1A2842AA1B00ADAF47 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
+		524A6C1B2842AA1B00ADAF47 /* Roboto-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Italic.ttf"; sourceTree = "<group>"; };
+		524A6C1C2842AA1B00ADAF47 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
+		524A6C1D2842AA1B00ADAF47 /* Roboto-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-LightItalic.ttf"; sourceTree = "<group>"; };
+		524A6C1E2842AA1B00ADAF47 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		524A6C1F2842AA1B00ADAF47 /* Roboto-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BoldItalic.ttf"; sourceTree = "<group>"; };
+		524A6C202842AA1B00ADAF47 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		524A6C212842AA1C00ADAF47 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		524A6C222842AA1C00ADAF47 /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-MediumItalic.ttf"; sourceTree = "<group>"; };
+		524A6C232842AA1C00ADAF47 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
+		524A6C242842CC0700ADAF47 /* RootTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
+		524A6C272842CEBA00ADAF47 /* ProfileColorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileColorTableViewCell.swift; sourceTree = "<group>"; };
+		524A6C282842CEBA00ADAF47 /* ProfileColorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileColorTableViewCell.xib; sourceTree = "<group>"; };
 		5251497A2809422A0055B8D0 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		5277D9732811DA3B00955C19 /* TitledScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitledScrollViewController.swift; sourceTree = "<group>"; };
 		5277D9752811FE5200955C19 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -156,6 +174,7 @@
 		5228AD4C27FF5CEF0000122D /* WunderPferd */ = {
 			isa = PBXGroup;
 			children = (
+				524A6C172842A9FB00ADAF47 /* Fonts */,
 				52A8A7692830CAB600C5B3EF /* Controllers */,
 				52A8A7662830C37C00C5B3EF /* Services */,
 				5277D9782811FF5900955C19 /* Cells */,
@@ -204,12 +223,41 @@
 			path = CharacterCollectionViewCell;
 			sourceTree = "<group>";
 		};
+		524A6C172842A9FB00ADAF47 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				524A6C1C2842AA1B00ADAF47 /* Roboto-Black.ttf */,
+				524A6C182842AA1B00ADAF47 /* Roboto-BlackItalic.ttf */,
+				524A6C212842AA1C00ADAF47 /* Roboto-Bold.ttf */,
+				524A6C1F2842AA1B00ADAF47 /* Roboto-BoldItalic.ttf */,
+				524A6C1B2842AA1B00ADAF47 /* Roboto-Italic.ttf */,
+				524A6C232842AA1C00ADAF47 /* Roboto-Light.ttf */,
+				524A6C1D2842AA1B00ADAF47 /* Roboto-LightItalic.ttf */,
+				524A6C1E2842AA1B00ADAF47 /* Roboto-Medium.ttf */,
+				524A6C222842AA1C00ADAF47 /* Roboto-MediumItalic.ttf */,
+				524A6C202842AA1B00ADAF47 /* Roboto-Regular.ttf */,
+				524A6C192842AA1B00ADAF47 /* Roboto-Thin.ttf */,
+				524A6C1A2842AA1B00ADAF47 /* Roboto-ThinItalic.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		524A6C262842CE6300ADAF47 /* ProfileColorTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				524A6C272842CEBA00ADAF47 /* ProfileColorTableViewCell.swift */,
+				524A6C282842CEBA00ADAF47 /* ProfileColorTableViewCell.xib */,
+			);
+			path = ProfileColorTableViewCell;
+			sourceTree = "<group>";
+		};
 		5277D9782811FF5900955C19 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				524A6C082840233B00ADAF47 /* CharacterCollectionViewCell */,
 				524A6BCA283CA41800ADAF47 /* PlanetTableViewCell */,
 				52C8A352281A826900C5A887 /* ProfileTitleTableViewCell */,
+				524A6C262842CE6300ADAF47 /* ProfileColorTableViewCell */,
 				5277D9792811FF7900955C19 /* ProfileDataTableViewCell */,
 			);
 			path = Cells;
@@ -260,6 +308,7 @@
 				5277D9732811DA3B00955C19 /* TitledScrollViewController.swift */,
 				5277D9752811FE5200955C19 /* ProfileViewController.swift */,
 				52A8A792283B9A5100C5B3EF /* PlanetViewController.swift */,
+				524A6C242842CC0700ADAF47 /* RootTabBarController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -357,6 +406,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				524A6C07284022E200ADAF47 /* CharacterListViewController.xib in Resources */,
+				524A6C2A2842CEBA00ADAF47 /* ProfileColorTableViewCell.xib in Resources */,
 				5228AD5A27FF5CF50000122D /* LaunchScreen.storyboard in Resources */,
 				524A6BD0283CA8FF00ADAF47 /* PlanetTableViewCell.xib in Resources */,
 				5277D97D2811FFD100955C19 /* ProfileDataTableViewCell.xib in Resources */,
@@ -394,7 +444,9 @@
 				524A6BF6283F5B3000ADAF47 /* LoginDataManager.swift in Sources */,
 				520169C6280961AE00662E71 /* BrightButton.swift in Sources */,
 				5277D97C2811FFD100955C19 /* ProfileDataTableViewCell.swift in Sources */,
+				524A6C292842CEBA00ADAF47 /* ProfileColorTableViewCell.swift in Sources */,
 				524A6C122840247B00ADAF47 /* CharacterNetworkManager.swift in Sources */,
+				524A6C252842CC0700ADAF47 /* RootTabBarController.swift in Sources */,
 				52A8A76E2830CC2D00C5B3EF /* UsernameResponse.swift in Sources */,
 				524A6BF2283EB9FF00ADAF47 /* AuthorizeNetworkManager.swift in Sources */,
 				5228AD5227FF5CEF0000122D /* AuthorizeViewController.swift in Sources */,

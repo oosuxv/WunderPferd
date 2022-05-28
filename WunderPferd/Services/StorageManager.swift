@@ -41,6 +41,15 @@ class StorageManager {
         return nil
     }
     
+    func removeFromKeychain(key: StorageManagerKey) {
+        let keychain = Keychain(service: Constants.serviceId)
+        do {
+            try keychain.remove(key.rawValue)
+        } catch {
+            print(error as Any)
+        }
+    }
+    
     func saveBoolToUserDefaults(bool: Bool, key: StorageManagerKey) {
         UserDefaults.standard.set(bool, forKey: key.rawValue)
     }
@@ -100,5 +109,11 @@ extension StorageManager: UserDataManager {
     
     func saveUsername(username: String) {
         saveStringToUserDefaults(username, key: .username)
+    }
+    
+    func logoutUser() {
+        removeFromKeychain(key: .token)
+        removeFromKeychain(key: .userId)
+        removeFromKeychain(key: .username)
     }
 }

@@ -34,6 +34,8 @@
 		524A6C0E2840239700ADAF47 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524A6C0D2840239700ADAF47 /* Character.swift */; };
 		524A6C10284023A300ADAF47 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524A6C0F284023A300ADAF47 /* Gender.swift */; };
 		524A6C122840247B00ADAF47 /* CharacterNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524A6C112840247B00ADAF47 /* CharacterNetworkManager.swift */; };
+		524A6C142840B90300ADAF47 /* ImageNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524A6C132840B90300ADAF47 /* ImageNetworkManager.swift */; };
+		524A6C162840BBA600ADAF47 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524A6C152840BBA600ADAF47 /* ImageService.swift */; };
 		5251497B2809422A0055B8D0 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5251497A2809422A0055B8D0 /* RegisterViewController.swift */; };
 		5277D9742811DA3B00955C19 /* TitledScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5277D9732811DA3B00955C19 /* TitledScrollViewController.swift */; };
 		5277D9762811FE5200955C19 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5277D9752811FE5200955C19 /* ProfileViewController.swift */; };
@@ -93,6 +95,8 @@
 		524A6C0D2840239700ADAF47 /* Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		524A6C0F284023A300ADAF47 /* Gender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		524A6C112840247B00ADAF47 /* CharacterNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterNetworkManager.swift; sourceTree = "<group>"; };
+		524A6C132840B90300ADAF47 /* ImageNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageNetworkManager.swift; sourceTree = "<group>"; };
+		524A6C152840BBA600ADAF47 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 		5251497A2809422A0055B8D0 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		5277D9732811DA3B00955C19 /* TitledScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitledScrollViewController.swift; sourceTree = "<group>"; };
 		5277D9752811FE5200955C19 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -232,14 +236,16 @@
 				524A6BD1283CB64700ADAF47 /* LocationNetworkManager.swift */,
 				524A6BF3283EBC1100ADAF47 /* RegisterNetworkManager.swift */,
 				524A6BCB283CA8A300ADAF47 /* ProfileNetworkManager.swift */,
-				52AA6D30281E4CF5005C2E52 /* ProfileDataInteractor.swift */,
+				524A6C112840247B00ADAF47 /* CharacterNetworkManager.swift */,
+				524A6C132840B90300ADAF47 /* ImageNetworkManager.swift */,
 				52A8A77C283196A700C5B3EF /* StorageManager.swift */,
 				524A6BF5283F5B3000ADAF47 /* LoginDataManager.swift */,
 				524A6BF7283F60BB00ADAF47 /* UserDataManager.swift */,
 				52A8A78A2838CEC900C5B3EF /* ProfileImageManager.swift */,
+				52AA6D30281E4CF5005C2E52 /* ProfileDataInteractor.swift */,
 				52A8A78C28395C2E00C5B3EF /* ServiceLocator.swift */,
 				524A6BEF283EB0B700ADAF47 /* FirstStartService.swift */,
-				524A6C112840247B00ADAF47 /* CharacterNetworkManager.swift */,
+				524A6C152840BBA600ADAF47 /* ImageService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -370,6 +376,7 @@
 			files = (
 				524A6C0E2840239700ADAF47 /* Character.swift in Sources */,
 				52A8A77D283196A700C5B3EF /* StorageManager.swift in Sources */,
+				524A6C142840B90300ADAF47 /* ImageNetworkManager.swift in Sources */,
 				52A8A7682830C3A900C5B3EF /* NetworkManager.swift in Sources */,
 				524A6C06284022E200ADAF47 /* CharacterListViewController.swift in Sources */,
 				52A8A77F2832F4C900C5B3EF /* ProfileResponse.swift in Sources */,
@@ -381,6 +388,7 @@
 				524A6BD7283CB79A00ADAF47 /* Location.swift in Sources */,
 				524A6BD4283CB69700ADAF47 /* RickURLRequestBuilder.swift in Sources */,
 				52A8A78D28395C2E00C5B3EF /* ServiceLocator.swift in Sources */,
+				524A6C162840BBA600ADAF47 /* ImageService.swift in Sources */,
 				524A6BCF283CA8FF00ADAF47 /* PlanetTableViewCell.swift in Sources */,
 				52A8A78F28397FEA00C5B3EF /* CustomError.swift in Sources */,
 				524A6BF6283F5B3000ADAF47 /* LoginDataManager.swift in Sources */,

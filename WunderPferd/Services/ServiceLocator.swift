@@ -9,6 +9,8 @@ import Foundation
 
 final class ServiceLocator {
     
+    private static var imageServiceSingleton = CachedImageService(imageNetworkManager: NetworkManager())
+    
     static func firstStartService() -> FirstStartService {
         StorageManager()
     }
@@ -47,5 +49,9 @@ final class ServiceLocator {
     
     static func characterNetworkManager() -> CharacterNetworkManager {
         NetworkManager()
+    }
+    
+    static func imageService() -> ImageService {
+        imageServiceSingleton
     }
 }

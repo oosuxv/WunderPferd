@@ -74,6 +74,7 @@ class StorageManager {
 extension StorageManager: FirstStartService {
     func processFirstStart() {
         if !loadUserDefaultsBool(key: .notFirstLaunch) {
+            print("first start")
             cleanKeychain()
             saveBoolToUserDefaults(bool: true, key: .notFirstLaunch)
         }

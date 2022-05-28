@@ -9,5 +9,6 @@ import Foundation
 
 protocol CharacterNetworkManager {
     
-    func getMultipleCharacters(ids: String, completion: (([Character]?, Error?) -> ())?)
+    func getCharacter(id: String, completion: ((Character?, Error?) -> ())?)
+    func getMultipleCharacters(idListCommaSeparated ids: String, completion: (([Character]?, Error?) -> ())?)
 }

@@ -6,10 +6,13 @@
 //
 
 import UIKit
+import JGProgressHUD
 
 class CharacterCollectionViewCell: UICollectionViewCell {
 
     var id: String?
+    let hud = JGProgressHUD()
+    @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var genderLabel: UILabel!

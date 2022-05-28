@@ -35,6 +35,25 @@ class NetworkManager {
             }
         }
     }
+    
+    func performRequest(
+            url: String,
+            method: HTTPMethod = .get,
+            headers: HTTPHeaders? = nil,
+            onRequestCompleted: ((Data?, Error?) -> ())?
+    ) {
+        AF.request(url, method: method, headers: headers)
+            .validate()
+            .responseData { (afDataResponse) in
+
+            guard let data = afDataResponse.data, afDataResponse.error == nil
+            else {
+                onRequestCompleted?(nil, afDataResponse.error)
+                return
+            }
+            onRequestCompleted?(data, nil)
+        }
+    }
 }
 
 extension NetworkManager: ProfileNetworkManager {
@@ -75,8 +94,20 @@ extension NetworkManager: RegisterNetworkManager {
 
 extension NetworkManager: CharacterNetworkManager {
     
-    func getMultipleCharacters(ids: String, completion: (([Character]?, Error?) -> ())?) {
+    func getCharacter(id: String, completion: ((Character?, Error?) -> ())?) {
+        let request = RickURLRequestBuilder.characters(id)
+        performRequest(request: request, onRequestCompleted: completion)
+    }
+    
+    func getMultipleCharacters(idListCommaSeparated ids: String, completion: (([Character]?, Error?) -> ())?) {
         let request = RickURLRequestBuilder.characters(ids)
         performRequest(request: request, onRequestCompleted: completion)
+    }
+}
+
+extension NetworkManager: ImageNetworkManager {
+    
+    func getImage(url: String, completion: ((Data?, Error?) -> ())?) {
+        performRequest(url: url, onRequestCompleted: completion)
     }
 }

@@ -117,3 +117,13 @@ extension StorageManager: UserDataManager {
         removeFromKeychain(key: .username)
     }
 }
+
+extension StorageManager: LoginCheckService {
+    func userIsLoggedIn() -> Bool {
+        if let _ = loadFromKeychain(key: .userId),
+           let _ = loadFromKeychain(key: .token) {
+            return true
+        }
+        return false
+    }
+}

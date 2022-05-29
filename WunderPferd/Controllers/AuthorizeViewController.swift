@@ -34,9 +34,8 @@ class AuthorizeViewController: TitledScrollViewController {
     
     @IBAction func registerButtonTap(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let registerVC = storyboard.instantiateViewController(identifier: RegisterViewController.className)
-        registerVC.modalPresentationStyle = .fullScreen
-        show(registerVC, sender: self)
+        let registerViewController = storyboard.instantiateViewController(identifier: RegisterViewController.className)
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(registerViewController)
     }
     
     @IBAction func loginButtonTap(_ sender: Any) {

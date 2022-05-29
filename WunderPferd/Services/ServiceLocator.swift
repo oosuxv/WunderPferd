@@ -54,4 +54,8 @@ final class ServiceLocator {
     static func imageService() -> ImageService {
         imageServiceSingleton
     }
+    
+    static func loginCheckService() -> LoginCheckService {
+        StorageManager()
+    }
 }

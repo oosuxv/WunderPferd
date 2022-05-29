@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let sm = StorageManager()
         
-        if let token = sm.loadFromKeychain(key: .token) {
+        if sm.loadFromKeychain(key: .token) != nil {
             let rootTabBarController = storyboard.instantiateViewController(withIdentifier: RootTabBarController.className)
             window?.rootViewController = rootTabBarController
         } else {

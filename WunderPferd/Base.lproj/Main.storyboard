@@ -33,14 +33,17 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Авторизуйтесь, чтоб получить доступ к полному функционалу приложения" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kav-IW-HQp" userLabel="authDescr">
-                                                <rect key="frame" x="16" y="203" width="382" height="84.666666666666686"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" text="Авторизуйтесь, чтоб получить доступ к полному функционалу приложения" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kav-IW-HQp" userLabel="authDescr">
+                                                <rect key="frame" x="16" y="203" width="382" height="85"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="85" id="v8I-Zf-dH9"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="24"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Login" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tV7-8b-fxZ">
-                                                <rect key="frame" x="16" y="363.66666666666669" width="382" height="70"/>
+                                                <rect key="frame" x="16" y="364" width="382" height="70"/>
                                                 <color key="backgroundColor" name="LightGrayBackground"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="70" id="o1j-1Z-8D9"/>
@@ -49,7 +52,7 @@
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="username"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7IC-vo-Dcc">
-                                                <rect key="frame" x="16" y="451.66666666666669" width="382" height="70.000000000000057"/>
+                                                <rect key="frame" x="16" y="452" width="382" height="70"/>
                                                 <color key="backgroundColor" name="LightGrayBackground"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="70" id="9Dq-UC-AbI"/>
@@ -102,17 +105,20 @@
                                             <constraint firstItem="7IC-vo-Dcc" firstAttribute="top" secondItem="tV7-8b-fxZ" secondAttribute="bottom" constant="18" id="Khh-oI-DdP"/>
                                             <constraint firstAttribute="bottom" secondItem="kcX-2K-8fe" secondAttribute="bottom" constant="38" id="MI0-Vg-onP"/>
                                             <constraint firstItem="tV7-8b-fxZ" firstAttribute="leading" secondItem="uFR-GO-Ldm" secondAttribute="leading" constant="16" id="Ma5-VB-v1B"/>
+                                            <constraint firstItem="LEb-VP-yy2" firstAttribute="top" secondItem="uFR-GO-Ldm" secondAttribute="top" priority="600" constant="135" id="N1K-vY-WgT"/>
+                                            <constraint firstItem="JFv-A5-bUF" firstAttribute="top" relation="greaterThanOrEqual" secondItem="7IC-vo-Dcc" secondAttribute="bottom" constant="15" id="P1q-gO-wpD"/>
                                             <constraint firstItem="JFv-A5-bUF" firstAttribute="leading" secondItem="uFR-GO-Ldm" secondAttribute="leading" id="Vb7-pi-mfX"/>
-                                            <constraint firstItem="LEb-VP-yy2" firstAttribute="top" secondItem="uFR-GO-Ldm" secondAttribute="top" constant="135" id="W2z-H8-TL7"/>
+                                            <constraint firstItem="LEb-VP-yy2" firstAttribute="top" relation="lessThanOrEqual" secondItem="uFR-GO-Ldm" secondAttribute="top" constant="135" id="W2z-H8-TL7"/>
                                             <constraint firstItem="LEb-VP-yy2" firstAttribute="leading" secondItem="uFR-GO-Ldm" secondAttribute="leading" constant="16" id="WIh-UV-o1C"/>
                                             <constraint firstItem="7IC-vo-Dcc" firstAttribute="leading" secondItem="uFR-GO-Ldm" secondAttribute="leading" constant="16" id="aE9-JP-3t3"/>
                                             <constraint firstAttribute="trailing" secondItem="kav-IW-HQp" secondAttribute="trailing" constant="16" id="dbT-Gl-Cpk"/>
                                             <constraint firstItem="kcX-2K-8fe" firstAttribute="top" secondItem="JFv-A5-bUF" secondAttribute="bottom" constant="15" id="gJy-aZ-tK2"/>
-                                            <constraint firstItem="tV7-8b-fxZ" firstAttribute="top" secondItem="kav-IW-HQp" secondAttribute="bottom" constant="76" id="hR6-Sb-H1D"/>
+                                            <constraint firstItem="tV7-8b-fxZ" firstAttribute="top" secondItem="kav-IW-HQp" secondAttribute="bottom" priority="950" constant="76" id="hR6-Sb-H1D"/>
+                                            <constraint firstItem="JFv-A5-bUF" firstAttribute="top" secondItem="7IC-vo-Dcc" secondAttribute="bottom" priority="500" constant="141" id="kyp-XY-0hL"/>
                                             <constraint firstItem="kcX-2K-8fe" firstAttribute="leading" secondItem="uFR-GO-Ldm" secondAttribute="leading" id="lC9-Lc-fIb"/>
                                             <constraint firstAttribute="trailing" secondItem="LEb-VP-yy2" secondAttribute="trailing" constant="16" id="pWl-Xf-ZTS"/>
                                             <constraint firstAttribute="trailing" secondItem="kcX-2K-8fe" secondAttribute="trailing" id="sTk-fD-yP8"/>
-                                            <constraint firstItem="kav-IW-HQp" firstAttribute="top" secondItem="LEb-VP-yy2" secondAttribute="bottom" constant="26" id="tF5-Yw-Kk3"/>
+                                            <constraint firstItem="kav-IW-HQp" firstAttribute="top" secondItem="LEb-VP-yy2" secondAttribute="bottom" priority="970" constant="26" id="tF5-Yw-Kk3"/>
                                             <constraint firstAttribute="trailing" secondItem="tV7-8b-fxZ" secondAttribute="trailing" constant="16" id="x8F-7k-YH1"/>
                                             <constraint firstItem="kav-IW-HQp" firstAttribute="leading" secondItem="uFR-GO-Ldm" secondAttribute="leading" constant="16" id="xk4-R6-OMP"/>
                                         </constraints>
@@ -232,6 +238,7 @@
                                             <constraint firstAttribute="trailing" secondItem="ZSL-0y-9s1" secondAttribute="trailing" id="5Cf-7x-2PH"/>
                                             <constraint firstItem="giQ-RA-lHK" firstAttribute="top" secondItem="zHG-P6-paf" secondAttribute="top" constant="208" id="64q-v2-Ifc"/>
                                             <constraint firstItem="kRD-I0-GCu" firstAttribute="leading" secondItem="giQ-RA-lHK" secondAttribute="trailing" constant="11" id="GMD-cJ-qvR"/>
+                                            <constraint firstItem="ZSL-0y-9s1" firstAttribute="top" secondItem="Hq8-hP-PQg" secondAttribute="bottom" constant="144" id="NC9-aw-f3u"/>
                                             <constraint firstItem="ZSL-0y-9s1" firstAttribute="leading" secondItem="zHG-P6-paf" secondAttribute="leading" id="PzJ-kw-dDy"/>
                                             <constraint firstItem="Hq8-hP-PQg" firstAttribute="top" secondItem="giQ-RA-lHK" secondAttribute="bottom" constant="26" id="UFr-Mg-7LN"/>
                                             <constraint firstAttribute="trailing" secondItem="Hq8-hP-PQg" secondAttribute="trailing" constant="16" id="Up8-2M-jqA"/>

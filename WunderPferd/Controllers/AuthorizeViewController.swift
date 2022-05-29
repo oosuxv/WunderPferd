@@ -43,9 +43,8 @@ class AuthorizeViewController: TitledScrollViewController {
             if let response = response {
                 self.loginDataManager.loginUser(token: response.token, userId: response.userId)
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let tabBarVC = storyboard.instantiateViewController(identifier: "UITabBarController")
-                tabBarVC.modalPresentationStyle = .fullScreen
-                self.show(tabBarVC, sender: self)
+                let rootTabBarController = storyboard.instantiateViewController(identifier: RootTabBarController.className)
+                (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(rootTabBarController)
                 return
             }
             ErrorMessageSnackBar.showMessage(in: self.view, message: "Логин провалился")

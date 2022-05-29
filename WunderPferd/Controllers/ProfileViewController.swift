@@ -20,9 +20,8 @@ class ProfileViewController: UIViewController {
         profileDataInteractor.logout()
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let authorizeViewController = storyboard.instantiateViewController(identifier: AuthorizeViewController.className)
-        authorizeViewController.modalPresentationStyle = .fullScreen
-        self.tabBarController?.present(authorizeViewController, animated: false)
-        self.tabBarController?.tabBar.isHidden = true
+
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(authorizeViewController)
     }
     
     override func viewDidLoad() {

@@ -36,6 +36,7 @@
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Login" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tV7-8b-fxZ">
                                                 <rect key="frame" x="16" y="391" width="382" height="70"/>
+                                                <color key="backgroundColor" name="LightGrayBackground"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="70" id="o1j-1Z-8D9"/>
                                                 </constraints>
@@ -44,6 +45,7 @@
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7IC-vo-Dcc">
                                                 <rect key="frame" x="16" y="479" width="382" height="70"/>
+                                                <color key="backgroundColor" name="LightGrayBackground"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="70" id="9Dq-UC-AbI"/>
                                                 </constraints>
@@ -55,12 +57,13 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="51" id="hFq-uG-i6J"/>
                                                 </constraints>
+                                                <color key="tintColor" name="ButtonBlue"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled">
                                                     <attributedString key="attributedTitle">
                                                         <fragment content="Войти">
                                                             <attributes>
-                                                                <font key="NSFont" size="18" name="Helvetica"/>
+                                                                <font key="NSFont" size="24" name="Helvetica"/>
                                                             </attributes>
                                                         </fragment>
                                                     </attributedString>
@@ -74,12 +77,13 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="51" id="8F6-zf-272"/>
                                                 </constraints>
+                                                <color key="tintColor" name="ButtonBlue"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled">
                                                     <attributedString key="attributedTitle">
                                                         <fragment content="Зарегистрироваться">
                                                             <attributes>
-                                                                <font key="NSFont" size="18" name="Helvetica"/>
+                                                                <font key="NSFont" size="24" name="Helvetica"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                             </attributes>
                                                         </fragment>
@@ -90,7 +94,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" name="DarkGreyBackground"/>
                                         <constraints>
                                             <constraint firstItem="kcX-2K-8fe" firstAttribute="top" secondItem="JFv-A5-bUF" secondAttribute="bottom" constant="15" id="1gt-Wx-Pg4"/>
                                             <constraint firstItem="kav-IW-HQp" firstAttribute="top" secondItem="LEb-VP-yy2" secondAttribute="bottom" constant="26" id="3o2-6w-vjg"/>
@@ -114,6 +118,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" name="DarkGreyBackground"/>
                                 <constraints>
                                     <constraint firstItem="uFR-GO-Ldm" firstAttribute="trailing" secondItem="VK5-qs-mTE" secondAttribute="trailing" id="9Dp-WR-io9"/>
                                     <constraint firstItem="uFR-GO-Ldm" firstAttribute="width" secondItem="llF-89-ObT" secondAttribute="width" id="9lM-WA-mlH"/>
@@ -127,7 +132,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="DarkGreyBackground"/>
                         <constraints>
                             <constraint firstItem="u8O-yz-O7G" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="2Qf-he-LN8"/>
                             <constraint firstItem="u8O-yz-O7G" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="41O-Ge-0BS"/>
@@ -160,8 +165,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zHG-P6-paf">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="giQ-RA-lHK">
-                                                <rect key="frame" x="21" y="139" width="57" height="75.666666666666671"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="registration" translatesAutoresizingMaskIntoConstraints="NO" id="giQ-RA-lHK">
+                                                <rect key="frame" x="21" y="138" width="57" height="77"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="77" id="7Zr-aK-91c"/>
@@ -179,6 +184,7 @@
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите логин" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="45b-YB-X0b">
                                                         <rect key="frame" x="0.0" y="0.0" width="382" height="70"/>
+                                                        <color key="backgroundColor" name="LightGrayBackground"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="70" id="Lzf-Jv-Ks5"/>
                                                         </constraints>
@@ -187,6 +193,7 @@
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ol4-qI-OuC">
                                                         <rect key="frame" x="0.0" y="102" width="382" height="70"/>
+                                                        <color key="backgroundColor" name="LightGrayBackground"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="70" id="VnM-90-N92"/>
                                                         </constraints>
@@ -195,6 +202,7 @@
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Повторите пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b9c-L8-FOT">
                                                         <rect key="frame" x="0.0" y="204" width="382" height="70"/>
+                                                        <color key="backgroundColor" name="LightGrayBackground"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="70" id="p7I-Nu-2Co"/>
                                                         </constraints>
@@ -208,6 +216,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="51" id="Bx0-Sd-f9E"/>
                                                 </constraints>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Готово">
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="24"/>
@@ -217,7 +226,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" name="DarkGreyBackground"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="Hq8-hP-PQg" secondAttribute="trailing" constant="16" id="2kf-Il-Hyd" userLabel="trailing = Stack View.trailing + 16"/>
                                             <constraint firstItem="Hq8-hP-PQg" firstAttribute="top" secondItem="kRD-I0-GCu" secondAttribute="bottom" constant="22" id="6No-xk-QfK"/>
@@ -248,7 +257,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1S2-B4-o9c"/>
-                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="DarkGreyBackground"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="t2d-OC-j3j" firstAttribute="bottom" secondItem="1S2-B4-o9c" secondAttribute="bottom" id="Pgf-mi-lzR"/>
@@ -345,6 +354,7 @@
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xD3-rQ-poq">
                                 <rect key="frame" x="0.0" y="739" width="414" height="36"/>
+                                <color key="tintColor" name="ButtonBlue"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Выйти">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="18"/>
@@ -386,11 +396,11 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Sab-M2-0s8">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" name="DarkGreyBackground"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="DUe-OD-hte"/>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="DarkGreyBackground"/>
                         <constraints>
                             <constraint firstItem="Sab-M2-0s8" firstAttribute="trailing" secondItem="DUe-OD-hte" secondAttribute="trailing" id="4gt-vD-edf"/>
                             <constraint firstItem="Sab-M2-0s8" firstAttribute="leading" secondItem="DUe-OD-hte" secondAttribute="leading" id="9l0-9M-xSS"/>
@@ -416,11 +426,17 @@
     </scenes>
     <resources>
         <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
-        <image name="person.crop.circle.fill" catalog="system" width="128" height="121"/>
         <image name="planets" width="31" height="30"/>
         <image name="profile" width="43" height="30"/>
+        <image name="registration" width="57" height="77"/>
+        <namedColor name="ButtonBlue">
+            <color red="0.19215686274509805" green="0.40784313725490196" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="DarkGreyBackground">
             <color red="0.45098039215686275" green="0.45098039215686275" blue="0.45098039215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="LightGrayBackground">
+            <color red="0.7686274509803922" green="0.7686274509803922" blue="0.7686274509803922" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

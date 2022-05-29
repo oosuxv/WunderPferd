@@ -38,8 +38,8 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Loy-gX-pdL">
-                                <rect key="frame" x="119.5" y="104.5" width="175" height="172.5"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DefaultProfilePicture" translatesAutoresizingMaskIntoConstraints="NO" id="Loy-gX-pdL">
+                                <rect key="frame" x="119.5" y="103" width="175" height="175"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="175" id="KuF-mW-aiP"/>
                                     <constraint firstAttribute="width" constant="175" id="Rsk-Pj-vaF"/>
@@ -78,7 +78,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="person" catalog="system" width="128" height="117"/>
+        <image name="DefaultProfilePicture" width="208" height="225"/>
         <namedColor name="DarkGreyBackground">
             <color red="0.45098039215686275" green="0.45098039215686275" blue="0.45098039215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

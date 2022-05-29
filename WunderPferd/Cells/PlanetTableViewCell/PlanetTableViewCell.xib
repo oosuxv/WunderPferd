@@ -3,8 +3,8 @@
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -47,7 +47,7 @@
                                 <rect key="frame" x="383" y="22" width="13" height="14.333333333333329"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="LightGrayBackground"/>
                         <constraints>
                             <constraint firstItem="uX3-KU-ZZK" firstAttribute="top" secondItem="7R4-24-1tB" secondAttribute="top" constant="22" id="3yX-Yz-uA7"/>
                             <constraint firstItem="aUq-GW-yp0" firstAttribute="top" secondItem="7R4-24-1tB" secondAttribute="top" constant="12" id="FSv-sc-JSs"/>
@@ -82,8 +82,8 @@
     </objects>
     <resources>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <namedColor name="LightGrayBackground">
+            <color red="0.7686274509803922" green="0.7686274509803922" blue="0.7686274509803922" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

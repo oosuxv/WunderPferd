@@ -27,6 +27,10 @@ class RegisterViewController: TitledScrollViewController {
         
         regTextFields.forEach { field in
             field.delegate = self
+            field.layer.borderWidth = 2
+            field.layer.borderColor = .init(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.56)
+            field.layer.cornerRadius = 10
+            field.layer.masksToBounds = true
             if field == regTextFields.last {
                 field.returnKeyType = .done
             } else {
@@ -42,7 +46,7 @@ class RegisterViewController: TitledScrollViewController {
         regTextFields.first?.becomeFirstResponder()
     }
     
-    private func hasNoValidationErrors() -> Bool {
+    private func hasNoValidationErrorsOtherwiseSnack() -> Bool {
         guard let username = regTextFields[usernameFieldId].text,
                 let password = regTextFields[passwordFieldId].text,
                 let passwordConfirmation = regTextFields[passwordConfirmationFieldId].text else {
@@ -77,7 +81,7 @@ class RegisterViewController: TitledScrollViewController {
     }
     
     @IBAction func doneButtonTap(_ sender: Any) {
-        guard hasNoValidationErrors(),
+        guard hasNoValidationErrorsOtherwiseSnack(),
                 let username = regTextFields[usernameFieldId].text,
                 let password = regTextFields[passwordFieldId].text else {
             return

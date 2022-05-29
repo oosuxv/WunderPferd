@@ -21,15 +21,8 @@ class AuthorizeViewController: TitledScrollViewController {
         hud.textLabel.text = "Connecting"
         hud.vibrancyEnabled = true
         
-        authLoginField.layer.borderWidth = 2
-        authLoginField.layer.borderColor = .init(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.56)
-        authLoginField.layer.cornerRadius = 10
-        authLoginField.layer.masksToBounds = true
-        
-        authPasswordField.layer.borderWidth = 2
-        authPasswordField.layer.borderColor = .init(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.56)
-        authPasswordField.layer.cornerRadius = 10
-        authPasswordField.layer.masksToBounds = true
+        authLoginField.setAppStyle()
+        authPasswordField.setAppStyle()
     }
     
     @IBAction func registerButtonTap(_ sender: Any) {

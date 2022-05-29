@@ -40,6 +40,7 @@
 		524A6C292842CEBA00ADAF47 /* ProfileColorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524A6C272842CEBA00ADAF47 /* ProfileColorTableViewCell.swift */; };
 		524A6C2A2842CEBA00ADAF47 /* ProfileColorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 524A6C282842CEBA00ADAF47 /* ProfileColorTableViewCell.xib */; };
 		524A6C2C284312B900ADAF47 /* LoginCheckService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524A6C2B284312B800ADAF47 /* LoginCheckService.swift */; };
+		524A6C2E2843F0C500ADAF47 /* UITextField+setAppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524A6C2D2843F0C500ADAF47 /* UITextField+setAppStyle.swift */; };
 		5251497B2809422A0055B8D0 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5251497A2809422A0055B8D0 /* RegisterViewController.swift */; };
 		5277D9742811DA3B00955C19 /* TitledScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5277D9732811DA3B00955C19 /* TitledScrollViewController.swift */; };
 		5277D9762811FE5200955C19 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5277D9752811FE5200955C19 /* ProfileViewController.swift */; };
@@ -60,7 +61,6 @@
 		52A8A7892834FF2E00C5B3EF /* UsernameStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8A7882834FF2E00C5B3EF /* UsernameStatus.swift */; };
 		52A8A78B2838CEC900C5B3EF /* ProfileImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8A78A2838CEC900C5B3EF /* ProfileImageManager.swift */; };
 		52A8A78D28395C2E00C5B3EF /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8A78C28395C2E00C5B3EF /* ServiceLocator.swift */; };
-		52A8A78F28397FEA00C5B3EF /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8A78E28397FEA00C5B3EF /* CustomError.swift */; };
 		52A8A791283B8A4800C5B3EF /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8A790283B8A4800C5B3EF /* AppError.swift */; };
 		52A8A793283B9A5100C5B3EF /* PlanetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8A792283B9A5100C5B3EF /* PlanetViewController.swift */; };
 		52AA6D31281E4CF5005C2E52 /* ProfileDataInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA6D30281E4CF5005C2E52 /* ProfileDataInteractor.swift */; };
@@ -117,6 +117,7 @@
 		524A6C272842CEBA00ADAF47 /* ProfileColorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileColorTableViewCell.swift; sourceTree = "<group>"; };
 		524A6C282842CEBA00ADAF47 /* ProfileColorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileColorTableViewCell.xib; sourceTree = "<group>"; };
 		524A6C2B284312B800ADAF47 /* LoginCheckService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCheckService.swift; sourceTree = "<group>"; };
+		524A6C2D2843F0C500ADAF47 /* UITextField+setAppStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+setAppStyle.swift"; sourceTree = "<group>"; };
 		5251497A2809422A0055B8D0 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		5277D9732811DA3B00955C19 /* TitledScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitledScrollViewController.swift; sourceTree = "<group>"; };
 		5277D9752811FE5200955C19 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -132,7 +133,6 @@
 		52A8A7882834FF2E00C5B3EF /* UsernameStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameStatus.swift; sourceTree = "<group>"; };
 		52A8A78A2838CEC900C5B3EF /* ProfileImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageManager.swift; sourceTree = "<group>"; };
 		52A8A78C28395C2E00C5B3EF /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
-		52A8A78E28397FEA00C5B3EF /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		52A8A790283B8A4800C5B3EF /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		52A8A792283B9A5100C5B3EF /* PlanetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetViewController.swift; sourceTree = "<group>"; };
 		52AA6D30281E4CF5005C2E52 /* ProfileDataInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataInteractor.swift; sourceTree = "<group>"; };
@@ -189,8 +189,8 @@
 				520169C5280961AE00662E71 /* BrightButton.swift */,
 				52A8A7722831516200C5B3EF /* ErrorMessageSnackBar.swift */,
 				52C8A34B281A7EBD00C5A887 /* NSObject+ClassName.swift */,
-				52A8A78E28397FEA00C5B3EF /* CustomError.swift */,
 				52A8A790283B8A4800C5B3EF /* AppError.swift */,
+				524A6C2D2843F0C500ADAF47 /* UITextField+setAppStyle.swift */,
 			);
 			path = WunderPferd;
 			sourceTree = "<group>";
@@ -443,7 +443,6 @@
 				52A8A78D28395C2E00C5B3EF /* ServiceLocator.swift in Sources */,
 				524A6C162840BBA600ADAF47 /* ImageService.swift in Sources */,
 				524A6BCF283CA8FF00ADAF47 /* PlanetTableViewCell.swift in Sources */,
-				52A8A78F28397FEA00C5B3EF /* CustomError.swift in Sources */,
 				524A6BF6283F5B3000ADAF47 /* LoginDataManager.swift in Sources */,
 				520169C6280961AE00662E71 /* BrightButton.swift in Sources */,
 				5277D97C2811FFD100955C19 /* ProfileDataTableViewCell.swift in Sources */,
@@ -456,6 +455,7 @@
 				5228AD5227FF5CEF0000122D /* AuthorizeViewController.swift in Sources */,
 				5228AD4E27FF5CEF0000122D /* AppDelegate.swift in Sources */,
 				524A6BF8283F60BB00ADAF47 /* UserDataManager.swift in Sources */,
+				524A6C2E2843F0C500ADAF47 /* UITextField+setAppStyle.swift in Sources */,
 				52A8A78B2838CEC900C5B3EF /* ProfileImageManager.swift in Sources */,
 				524A6BDB283D67D500ADAF47 /* PageInfo.swift in Sources */,
 				524A6BF4283EBC1200ADAF47 /* RegisterNetworkManager.swift in Sources */,

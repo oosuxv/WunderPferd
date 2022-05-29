@@ -27,10 +27,7 @@ class RegisterViewController: TitledScrollViewController {
         
         regTextFields.forEach { field in
             field.delegate = self
-            field.layer.borderWidth = 2
-            field.layer.borderColor = .init(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.56)
-            field.layer.cornerRadius = 10
-            field.layer.masksToBounds = true
+            field.setAppStyle()
             if field == regTextFields.last {
                 field.returnKeyType = .done
             } else {

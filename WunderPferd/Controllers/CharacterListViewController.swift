@@ -25,7 +25,6 @@ class CharacterListViewController: UIViewController {
             flowLayout.minimumInteritemSpacing = 20
         }
         
-        collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: CharacterCollectionViewCell.className, bundle: nil),
                                 forCellWithReuseIdentifier: CharacterCollectionViewCell.className)
@@ -83,7 +82,7 @@ class CharacterListViewController: UIViewController {
                     self.collectionView.reloadData()
                 } else {
                     ErrorMessageSnackBar.showMessage(in: self.view, message: "Ошибка загрузки жителей")
-                    print(error as Any)
+                    ServiceLocator.logger.info("character load failed: \(error?.localizedDescription ?? "")")
                 }
             }
         }
@@ -98,7 +97,7 @@ class CharacterListViewController: UIViewController {
                     self.collectionView.reloadData()
                 } else {
                     ErrorMessageSnackBar.showMessage(in: self.view, message: "Ошибка загрузки жителей")
-                    print(error as Any)
+                    ServiceLocator.logger.info("character load failed: \(error?.localizedDescription ?? "")")
                 }
             }
         }
@@ -129,7 +128,6 @@ extension CharacterListViewController: UICollectionViewDataSource {
             }
             cell.imageView.image = image
             cell.imageView.layer.masksToBounds = true
-
         }
         return cell
     }
@@ -157,8 +155,4 @@ extension CharacterListViewController: UICollectionViewDataSource {
         cell.hud.show(in: cell.imageView, animated: false, afterDelay: 0.001)
     }
     
-}
-
-extension CharacterListViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    // TODO: realise
 }

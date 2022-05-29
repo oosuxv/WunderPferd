@@ -26,7 +26,7 @@ class StorageManager {
         do {
             try keychain.set(string, key: key.rawValue)
         } catch {
-            print(error as Any)
+            ServiceLocator.logger.info("save to keychain failed: \(error.localizedDescription)")
         }
     }
     
@@ -36,7 +36,7 @@ class StorageManager {
             let result = try keychain.getString(key.rawValue)
             return result
         } catch {
-            print(error as Any)
+            ServiceLocator.logger.info("loadFromKeychain failed: \(error.localizedDescription)")
         }
         return nil
     }
@@ -46,7 +46,7 @@ class StorageManager {
         do {
             try keychain.remove(key.rawValue)
         } catch {
-            print(error as Any)
+            ServiceLocator.logger.info("removeFromKeychain failed: \(error.localizedDescription)")
         }
     }
     
@@ -71,7 +71,7 @@ class StorageManager {
         do {
             try keychain.removeAll()
         } catch {
-            print(error as Any)
+            ServiceLocator.logger.info("cleanKeychain failed: \(error.localizedDescription)")
         }
     }
     
@@ -83,7 +83,6 @@ class StorageManager {
 extension StorageManager: FirstStartService {
     func processFirstStart() {
         if !loadUserDefaultsBool(key: .notFirstLaunch) {
-            print("first start")
             cleanKeychain()
             saveBoolToUserDefaults(bool: true, key: .notFirstLaunch)
         }

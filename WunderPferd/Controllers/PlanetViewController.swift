@@ -45,7 +45,7 @@ class PlanetViewController: UIViewController {
                 self.isLoading = false
             } else {
                 ErrorMessageSnackBar.showMessage(in: self.view, message: "ошибка загрузки данных")
-                print(error as Any)
+                ServiceLocator.logger.info("locations load failed: \(error?.localizedDescription ?? "")")
             }
         }
     }

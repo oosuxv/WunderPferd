@@ -87,7 +87,7 @@ extension ProfileViewController: UITableViewDataSource {
                 if let username = username {
                     cell.loginLabel.text = username
                 } else {
-                    print(error as Any)
+                    ServiceLocator.logger.info("username request failed: \(error?.localizedDescription ?? "")")
                 }
             })
             return cell

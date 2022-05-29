@@ -236,16 +236,20 @@
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="kRD-I0-GCu" secondAttribute="trailing" constant="16" id="40f-Ox-0HE"/>
                                             <constraint firstAttribute="trailing" secondItem="ZSL-0y-9s1" secondAttribute="trailing" id="5Cf-7x-2PH"/>
-                                            <constraint firstItem="giQ-RA-lHK" firstAttribute="top" secondItem="zHG-P6-paf" secondAttribute="top" constant="208" id="64q-v2-Ifc"/>
+                                            <constraint firstItem="giQ-RA-lHK" firstAttribute="top" secondItem="zHG-P6-paf" secondAttribute="top" priority="400" constant="208" id="64q-v2-Ifc"/>
+                                            <constraint firstItem="Hq8-hP-PQg" firstAttribute="top" secondItem="kRD-I0-GCu" secondAttribute="bottom" constant="43" id="DKU-qV-h08"/>
                                             <constraint firstItem="kRD-I0-GCu" firstAttribute="leading" secondItem="giQ-RA-lHK" secondAttribute="trailing" constant="11" id="GMD-cJ-qvR"/>
-                                            <constraint firstItem="ZSL-0y-9s1" firstAttribute="top" secondItem="Hq8-hP-PQg" secondAttribute="bottom" constant="144" id="NC9-aw-f3u"/>
+                                            <constraint firstItem="giQ-RA-lHK" firstAttribute="top" relation="lessThanOrEqual" secondItem="zHG-P6-paf" secondAttribute="top" constant="208" id="JnN-1J-wlv"/>
+                                            <constraint firstItem="ZSL-0y-9s1" firstAttribute="top" secondItem="Hq8-hP-PQg" secondAttribute="bottom" priority="500" constant="144" id="NC9-aw-f3u"/>
                                             <constraint firstItem="ZSL-0y-9s1" firstAttribute="leading" secondItem="zHG-P6-paf" secondAttribute="leading" id="PzJ-kw-dDy"/>
+                                            <constraint firstItem="kRD-I0-GCu" firstAttribute="top" relation="lessThanOrEqual" secondItem="zHG-P6-paf" secondAttribute="top" constant="225" id="Q7P-ga-ApW"/>
                                             <constraint firstItem="Hq8-hP-PQg" firstAttribute="top" secondItem="giQ-RA-lHK" secondAttribute="bottom" constant="26" id="UFr-Mg-7LN"/>
                                             <constraint firstAttribute="trailing" secondItem="Hq8-hP-PQg" secondAttribute="trailing" constant="16" id="Up8-2M-jqA"/>
-                                            <constraint firstItem="kRD-I0-GCu" firstAttribute="top" secondItem="zHG-P6-paf" secondAttribute="top" constant="225" id="bEs-dg-bTK"/>
+                                            <constraint firstItem="kRD-I0-GCu" firstAttribute="top" secondItem="zHG-P6-paf" secondAttribute="top" priority="400" constant="225" id="bEs-dg-bTK"/>
                                             <constraint firstItem="Hq8-hP-PQg" firstAttribute="leading" secondItem="zHG-P6-paf" secondAttribute="leading" constant="16" id="gTt-iS-Bov"/>
                                             <constraint firstAttribute="bottom" secondItem="ZSL-0y-9s1" secondAttribute="bottom" constant="38" id="gVO-CD-5hD"/>
                                             <constraint firstItem="giQ-RA-lHK" firstAttribute="leading" secondItem="zHG-P6-paf" secondAttribute="leading" constant="21" id="hqQ-mk-Gdq"/>
+                                            <constraint firstItem="ZSL-0y-9s1" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Hq8-hP-PQg" secondAttribute="bottom" constant="15" id="rrJ-6b-8jx"/>
                                         </constraints>
                                     </view>
                                 </subviews>

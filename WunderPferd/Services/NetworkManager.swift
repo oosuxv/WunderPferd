@@ -30,7 +30,7 @@ class NetworkManager {
                 onRequestCompleted?(decodedValue, nil)
             }
             catch (let error) {
-                print("Response parsing error: \(error.localizedDescription)")
+                ServiceLocator.logger.info("response parse failed: \(error.localizedDescription)")
                 onRequestCompleted?(nil, error)
             }
         }

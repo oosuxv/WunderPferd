@@ -40,7 +40,7 @@ class CachedImageService: ImageService {
                     guard let self = self,
                             error == nil,
                             let data = data else {
-                        print(error as Any)
+                        ServiceLocator.logger.error("image load failed: \(error?.localizedDescription ?? "")")
                         completion(nil, nil)
                         return
                     }

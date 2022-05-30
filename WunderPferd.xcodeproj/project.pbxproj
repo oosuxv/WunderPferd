@@ -174,21 +174,19 @@
 		5228AD4C27FF5CEF0000122D /* WunderPferd */ = {
 			isa = PBXGroup;
 			children = (
-				524A6C172842A9FB00ADAF47 /* Fonts */,
 				52A8A7692830CAB600C5B3EF /* Controllers */,
 				52A8A7662830C37C00C5B3EF /* Services */,
+				524A6C302845673100ADAF47 /* Extensions */,
+				524A6C2F2845671300ADAF47 /* CustomUI */,
+				524A6C172842A9FB00ADAF47 /* Fonts */,
 				5277D9782811FF5900955C19 /* Cells */,
+				524A6C32284569A100ADAF47 /* Errors */,
 				5228AD4D27FF5CEF0000122D /* AppDelegate.swift */,
 				5228AD4F27FF5CEF0000122D /* SceneDelegate.swift */,
 				5228AD5327FF5CEF0000122D /* Main.storyboard */,
 				5228AD5627FF5CF50000122D /* Assets.xcassets */,
 				5228AD5827FF5CF50000122D /* LaunchScreen.storyboard */,
 				5228AD5B27FF5CF50000122D /* Info.plist */,
-				520169C5280961AE00662E71 /* BrightButton.swift */,
-				52A8A7722831516200C5B3EF /* ErrorMessageSnackBar.swift */,
-				52C8A34B281A7EBD00C5A887 /* NSObject+ClassName.swift */,
-				52A8A790283B8A4800C5B3EF /* AppError.swift */,
-				524A6C2D2843F0C500ADAF47 /* UITextField+setAppStyle.swift */,
 			);
 			path = WunderPferd;
 			sourceTree = "<group>";
@@ -249,6 +247,32 @@
 				524A6C282842CEBA00ADAF47 /* ProfileColorTableViewCell.xib */,
 			);
 			path = ProfileColorTableViewCell;
+			sourceTree = "<group>";
+		};
+		524A6C2F2845671300ADAF47 /* CustomUI */ = {
+			isa = PBXGroup;
+			children = (
+				520169C5280961AE00662E71 /* BrightButton.swift */,
+				52A8A7722831516200C5B3EF /* ErrorMessageSnackBar.swift */,
+			);
+			path = CustomUI;
+			sourceTree = "<group>";
+		};
+		524A6C302845673100ADAF47 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				52C8A34B281A7EBD00C5A887 /* NSObject+ClassName.swift */,
+				524A6C2D2843F0C500ADAF47 /* UITextField+setAppStyle.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		524A6C32284569A100ADAF47 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				52A8A790283B8A4800C5B3EF /* AppError.swift */,
+			);
+			path = Errors;
 			sourceTree = "<group>";
 		};
 		5277D9782811FF5900955C19 /* Cells */ = {

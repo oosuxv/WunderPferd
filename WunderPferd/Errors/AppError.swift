@@ -9,10 +9,6 @@ import Foundation
 
 struct AppError {
     let message: String
-
-    init(message: String) {
-        self.message = message
-    }
 }
 
 extension AppError: LocalizedError {

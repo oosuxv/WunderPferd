@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -25,19 +26,26 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rjy-rV-Vdt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="423"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.51000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W4B-jj-qex">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W4B-jj-qex">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="207"/>
                                 <color key="backgroundColor" red="0.4941176471" green="0.53333333333333333" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="207" id="VOs-mS-jzb"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Логин пользователя" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="65H-pY-tBI">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="65H-pY-tBI">
                                 <rect key="frame" x="0.0" y="340" width="414" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="41" id="Brf-5s-dKP"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="36"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view opaque="NO" alpha="0.51000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YX6-ba-paE">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="207"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DefaultProfilePicture" translatesAutoresizingMaskIntoConstraints="NO" id="Loy-gX-pdL">
                                 <rect key="frame" x="119.5" y="103" width="175" height="175"/>
                                 <constraints>
@@ -52,11 +60,16 @@
                             <constraint firstAttribute="trailing" secondItem="W4B-jj-qex" secondAttribute="trailing" id="G11-IN-MXM"/>
                             <constraint firstItem="W4B-jj-qex" firstAttribute="top" secondItem="rjy-rV-Vdt" secondAttribute="top" id="KM6-5h-mjz"/>
                             <constraint firstAttribute="trailing" secondItem="65H-pY-tBI" secondAttribute="trailing" id="KXE-fe-IG8"/>
-                            <constraint firstAttribute="bottom" secondItem="65H-pY-tBI" secondAttribute="bottom" constant="41" id="Llm-Gy-iJj"/>
+                            <constraint firstAttribute="bottom" secondItem="65H-pY-tBI" secondAttribute="bottom" priority="800" constant="41" id="Llm-Gy-iJj"/>
+                            <constraint firstItem="YX6-ba-paE" firstAttribute="top" secondItem="W4B-jj-qex" secondAttribute="top" id="YZN-Qe-U5n"/>
                             <constraint firstItem="W4B-jj-qex" firstAttribute="leading" secondItem="rjy-rV-Vdt" secondAttribute="leading" id="Z7a-Jl-ddv"/>
-                            <constraint firstItem="65H-pY-tBI" firstAttribute="top" secondItem="W4B-jj-qex" secondAttribute="bottom" constant="133" id="bgX-fC-aj8"/>
+                            <constraint firstItem="65H-pY-tBI" firstAttribute="top" secondItem="rjy-rV-Vdt" secondAttribute="top" constant="340" id="bgX-fC-aj8"/>
+                            <constraint firstItem="W4B-jj-qex" firstAttribute="bottom" secondItem="YX6-ba-paE" secondAttribute="bottom" id="emI-Cv-MlX"/>
                             <constraint firstItem="Loy-gX-pdL" firstAttribute="top" secondItem="rjy-rV-Vdt" secondAttribute="top" constant="103" id="fHb-8G-0dz"/>
                             <constraint firstItem="65H-pY-tBI" firstAttribute="leading" secondItem="rjy-rV-Vdt" secondAttribute="leading" id="ptK-vK-kN3"/>
+                            <constraint firstAttribute="bottom" secondItem="65H-pY-tBI" secondAttribute="bottom" constant="41" id="vZK-U5-7gA"/>
+                            <constraint firstAttribute="trailing" secondItem="YX6-ba-paE" secondAttribute="trailing" id="yIf-87-CS2"/>
+                            <constraint firstItem="YX6-ba-paE" firstAttribute="leading" secondItem="rjy-rV-Vdt" secondAttribute="leading" id="zmi-pt-f1y"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -72,15 +85,19 @@
             <connections>
                 <outlet property="circledImageView" destination="Loy-gX-pdL" id="umo-ut-exG"/>
                 <outlet property="loginLabel" destination="65H-pY-tBI" id="A5N-3B-8GS"/>
+                <outlet property="pictureTintView" destination="YX6-ba-paE" id="YSa-Gj-4kT"/>
                 <outlet property="wideImageView" destination="W4B-jj-qex" id="y0i-ih-Ial"/>
             </connections>
             <point key="canvasLocation" x="149.27536231884059" y="285.60267857142856"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="DefaultProfilePicture" width="208" height="225"/>
+        <image name="DefaultProfilePicture" width="160" height="160"/>
         <namedColor name="DarkGreyBackground">
             <color red="0.45098039215686275" green="0.45098039215686275" blue="0.45098039215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

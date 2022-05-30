@@ -32,6 +32,7 @@
                 </subviews>
                 <color key="backgroundColor" name="LightGrayBackground"/>
                 <constraints>
+                    <constraint firstItem="AIe-km-c3Q" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="DUZ-5m-K1S" secondAttribute="trailing" constant="15" id="1oQ-Zd-3zd"/>
                     <constraint firstAttribute="trailing" secondItem="AIe-km-c3Q" secondAttribute="trailing" constant="16" id="cii-uD-VCD"/>
                     <constraint firstAttribute="bottom" secondItem="AIe-km-c3Q" secondAttribute="bottom" constant="21" id="eJM-cP-XHf"/>
                     <constraint firstAttribute="bottom" secondItem="DUZ-5m-K1S" secondAttribute="bottom" constant="21" id="gtj-jH-Adg"/>

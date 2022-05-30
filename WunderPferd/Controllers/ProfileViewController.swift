@@ -75,7 +75,7 @@ extension ProfileViewController: UITableViewDataSource {
             cell.circledImageView.layer.borderColor = UIColor.white.cgColor
             cell.circledImageView.layer.cornerRadius = cell.circledImageView.frame.height / 2
             cell.circledImageView.clipsToBounds = true
-            cell.wideImageView.backgroundColor = preferredColor
+            cell.pictureTintView.backgroundColor = preferredColor
             
             if let image = profileDataInteractor.image {
                 cell.circledImageView.image = image

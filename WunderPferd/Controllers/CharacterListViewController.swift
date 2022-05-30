@@ -18,13 +18,6 @@ class CharacterListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let flowLayout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
-            flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-            flowLayout.sectionInset = .init(top: 28, left: 5, bottom: 28, right: 5)
-            flowLayout.minimumLineSpacing = 28
-            flowLayout.minimumInteritemSpacing = 18
-        }
-        
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: CharacterCollectionViewCell.className, bundle: nil),
                                 forCellWithReuseIdentifier: CharacterCollectionViewCell.className)
@@ -38,6 +31,15 @@ class CharacterListViewController: UIViewController {
             return
         }
         title = "Жители локации \"\(location.name)\""
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if let flowLayout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
+            flowLayout.itemSize.width = collectionView.frame.width / 2 - 24 - 10
+            flowLayout.sectionInset = .init(top: 28, left: 24, bottom: 28, right: 24)
+            flowLayout.minimumLineSpacing = 28
+            flowLayout.minimumInteritemSpacing = 20
+        }
         requestCharacters()
     }
     

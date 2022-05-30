@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -21,14 +21,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="173" height="187"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pgH-cG-wVB">
-                                <rect key="frame" x="26" y="12" width="121" height="107"/>
+                                <rect key="frame" x="26" y="12" width="121" height="110"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" priority="999" constant="121" id="4pz-aF-wNU"/>
-                                    <constraint firstAttribute="height" priority="999" constant="107" id="HoJ-Gr-KTE"/>
+                                    <constraint firstAttribute="width" secondItem="pgH-cG-wVB" secondAttribute="height" multiplier="11:10" id="aFY-hC-w7C"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yc0-eQ-L0W">
-                                <rect key="frame" x="68" y="131" width="37.5" height="21"/>
+                                <rect key="frame" x="67.666666666666671" y="134" width="37.666666666666671" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="169" id="qLV-h5-eTO"/>
                                 </constraints>
@@ -56,12 +55,12 @@
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="DMP-lu-ORr" secondAttribute="bottom" constant="5" id="1Gy-G1-PDJ"/>
                             <constraint firstItem="DMP-lu-ORr" firstAttribute="top" secondItem="4ce-rh-ayD" secondAttribute="bottom" id="9It-48-5C9"/>
-                            <constraint firstItem="pgH-cG-wVB" firstAttribute="leading" secondItem="izb-vn-HZ8" secondAttribute="leading" priority="999" constant="26" id="BzE-iV-hNj"/>
+                            <constraint firstItem="pgH-cG-wVB" firstAttribute="leading" secondItem="izb-vn-HZ8" secondAttribute="leading" constant="26" id="BzE-iV-hNj"/>
                             <constraint firstItem="DMP-lu-ORr" firstAttribute="centerX" secondItem="izb-vn-HZ8" secondAttribute="centerX" id="Ebh-Gm-75J"/>
                             <constraint firstItem="pgH-cG-wVB" firstAttribute="top" secondItem="izb-vn-HZ8" secondAttribute="top" constant="12" id="KE6-QV-W9j"/>
                             <constraint firstItem="4ce-rh-ayD" firstAttribute="centerX" secondItem="izb-vn-HZ8" secondAttribute="centerX" id="PPw-np-edq"/>
                             <constraint firstItem="yc0-eQ-L0W" firstAttribute="top" secondItem="pgH-cG-wVB" secondAttribute="bottom" constant="12" id="Qvi-mM-zgM"/>
-                            <constraint firstAttribute="trailing" secondItem="pgH-cG-wVB" secondAttribute="trailing" priority="999" constant="26" id="Sbb-VE-DIJ"/>
+                            <constraint firstAttribute="trailing" secondItem="pgH-cG-wVB" secondAttribute="trailing" constant="26" id="Sbb-VE-DIJ"/>
                             <constraint firstItem="4ce-rh-ayD" firstAttribute="top" secondItem="yc0-eQ-L0W" secondAttribute="bottom" id="TTb-4G-hFQ"/>
                             <constraint firstItem="yc0-eQ-L0W" firstAttribute="centerX" secondItem="izb-vn-HZ8" secondAttribute="centerX" id="dXe-Ri-LgO"/>
                         </constraints>

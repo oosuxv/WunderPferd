@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let loginCheckService = ServiceLocator.loginCheckService()
         if loginCheckService.userIsLoggedIn() {
-            let rootTabBarController = storyboard.instantiateViewController(withIdentifier: RootTabBarController.className)
+            let rootTabBarController = storyboard.instantiateViewController(withIdentifier: "RootTabBarController")
             window?.rootViewController = rootTabBarController
         } else {
             let authorizeViewController = storyboard.instantiateViewController(identifier: AuthorizeViewController.className)

@@ -20,9 +20,9 @@ class CharacterListViewController: UIViewController {
         
         if let flowLayout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
             flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-            flowLayout.sectionInset = .init(top: 28, left: 24, bottom: 28, right: 24)
+            flowLayout.sectionInset = .init(top: 28, left: 5, bottom: 28, right: 5)
             flowLayout.minimumLineSpacing = 28
-            flowLayout.minimumInteritemSpacing = 20
+            flowLayout.minimumInteritemSpacing = 18
         }
         
         collectionView.dataSource = self
@@ -113,7 +113,7 @@ extension CharacterListViewController: UICollectionViewDataSource {
         }
         let character = characters[indexPath.row]
         
-        setupCell(cell, character)
+        cell.setup(character)
         
         imageService.getImage(url: character.image) {
             [weak cell] image, url in
@@ -136,23 +136,6 @@ extension CharacterListViewController: UICollectionViewDataSource {
         return characters.count
     }
     
-    private func setupCell(_ cell: CharacterCollectionViewCell, _ character: Character) {
-        cell.containerView.layer.cornerRadius = 15
-        cell.containerView.layer.borderWidth = 1
-        cell.containerView.layer.masksToBounds = true
-        cell.containerView.layer.borderColor = CGColor.init(red: 86.0/255.0, green: 86.0/255.0, blue: 86.0/255.0, alpha: 1.0)
-        
-        cell.imageView.layer.cornerRadius = 10
-        cell.imageView.layer.masksToBounds = true
-        
-        cell.nameLabel.text = character.name
-        cell.nameLabel.adjustsFontSizeToFitWidth = true
-        cell.nameLabel.minimumScaleFactor = cell.genderLabel.font.pointSize / cell.nameLabel.font.pointSize
-        cell.speciesLabel.text = character.species
-        cell.genderLabel.text = character.gender.representedValue
-        cell.id = character.image
-        cell.imageView.image = UIImage(named: "defaultCharacterImage")
-        cell.hud.show(in: cell.imageView, animated: false, afterDelay: 0.001)
-    }
+    
     
 }

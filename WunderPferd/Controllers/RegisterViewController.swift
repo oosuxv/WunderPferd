@@ -69,7 +69,7 @@ class RegisterViewController: TitledScrollViewController {
             if let response = response {
                 self.loginDataManager.loginUser(token: response.token, userId: response.userId)
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let rootTabBarController = storyboard.instantiateViewController(identifier: RootTabBarController.className)
+                let rootTabBarController = storyboard.instantiateViewController(identifier: "RootTabBarController")
                 (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(rootTabBarController)
                 return
             }

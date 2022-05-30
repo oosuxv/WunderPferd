@@ -306,10 +306,10 @@
             </objects>
             <point key="canvasLocation" x="2561" y="38"/>
         </scene>
-        <!--Root Tab Bar Controller-->
+        <!--Tab Bar Controller-->
         <scene sceneID="auI-99-hzY">
             <objects>
-                <tabBarController storyboardIdentifier="RootTabBarController" id="nO9-VM-Wl7" customClass="RootTabBarController" customModule="WunderPferd" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="RootTabBarController" id="nO9-VM-Wl7" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="8gS-YS-8Lf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

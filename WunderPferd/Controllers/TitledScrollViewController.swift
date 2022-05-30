@@ -49,14 +49,14 @@ class TitledScrollViewController: UIViewController {
     var scrollView: UIScrollView?
     var titleLabel: UILabel?
     var stackOffset = 0.0
-    let scaleCoef = 500.0
+    let scaleCoefficient = 500.0
 }
 
 extension TitledScrollViewController : UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView.contentOffset.y < 0 {
-            let scale = 1 - scrollView.contentOffset.y / scaleCoef
+            let scale = 1 - scrollView.contentOffset.y / scaleCoefficient
             let leftEdgeCompensation = scrollView.contentSize.width * (scale - 1) / 2
             titleLabel?.transform = CGAffineTransform(scaleX: scale, y: scale)
                                     .concatenating(CGAffineTransform(translationX: leftEdgeCompensation, y: 0))

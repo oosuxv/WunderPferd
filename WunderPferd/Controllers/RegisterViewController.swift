@@ -78,6 +78,7 @@ class RegisterViewController: TitledScrollViewController {
     }
     
     @IBAction func doneButtonTap(_ sender: Any) {
+        self.view.endEditing(true)
         guard hasNoValidationErrorsOtherwiseSnack(),
                 let username = regTextFields[usernameFieldId].text,
                 let password = regTextFields[passwordFieldId].text else {

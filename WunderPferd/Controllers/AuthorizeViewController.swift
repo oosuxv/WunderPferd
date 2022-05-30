@@ -32,6 +32,7 @@ class AuthorizeViewController: TitledScrollViewController {
     }
     
     @IBAction func loginButtonTap(_ sender: Any) {
+        self.view.endEditing(true)
         guard let username = authLoginField.text,
               let password = authPasswordField.text else {
             ErrorMessageSnackBar.showMessage(in: view, message: "Заполните все поля.")

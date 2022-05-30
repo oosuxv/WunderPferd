@@ -67,7 +67,7 @@ extension PlanetViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row > locationList.count - 5 {
+        if indexPath.row > locationList.count / 2 {
             loadData()
         }
     }
@@ -82,6 +82,7 @@ extension PlanetViewController: UITableViewDataSource {
         cell.locationLabel.text = location.name
         cell.typeLabel.text = location.type
         cell.populationLabel.text = "population: \(location.residents.count)"
+        cell.selectionStyle = .none
         return cell
     }
     

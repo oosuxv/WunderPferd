@@ -15,6 +15,11 @@ class CharacterListViewController: UIViewController {
     private var location: Location?
     private var characters: [Character] = []
     
+    private struct Constants {
+        static let minimumInteritemSpacing = 20.0
+        static let sideInset = 24.0
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,10 +40,15 @@ class CharacterListViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         if let flowLayout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
-            flowLayout.itemSize.width = collectionView.frame.width / 2 - 24 - 10
-            flowLayout.sectionInset = .init(top: 28, left: 24, bottom: 28, right: 24)
+            flowLayout.itemSize.width = (collectionView.frame.width -
+                                         2 * Constants.sideInset -
+                                         Constants.minimumInteritemSpacing) / 2
+            flowLayout.sectionInset = .init(top: 28,
+                                            left: Constants.sideInset,
+                                            bottom: 28,
+                                            right: Constants.sideInset)
             flowLayout.minimumLineSpacing = 28
-            flowLayout.minimumInteritemSpacing = 20
+            flowLayout.minimumInteritemSpacing = Constants.minimumInteritemSpacing
         }
         requestCharacters()
     }

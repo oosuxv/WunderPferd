@@ -14,6 +14,8 @@ class CharacterListViewController: UIViewController {
     private let imageService = ServiceLocator.imageService()
     private var location: Location?
     private var characters: [Character] = []
+    private var requestQueue = OperationQueue()
+    private var updateQueue = OperationQueue()
     
     private struct Constants {
         static let minimumInteritemSpacing = 20.0
@@ -23,6 +25,9 @@ class CharacterListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        requestQueue.maxConcurrentOperationCount = 10
+        updateQueue.maxConcurrentOperationCount = 1
+        
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: CharacterCollectionViewCell.className, bundle: nil),
                                 forCellWithReuseIdentifier: CharacterCollectionViewCell.className)
@@ -31,6 +36,8 @@ class CharacterListViewController: UIViewController {
             ErrorMessageSnackBar.showMessage(in: self.view, message: "Ошибка загрузки локации")
             return
         }
+        
+        
         guard location.residents.count > 0 else {
             title = "Пустая локация \"\(location.name)\""
             return
@@ -50,7 +57,7 @@ class CharacterListViewController: UIViewController {
             flowLayout.minimumLineSpacing = 28
             flowLayout.minimumInteritemSpacing = Constants.minimumInteritemSpacing
         }
-        requestCharacters()
+        requestCharactersParallel()
     }
     
     func setLocation(_ location: Location) {
@@ -110,6 +117,33 @@ class CharacterListViewController: UIViewController {
                 } else {
                     ErrorMessageSnackBar.showMessage(in: self.view, message: "Ошибка загрузки жителей")
                     ServiceLocator.logger.info("character load failed: \(error?.localizedDescription ?? "")")
+                }
+            }
+        }
+    }
+    
+    func requestCharactersParallel() {
+        guard let location = location else {
+            ErrorMessageSnackBar.showMessage(in: self.view, message: "Ошибка загрузки локации")
+            return
+        }
+        location.residents.forEach {
+            residentUrl in
+            requestQueue.addOperation {
+                self.characterNetworkManager.getCharacter(url: residentUrl) {
+                    character, error in
+                    guard let character = character else {
+                        print(error as Any)
+                        ErrorMessageSnackBar.showMessage(in: self.view, message: "Ошибка загрузки персонажа \(error?.localizedDescription ?? "")")
+                        return
+                    }
+                    DispatchQueue.main.async {
+                        [weak self] in
+                        guard let self = self else { return }
+                        self.characters.append(character)
+                        let indexPath = IndexPath(item: self.characters.count - 1, section: 0)
+                        self.collectionView.insertItems(at: [indexPath])
+                    }
                 }
             }
         }

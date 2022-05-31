@@ -36,7 +36,34 @@ class NetworkManager {
         }
     }
     
-    func performRequest(
+    func performRequest<ResponseType: Decodable>(
+            url: String,
+            method: HTTPMethod = .get,
+            headers: HTTPHeaders? = nil,
+            onRequestCompleted: ((ResponseType?, Error?) -> ())?
+    ) {
+        AF.request(url, method: method, headers: headers)
+            .validate()
+            .responseData { (afDataResponse) in
+
+            guard let data = afDataResponse.data, afDataResponse.error == nil
+            else {
+                onRequestCompleted?(nil, afDataResponse.error)
+                return
+            }
+
+            do {
+                let decodedValue: ResponseType = try JSONDecoder().decode(ResponseType.self, from: data)
+                onRequestCompleted?(decodedValue, nil)
+            }
+            catch (let error) {
+                ServiceLocator.logger.info("response parse failed: \(error.localizedDescription)")
+                onRequestCompleted?(nil, error)
+            }
+        }
+    }
+    
+    func performDataRequest(
             url: String,
             method: HTTPMethod = .get,
             headers: HTTPHeaders? = nil,
@@ -94,6 +121,10 @@ extension NetworkManager: RegisterNetworkManager {
 
 extension NetworkManager: CharacterNetworkManager {
     
+    func getCharacter(url: String, completion: ((Character?, Error?) -> ())?) {
+        performRequest(url: url, onRequestCompleted: completion)
+    }
+    
     func getCharacter(id: String, completion: ((Character?, Error?) -> ())?) {
         let request = RickURLRequestBuilder.characters(id)
         performRequest(request: request, onRequestCompleted: completion)
@@ -108,6 +139,6 @@ extension NetworkManager: CharacterNetworkManager {
 extension NetworkManager: ImageNetworkManager {
     
     func getImage(url: String, completion: ((Data?, Error?) -> ())?) {
-        performRequest(url: url, onRequestCompleted: completion)
+        performDataRequest(url: url, onRequestCompleted: completion)
     }
 }

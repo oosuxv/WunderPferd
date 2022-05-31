@@ -35,6 +35,8 @@
 		E79E376C282EA59C00FEA376 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79E376B282EA59C00FEA376 /* StorageManager.swift */; };
 		E79E376E2833E63300FEA376 /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79E376D2833E63300FEA376 /* ServiceLocator.swift */; };
 		E7FD76FE283D17B000D62B85 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FD76FD283D17B000D62B85 /* ImageService.swift */; };
+		E7FD7703284647D600D62B85 /* AutoLayoutSugar in Frameworks */ = {isa = PBXBuildFile; productRef = E7FD7702284647D600D62B85 /* AutoLayoutSugar */; };
+		E7FD77052846482D00D62B85 /* ConViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FD77042846482D00D62B85 /* ConViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +67,7 @@
 		E79E376B282EA59C00FEA376 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		E79E376D2833E63300FEA376 /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
 		E7FD76FD283D17B000D62B85 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
+		E7FD77042846482D00D62B85 /* ConViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7FD7703284647D600D62B85 /* AutoLayoutSugar in Frameworks */,
 				E79E3760282E93C400FEA376 /* KeychainAccess in Frameworks */,
 				E79E3763282E94A300FEA376 /* JGProgressHUD in Frameworks */,
 				52C8A35B281C297700C5A887 /* Alamofire in Frameworks */,
@@ -116,6 +120,7 @@
 				E7816D042812E7D200E9F9AB /* NSObject+ClassName.swift */,
 				E7816D062812F2E900E9F9AB /* CompositionCollectionViewController.swift */,
 				E79E376D2833E63300FEA376 /* ServiceLocator.swift */,
+				E7FD77042846482D00D62B85 /* ConViewController.swift */,
 			);
 			path = WunderPferd;
 			sourceTree = "<group>";
@@ -198,6 +203,7 @@
 				52C8A35A281C297700C5A887 /* Alamofire */,
 				E79E375F282E93C400FEA376 /* KeychainAccess */,
 				E79E3762282E94A300FEA376 /* JGProgressHUD */,
+				E7FD7702284647D600D62B85 /* AutoLayoutSugar */,
 			);
 			productName = WunderPferd;
 			productReference = 5228AD4A27FF5CEF0000122D /* WunderPferd.app */;
@@ -231,6 +237,7 @@
 				52C8A359281C297700C5A887 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				E79E375E282E93C400FEA376 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
 				E79E3761282E94A300FEA376 /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
+				E7FD7701284647D600D62B85 /* XCRemoteSwiftPackageReference "auto-layout-sugar-ios" */,
 			);
 			productRefGroup = 5228AD4B27FF5CEF0000122D /* Products */;
 			projectDirPath = "";
@@ -261,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7FD77052846482D00D62B85 /* ConViewController.swift in Sources */,
 				E7816CFE2812E26600E9F9AB /* TestCollectionViewCell.swift in Sources */,
 				E79E3768282E97AC00FEA376 /* CharacterStatus.swift in Sources */,
 				E7816D052812E7D200E9F9AB /* NSObject+ClassName.swift in Sources */,
@@ -522,6 +530,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		E7FD7701284647D600D62B85 /* XCRemoteSwiftPackageReference "auto-layout-sugar-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Heads-and-Hands/auto-layout-sugar-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -539,6 +555,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E79E3761282E94A300FEA376 /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
 			productName = JGProgressHUD;
+		};
+		E7FD7702284647D600D62B85 /* AutoLayoutSugar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E7FD7701284647D600D62B85 /* XCRemoteSwiftPackageReference "auto-layout-sugar-ios" */;
+			productName = AutoLayoutSugar;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

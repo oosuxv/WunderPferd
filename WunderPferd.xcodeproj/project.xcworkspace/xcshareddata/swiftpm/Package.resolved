@@ -10,6 +10,15 @@
       }
     },
     {
+      "identity" : "auto-layout-sugar-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Heads-and-Hands/auto-layout-sugar-ios",
+      "state" : {
+        "revision" : "1b57b50cf4e6b7715634df41a565b6d94637ca3d",
+        "version" : "1.0.6"
+      }
+    },
+    {
       "identity" : "jgprogresshud",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/JonasGessner/JGProgressHUD.git",

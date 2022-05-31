@@ -42,6 +42,7 @@
                             <constraint firstItem="2JH-3L-G7I" firstAttribute="leading" secondItem="syf-HG-WtT" secondAttribute="leading" constant="8" id="3ij-DQ-WfN"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="2JH-3L-G7I" secondAttribute="trailing" constant="8" id="VqE-h3-akm"/>
                             <constraint firstItem="2JH-3L-G7I" firstAttribute="top" secondItem="VgZ-5o-CI8" secondAttribute="bottom" constant="8" id="ce4-3x-Ev1"/>
+                            <constraint firstItem="GwM-rX-Hr8" firstAttribute="width" secondItem="VgZ-5o-CI8" secondAttribute="width" id="hjq-Nb-M4d"/>
                             <constraint firstItem="GwM-rX-Hr8" firstAttribute="top" secondItem="2JH-3L-G7I" secondAttribute="bottom" constant="8" id="k0f-gJ-i9h"/>
                         </constraints>
                     </stackView>

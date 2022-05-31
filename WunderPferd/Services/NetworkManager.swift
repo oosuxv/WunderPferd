@@ -124,16 +124,6 @@ extension NetworkManager: CharacterNetworkManager {
     func getCharacter(url: String, completion: ((Character?, Error?) -> ())?) {
         performRequest(url: url, onRequestCompleted: completion)
     }
-    
-    func getCharacter(id: String, completion: ((Character?, Error?) -> ())?) {
-        let request = RickURLRequestBuilder.characters(id)
-        performRequest(request: request, onRequestCompleted: completion)
-    }
-    
-    func getMultipleCharacters(idListCommaSeparated ids: String, completion: (([Character]?, Error?) -> ())?) {
-        let request = RickURLRequestBuilder.characters(ids)
-        performRequest(request: request, onRequestCompleted: completion)
-    }
 }
 
 extension NetworkManager: ImageNetworkManager {

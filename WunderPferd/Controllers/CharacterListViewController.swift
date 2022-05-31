@@ -15,7 +15,6 @@ class CharacterListViewController: UIViewController {
     private var location: Location?
     private var characters: [Character] = []
     private var requestQueue = OperationQueue()
-    private var updateQueue = OperationQueue()
     
     private struct Constants {
         static let minimumInteritemSpacing = 20.0
@@ -26,7 +25,6 @@ class CharacterListViewController: UIViewController {
         super.viewDidLoad()
         
         requestQueue.maxConcurrentOperationCount = 10
-        updateQueue.maxConcurrentOperationCount = 1
         
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: CharacterCollectionViewCell.className, bundle: nil),
@@ -36,7 +34,6 @@ class CharacterListViewController: UIViewController {
             ErrorMessageSnackBar.showMessage(in: self.view, message: "Ошибка загрузки локации")
             return
         }
-        
         
         guard location.residents.count > 0 else {
             title = "Пустая локация \"\(location.name)\""
@@ -64,64 +61,6 @@ class CharacterListViewController: UIViewController {
         self.location = location
     }
     
-    private func getCharacterIds() -> String {
-        var result = ""
-        if let location = location {
-            for characterUrl in location.residents {
-                var id = ""
-                for symbol in characterUrl.reversed() {
-                    if symbol.isNumber {
-                        id.insert(symbol, at: id.startIndex)
-                    } else {
-                        break
-                    }
-                }
-                if result.count != 0 {
-                    result.append(",")
-                }
-                result.append(contentsOf: id)
-            }
-        }
-        return result
-    }
-    
-    private func requestCharacters() {
-        guard let location = location else {
-            ErrorMessageSnackBar.showMessage(in: self.view, message: "Ошибка загрузки локации")
-            return
-        }
-        if location.residents.count == 1 {
-            characterNetworkManager.getCharacter(id: getCharacterIds()) {
-                [weak self] character, error in
-                guard let self = self else {
-                    return
-                }
-                if let character = character {
-                    self.characters.append(character)
-                    self.collectionView.reloadData()
-                } else {
-                    ErrorMessageSnackBar.showMessage(in: self.view, message: "Ошибка загрузки жителей")
-                    ServiceLocator.logger.info("character load failed: \(error?.localizedDescription ?? "")")
-                }
-            }
-        }
-        if location.residents.count > 1 {
-            characterNetworkManager.getMultipleCharacters(idListCommaSeparated: getCharacterIds()) {
-                [weak self] characters, error in
-                guard let self = self else {
-                    return
-                }
-                if let characters = characters {
-                    self.characters.append(contentsOf: characters)
-                    self.collectionView.reloadData()
-                } else {
-                    ErrorMessageSnackBar.showMessage(in: self.view, message: "Ошибка загрузки жителей")
-                    ServiceLocator.logger.info("character load failed: \(error?.localizedDescription ?? "")")
-                }
-            }
-        }
-    }
-    
     func requestCharactersParallel() {
         guard let location = location else {
             ErrorMessageSnackBar.showMessage(in: self.view, message: "Ошибка загрузки локации")
@@ -133,7 +72,6 @@ class CharacterListViewController: UIViewController {
                 self.characterNetworkManager.getCharacter(url: residentUrl) {
                     character, error in
                     guard let character = character else {
-                        print(error as Any)
                         ErrorMessageSnackBar.showMessage(in: self.view, message: "Ошибка загрузки персонажа \(error?.localizedDescription ?? "")")
                         return
                     }
@@ -181,7 +119,4 @@ extension CharacterListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return characters.count
     }
-    
-    
-    
 }

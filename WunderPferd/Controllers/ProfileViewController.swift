@@ -99,6 +99,7 @@ extension ProfileViewController: UITableViewDataSource {
             let formatter = DateFormatter()
             formatter.dateFormat = "dd/MM/YYYY"
             cell.value.text = formatter.string(from: registrationDate)
+            cell.selectionStyle = .none
             return cell
         } else if indexPath.section == 2 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ProfileColorTableViewCell.className) as? ProfileColorTableViewCell else {
@@ -107,6 +108,7 @@ extension ProfileViewController: UITableViewDataSource {
             cell.attributeLabel.text = "Цвет профиля"
             cell.colorView.layer.cornerRadius = 8
             cell.colorView.backgroundColor = preferredColor
+            cell.selectionStyle = .none
             return cell
         }
         return UITableViewCell()

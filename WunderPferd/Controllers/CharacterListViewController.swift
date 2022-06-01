@@ -18,7 +18,8 @@ class CharacterListViewController: UIViewController {
     
     private struct Constants {
         static let minimumInteritemSpacing = 20.0
-        static let sideInset = 24.0
+        static let horizontalInset = 24.0
+        static let verticalInset = 24.0
     }
     
     override func viewDidLoad() {
@@ -26,6 +27,7 @@ class CharacterListViewController: UIViewController {
         
         requestQueue.maxConcurrentOperationCount = 10
         
+        collectionView.collectionViewLayout = createLayout()
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: CharacterCollectionViewCell.className, bundle: nil),
                                 forCellWithReuseIdentifier: CharacterCollectionViewCell.className)
@@ -40,20 +42,6 @@ class CharacterListViewController: UIViewController {
             return
         }
         title = "Жители локации \"\(location.name)\""
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        if let flowLayout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
-            flowLayout.itemSize.width = (collectionView.frame.width -
-                                         2 * Constants.sideInset -
-                                         Constants.minimumInteritemSpacing) / 2
-            flowLayout.sectionInset = .init(top: 28,
-                                            left: Constants.sideInset,
-                                            bottom: 28,
-                                            right: Constants.sideInset)
-            flowLayout.minimumLineSpacing = 28
-            flowLayout.minimumInteritemSpacing = Constants.minimumInteritemSpacing
-        }
         requestCharactersParallel()
     }
     
@@ -61,7 +49,26 @@ class CharacterListViewController: UIViewController {
         self.location = location
     }
     
-    func requestCharactersParallel() {
+    private func createLayout() -> UICollectionViewLayout {
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                              heightDimension:.fractionalHeight(1.02))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                               heightDimension: .fractionalWidth(0.5))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
+        group.interItemSpacing = .fixed(Constants.minimumInteritemSpacing)
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = .init(top: Constants.verticalInset,
+                                      leading: Constants.horizontalInset,
+                                      bottom: Constants.verticalInset,
+                                      trailing: Constants.horizontalInset)
+        section.interGroupSpacing = Constants.verticalInset
+        let layout = UICollectionViewCompositionalLayout(section: section)
+
+        return layout
+    }
+    
+    private func requestCharactersParallel() {
         guard let location = location else {
             ErrorMessageSnackBar.showMessage(in: self.view, message: "Ошибка загрузки локации")
             return

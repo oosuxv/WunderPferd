@@ -9,8 +9,8 @@ import UIKit
 
 class BrightButton: UIButton {
     
-    private let defaultColor = UIColor.red
-    private let highighlightedColor = UIColor.orange
+    private let defaultColor = UIColor.init(named: "ButtonBlue")
+    private let highlightedColor = UIColor.orange
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -24,12 +24,13 @@ class BrightButton: UIButton {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.layer.cornerRadius = 25
+        self.layer.cornerRadius = 0
+        self.layer.masksToBounds = true
     }
     
     override open var isHighlighted: Bool {
         didSet {
-            self.backgroundColor = isHighlighted ? highighlightedColor : defaultColor
+            self.backgroundColor = isHighlighted ? highlightedColor : defaultColor
         }
     }
 

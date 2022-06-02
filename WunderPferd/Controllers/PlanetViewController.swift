@@ -45,7 +45,7 @@ class PlanetViewController: UIViewController {
                 self.isLoading = false
             } else {
                 ErrorMessageSnackBar.showMessage(in: self.view, message: "ошибка загрузки данных")
-                print(error as Any)
+                ServiceLocator.logger.info("locations load failed: \(error?.localizedDescription ?? "")")
             }
         }
     }
@@ -61,11 +61,13 @@ class PlanetViewController: UIViewController {
 
 extension PlanetViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // TODO: move to planet controller
+        let characterListViewController = CharacterListViewController()
+        characterListViewController.setLocation(locationList[indexPath.row])
+        navigationController?.pushViewController(characterListViewController, animated: true)
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row > locationList.count - 5 {
+        if indexPath.row > locationList.count / 2 {
             loadData()
         }
     }
@@ -80,6 +82,7 @@ extension PlanetViewController: UITableViewDataSource {
         cell.locationLabel.text = location.name
         cell.typeLabel.text = location.type
         cell.populationLabel.text = "population: \(location.residents.count)"
+        cell.selectionStyle = .none
         return cell
     }
     

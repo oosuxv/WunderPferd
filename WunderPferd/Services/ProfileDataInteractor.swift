@@ -10,6 +10,7 @@ import UIKit
 protocol ProfileDataInteractor {
     var image: UIImage? { get set }
     func requestUsername(completion: @escaping (String?, Error?) -> ())
+    func logout()
 }
 
 class DefaultProfileDataInteractor: ProfileDataInteractor {
@@ -60,5 +61,9 @@ class DefaultProfileDataInteractor: ProfileDataInteractor {
                 completion(nil, error)
             }
         }
+    }
+    
+    func logout() {
+        userDataManager.logoutUser()
     }
 }

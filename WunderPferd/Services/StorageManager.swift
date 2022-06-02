@@ -26,7 +26,7 @@ class StorageManager {
         do {
             try keychain.set(string, key: key.rawValue)
         } catch {
-            print(error as Any)
+            ServiceLocator.logger.info("save to keychain failed: \(error.localizedDescription)")
         }
     }
     
@@ -36,9 +36,18 @@ class StorageManager {
             let result = try keychain.getString(key.rawValue)
             return result
         } catch {
-            print(error as Any)
+            ServiceLocator.logger.info("loadFromKeychain failed: \(error.localizedDescription)")
         }
         return nil
+    }
+    
+    func removeFromKeychain(key: StorageManagerKey) {
+        let keychain = Keychain(service: Constants.serviceId)
+        do {
+            try keychain.remove(key.rawValue)
+        } catch {
+            ServiceLocator.logger.info("removeFromKeychain failed: \(error.localizedDescription)")
+        }
     }
     
     func saveBoolToUserDefaults(bool: Bool, key: StorageManagerKey) {
@@ -62,7 +71,7 @@ class StorageManager {
         do {
             try keychain.removeAll()
         } catch {
-            print(error as Any)
+            ServiceLocator.logger.info("cleanKeychain failed: \(error.localizedDescription)")
         }
     }
     
@@ -99,5 +108,21 @@ extension StorageManager: UserDataManager {
     
     func saveUsername(username: String) {
         saveStringToUserDefaults(username, key: .username)
+    }
+    
+    func logoutUser() {
+        removeFromKeychain(key: .token)
+        removeFromKeychain(key: .userId)
+        removeFromKeychain(key: .username)
+    }
+}
+
+extension StorageManager: LoginCheckService {
+    func userIsLoggedIn() -> Bool {
+        if let _ = loadFromKeychain(key: .userId),
+           let _ = loadFromKeychain(key: .token) {
+            return true
+        }
+        return false
     }
 }

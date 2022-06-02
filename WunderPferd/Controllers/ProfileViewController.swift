@@ -9,17 +9,20 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
-    @IBOutlet weak var tableView: UITableView!
-    
     var profileDataInteractor = ServiceLocator.profileDataInteractor()
-    var source: [(String, String)] = [
-            ("first name", "Bob"),
-            ("last name", "Bobson"),
-            ("age", "8 month"),
-            ("gender", "bender"),
-            ("occupation", "no"),
-            ("hobby", "eating")
-        ]
+    var registrationDate = Date.now.addingTimeInterval(-86400)
+    var preferredColor = UIColor.blue
+    
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var logoutButton: UIButton!
+    
+    @IBAction func logoutButtonTap(_ sender: Any) {
+        profileDataInteractor.logout()
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let authorizeViewController = storyboard.instantiateViewController(identifier: AuthorizeViewController.className)
+
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(authorizeViewController)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +34,8 @@ class ProfileViewController: UIViewController {
                            forCellReuseIdentifier: ProfileTitleTableViewCell.className)
         tableView.register(UINib(nibName: ProfileDataTableViewCell.className, bundle: nil),
                            forCellReuseIdentifier: ProfileDataTableViewCell.className)
+        tableView.register(UINib(nibName: ProfileColorTableViewCell.className, bundle: nil),
+                           forCellReuseIdentifier: ProfileColorTableViewCell.className)
     }
     
     @objc func loadImage() {
@@ -52,11 +57,11 @@ extension ProfileViewController: UITableViewDelegate {
 extension ProfileViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        2
+        3
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        section == 0 ? 1 : source.count
+        1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -70,30 +75,43 @@ extension ProfileViewController: UITableViewDataSource {
             cell.circledImageView.layer.borderColor = UIColor.white.cgColor
             cell.circledImageView.layer.cornerRadius = cell.circledImageView.frame.height / 2
             cell.circledImageView.clipsToBounds = true
+            cell.pictureTintView.backgroundColor = preferredColor
             
             if let image = profileDataInteractor.image {
                 cell.circledImageView.image = image
                 cell.wideImageView.image = image
             }
             
-            profileDataInteractor.requestUsername(completion:  {
+            profileDataInteractor.requestUsername(completion: {
                 username, error in
                 if let username = username {
                     cell.loginLabel.text = username
                 } else {
-                    print(error as Any)
+                    ServiceLocator.logger.info("username request failed: \(error?.localizedDescription ?? "")")
                 }
             })
             return cell
-        } else {
+        } else if indexPath.section == 1 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ProfileDataTableViewCell.className) as? ProfileDataTableViewCell else {
                 return UITableViewCell()
             }
-            let tuple = source[indexPath.row]
-            cell.attribute.text = tuple.0
-            cell.value.text = tuple.1
+            cell.attribute.text = "Дата Регистрации"
+            let formatter = DateFormatter()
+            formatter.dateFormat = "dd/MM/YYYY"
+            cell.value.text = formatter.string(from: registrationDate)
+            cell.selectionStyle = .none
+            return cell
+        } else if indexPath.section == 2 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: ProfileColorTableViewCell.className) as? ProfileColorTableViewCell else {
+                return UITableViewCell()
+            }
+            cell.attributeLabel.text = "Цвет профиля"
+            cell.colorView.layer.cornerRadius = 8
+            cell.colorView.backgroundColor = preferredColor
+            cell.selectionStyle = .none
             return cell
         }
+        return UITableViewCell()
     }
 }
 

@@ -6,8 +6,14 @@
 //
 
 import Foundation
+import OSLog
 
 final class ServiceLocator {
+    
+    private static var imageServiceSingleton = CachedImageService(imageNetworkManager: NetworkManager())
+    private static var subsystem = Bundle.main.bundleIdentifier!
+
+    static let logger = Logger(subsystem: subsystem, category: "logger")
     
     static func firstStartService() -> FirstStartService {
         StorageManager()
@@ -43,5 +49,17 @@ final class ServiceLocator {
     
     static func locationNetworkManager() -> LocationNetworkManager {
         NetworkManager()
+    }
+    
+    static func characterNetworkManager() -> CharacterNetworkManager {
+        NetworkManager()
+    }
+    
+    static func imageService() -> ImageService {
+        imageServiceSingleton
+    }
+    
+    static func loginCheckService() -> LoginCheckService {
+        StorageManager()
     }
 }

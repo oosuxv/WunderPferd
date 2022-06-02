@@ -20,16 +20,19 @@ class AuthorizeViewController: TitledScrollViewController {
         
         hud.textLabel.text = "Connecting"
         hud.vibrancyEnabled = true
+        
+        authLoginField.setAppStyle()
+        authPasswordField.setAppStyle()
     }
     
     @IBAction func registerButtonTap(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let registerVC = storyboard.instantiateViewController(identifier: RegisterViewController.className)
-        registerVC.modalPresentationStyle = .fullScreen
-        show(registerVC, sender: self)
+        let registerViewController = storyboard.instantiateViewController(identifier: RegisterViewController.className)
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(registerViewController)
     }
     
     @IBAction func loginButtonTap(_ sender: Any) {
+        self.view.endEditing(true)
         guard let username = authLoginField.text,
               let password = authPasswordField.text else {
             ErrorMessageSnackBar.showMessage(in: view, message: "Заполните все поля.")
@@ -43,9 +46,8 @@ class AuthorizeViewController: TitledScrollViewController {
             if let response = response {
                 self.loginDataManager.loginUser(token: response.token, userId: response.userId)
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let tabBarVC = storyboard.instantiateViewController(identifier: "UITabBarController")
-                tabBarVC.modalPresentationStyle = .fullScreen
-                self.show(tabBarVC, sender: self)
+                let rootTabBarController = storyboard.instantiateViewController(identifier: "RootTabBarController")
+                (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(rootTabBarController)
                 return
             }
             ErrorMessageSnackBar.showMessage(in: self.view, message: "Логин провалился")

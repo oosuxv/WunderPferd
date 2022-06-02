@@ -27,6 +27,7 @@ class RegisterViewController: TitledScrollViewController {
         
         regTextFields.forEach { field in
             field.delegate = self
+            field.setAppStyle()
             if field == regTextFields.last {
                 field.returnKeyType = .done
             } else {
@@ -42,7 +43,7 @@ class RegisterViewController: TitledScrollViewController {
         regTextFields.first?.becomeFirstResponder()
     }
     
-    private func hasNoValidationErrors() -> Bool {
+    private func hasNoValidationErrorsOtherwiseSnack() -> Bool {
         guard let username = regTextFields[usernameFieldId].text,
                 let password = regTextFields[passwordFieldId].text,
                 let passwordConfirmation = regTextFields[passwordConfirmationFieldId].text else {
@@ -68,9 +69,8 @@ class RegisterViewController: TitledScrollViewController {
             if let response = response {
                 self.loginDataManager.loginUser(token: response.token, userId: response.userId)
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let tabBarVC = storyboard.instantiateViewController(identifier: "UITabBarController")
-                tabBarVC.modalPresentationStyle = .fullScreen
-                self.show(tabBarVC, sender: self)
+                let rootTabBarController = storyboard.instantiateViewController(identifier: "RootTabBarController")
+                (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(rootTabBarController)
                 return
             }
             ErrorMessageSnackBar.showMessage(in: self.view, message: "Ошибка соединения.")
@@ -78,7 +78,8 @@ class RegisterViewController: TitledScrollViewController {
     }
     
     @IBAction func doneButtonTap(_ sender: Any) {
-        guard hasNoValidationErrors(),
+        self.view.endEditing(true)
+        guard hasNoValidationErrorsOtherwiseSnack(),
                 let username = regTextFields[usernameFieldId].text,
                 let password = regTextFields[passwordFieldId].text else {
             return
